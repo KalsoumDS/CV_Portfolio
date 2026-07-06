@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Oumou Kaltoum Sall — Data Scientist & ML Engineer</title>
+  <meta name="description" content="Portfolio d'Oumou Kaltoum Sall — Data Scientist & ML Engineer. Vision par ordinateur, AutoML, BI et MLOps.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav id="navbar">
+    <a href="#hero" class="nav-logo">Oumou <span>Kaltoum</span></a>
+    <ul class="nav-links">
+      <li><a href="#about" data-i18n="nav.about">À propos</a></li>
+      <li><a href="#expertise" data-i18n="nav.expertise">Expertise</a></li>
+      <li><a href="#case-studies" data-i18n="nav.caseStudies">Projets phares</a></li>
+      <li><a href="#projects" data-i18n="nav.projects">Projets</a></li>
+      <li><a href="#journey" data-i18n="nav.journey">Parcours</a></li>
+      <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <button class="toggle-lang" id="langToggle" aria-label="Changer de langue"><span id="langLabel">EN</span></button>
+      <button class="toggle-theme" id="themeToggle" aria-label="Changer de thème">
+        <span class="icon-sun"><i class="fa-solid fa-sun"></i></span>
+        <span class="icon-moon"><i class="fa-solid fa-moon"></i></span>
+      </button>
+      <a href="https://github.com/KalsoumDS" target="_blank" rel="noopener noreferrer" class="nav-social" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+      <a href="https://linkedin.com/in/oumou-kaltoum-sall" target="_blank" rel="noopener noreferrer" class="nav-social" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+      <button class="nav-chat" id="navChatBtn" type="button"><i class="fa-solid fa-comments"></i> <span data-i18n="nav.chat">Assistant IA</span></button>
+      <button class="nav-hamburger" id="hamburger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <div class="nav-overlay" id="overlay"></div>
+  <aside class="nav-drawer" id="drawer">
+    <ul>
+      <li><a href="#about" class="drawer-link" data-i18n="nav.about">À propos</a></li>
+      <li><a href="#expertise" class="drawer-link" data-i18n="nav.expertise">Expertise</a></li>
+      <li><a href="#case-studies" class="drawer-link" data-i18n="nav.caseStudies">Projets phares</a></li>
+      <li><a href="#projects" class="drawer-link" data-i18n="nav.projects">Projets</a></li>
+      <li><a href="#journey" class="drawer-link" data-i18n="nav.journey">Parcours</a></li>
+      <li><a href="#contact" class="drawer-link" data-i18n="nav.contact">Contact</a></li>
+    </ul>
+    <button class="nav-chat drawer-chat" id="drawerChatBtn" type="button"><i class="fa-solid fa-comments"></i> <span data-i18n="nav.chat">Assistant IA</span></button>
+  </aside>
+
+  <main>
+    <section class="hero" id="hero">
+      <div class="hero-inner">
+        <div class="hero-copy">
+          <p class="hero-greeting reveal" data-i18n="hero.greeting">Bonjour, je suis</p>
+          <h1 class="hero-name reveal"><span data-i18n="hero.rolePrefix">Data Scientist</span> <span class="hero-accent">Oumou Kaltoum Sall</span></h1>
+          <p class="hero-subtitle reveal" data-i18n="hero.subtitle">De la recherche à l'IA en production</p>
+          <p class="hero-bio reveal" data-i18n="hero.bio">Data Scientist & ML Engineer basée au Maroc et au Sénégal. Je conçois des systèmes d'IA appliquée — reconnaissance faciale temps réel, pipelines RAG/AutoML, BI et déploiement de modèles en production.</p>
+          <p class="hero-kicker reveal">
+            <span class="hero-kicker-live"><span class="badge-dot"></span><span data-i18n="hero.available">Disponible — Freelance · CDD · CDI · Remote</span></span>
+          </p>
+          <div class="hero-cta reveal">
+            <a href="#case-studies" class="btn-primary" data-i18n="hero.cta1">Voir mes projets</a>
+            <a href="#contact" class="btn-ghost" data-i18n="hero.cta2">Me contacter</a>
+          </div>
+          <div class="hero-stats reveal">
+            <div class="hero-stat"><strong>10+</strong><span data-i18n="analytics.stat.projects">Projets data & IA</span></div>
+            <div class="hero-stat"><strong>15+</strong><span data-i18n="analytics.stat.skills">Compétences techniques</span></div>
+            <div class="hero-stat"><strong>3+</strong><span data-i18n="analytics.stat.experience">Années d'expérience</span></div>
+            <div class="hero-stat"><strong>2</strong><span data-i18n="analytics.stat.markets">Pays</span></div>
+          </div>
+        </div>
+        <div class="hero-visual reveal">
+          <div class="hero-photo-frame">
+            <div class="hero-photo-ring"></div>
+            <div class="hero-photo hero-sigle">
+              <span>OKS</span>
+            </div>
+            <div class="hero-photo-badge"><i class="fa-solid fa-brain"></i> ML · Vision · MLOps</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="about">
+      <div class="about-inner">
+        <div class="section-header reveal">
+          <p class="section-tag" data-i18n="about.tag">01 — À PROPOS</p>
+          <h2 class="section-title" data-i18n-html="about.title">Passionnée par la data, le deep learning et les systèmes IA en production.</h2>
+        </div>
+        <div class="about-content reveal">
+          <p class="about-bio" data-i18n="about.bio">Data Scientist & ML Engineer basée au Maroc et au Sénégal. Mon expérience couvre la reconnaissance faciale temps réel chez ABA Technology, les pipelines RAG/AutoML, le traitement de données industrielles et la mise en production de modèles.</p>
+          <div class="about-meta">
+            <div class="about-meta-item">
+              <span class="meta-label" data-i18n="about.loc.label">Localisation</span>
+              <span class="meta-value" data-i18n="about.loc.val">Maroc · Sénégal</span>
+            </div>
+            <div class="about-meta-item">
+              <span class="meta-label" data-i18n="about.avail.label">Disponibilité</span>
+              <span class="meta-value" data-i18n="about.avail.val">Freelance · CDD · CDI · Remote</span>
+            </div>
+            <div class="about-meta-item">
+              <span class="meta-label" data-i18n="about.focus.label">Focus</span>
+              <span class="meta-value" data-i18n="about.focus.val">Vision IA · AutoML · MLOps</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="expertise">
+      <div class="section-header reveal">
+        <p class="section-tag" data-i18n="exp.tag">02 — EXPERTISE</p>
+        <h2 class="section-title" data-i18n="exp.title">Compétences & technologies</h2>
+        <p class="section-sub reveal" data-i18n="exp.subtitle">Machine learning, vision par ordinateur, AutoML et MLOps pour transformer la data en solutions IA exploitables.</p>
+      </div>
+      <div class="skills-grid">
+        <article class="skill-card reveal">
+          <div class="skill-icon"><i class="fa-solid fa-brain"></i></div>
+          <h3 data-i18n="exp.c1.title">Machine Learning & Deep Learning</h3>
+          <p data-i18n="exp.c1.desc">Modèles prédictifs, réseaux de neurones, AutoML et pipelines de bout en bout.</p>
+        </article>
+        <article class="skill-card reveal">
+          <div class="skill-icon"><i class="fa-solid fa-eye"></i></div>
+          <h3 data-i18n="exp.c2.title">Computer Vision</h3>
+          <p data-i18n="exp.c2.desc">Reconnaissance faciale, détection d'objets et pipelines temps réel sur flux RTSP.</p>
+        </article>
+        <article class="skill-card reveal">
+          <div class="skill-icon"><i class="fa-solid fa-robot"></i></div>
+          <h3 data-i18n="exp.c3.title">AutoML & MLOps</h3>
+          <p data-i18n="exp.c3.desc">Optimisation Optuna, MLflow, déploiement Docker et APIs REST pour servir des modèles.</p>
+        </article>
+        <article class="skill-card reveal">
+          <div class="skill-icon"><i class="fa-solid fa-chart-line"></i></div>
+          <h3 data-i18n="exp.c4.title">BI & Data Visualization</h3>
+          <p data-i18n="exp.c4.desc">Dashboards Power BI, ETL, data storytelling et KPIs pour la prise de décision.</p>
+        </article>
+        <article class="skill-card reveal">
+          <div class="skill-icon"><i class="fa-brands fa-python"></i></div>
+          <h3 data-i18n="exp.c5.title">Python & APIs</h3>
+          <p data-i18n="exp.c5.desc">Automatisation, FastAPI, Flask, Streamlit et intégrations REST.</p>
+        </article>
+        <article class="skill-card reveal">
+          <div class="skill-icon"><i class="fa-solid fa-database"></i></div>
+          <h3 data-i18n="exp.c6.title">SQL & Bases de données</h3>
+          <p data-i18n="exp.c6.desc">Modélisation relationnelle, requêtes optimisées et pipelines ETL structurés.</p>
+        </article>
+        <article class="skill-card reveal">
+          <div class="skill-icon"><i class="fa-solid fa-comments"></i></div>
+          <h3 data-i18n="exp.c7.title">NLP & RAG</h3>
+          <p data-i18n="exp.c7.desc">LangChain, embeddings, recherche vectorielle et assistants documentaires.</p>
+        </article>
+        <article class="skill-card reveal">
+          <div class="skill-icon"><i class="fa-solid fa-server"></i></div>
+          <h3 data-i18n="exp.c8.title">Déploiement & Production</h3>
+          <p data-i18n="exp.c8.desc">Conteneurisation Docker, APIs scalables et validation industrielle de modèles.</p>
+        </article>
+      </div>
+    </section>
+
+    <div class="tech-strip reveal" aria-hidden="true">
+      <div class="tech-strip-track">
+        <span>Python</span><span>PyTorch</span><span>TensorFlow</span><span>Scikit-learn</span><span>OpenCV</span><span>FastAPI</span><span>Docker</span><span>Streamlit</span><span>Power BI</span><span>SQL</span><span>MLflow</span><span>Optuna</span>
+        <span>Python</span><span>PyTorch</span><span>TensorFlow</span><span>Scikit-learn</span><span>OpenCV</span><span>FastAPI</span><span>Docker</span><span>Streamlit</span><span>Power BI</span><span>SQL</span><span>MLflow</span><span>Optuna</span>
+      </div>
+    </div>
+
+    <section class="section section-alt" id="analytics">
+      <div class="section-header reveal">
+        <p class="section-tag" data-i18n="analytics.tag">03 — ANALYTICS</p>
+        <h2 class="section-title" data-i18n="analytics.title">Niveau de maîtrise</h2>
+      </div>
+      <div class="skills-bars reveal">
+        <div class="skill-bar"><div class="skill-bar-head"><span data-i18n="analytics.d1">Machine Learning & Deep Learning</span><strong>95%</strong></div><div class="skill-bar-track"><span style="width:95%"></span></div></div>
+        <div class="skill-bar"><div class="skill-bar-head"><span data-i18n="analytics.d2">Computer Vision & IA appliquée</span><strong>90%</strong></div><div class="skill-bar-track"><span style="width:90%"></span></div></div>
+        <div class="skill-bar"><div class="skill-bar-head"><span data-i18n="analytics.d3">BI, ETL & data storytelling</span><strong>85%</strong></div><div class="skill-bar-track"><span style="width:85%"></span></div></div>
+        <div class="skill-bar"><div class="skill-bar-head"><span data-i18n="analytics.d4">APIs, Docker & déploiement</span><strong>80%</strong></div><div class="skill-bar-track"><span style="width:80%"></span></div></div>
+      </div>
+    </section>
+
+    <section class="section" id="case-studies">
+      <div class="section-header reveal">
+        <p class="section-tag" data-i18n="proof.tag">04 — PROJETS PHARES</p>
+        <h2 class="section-title" data-i18n="proof.title">Études de cas impactantes</h2>
+      </div>
+      <div class="case-list">
+        <article class="case-card reveal">
+          <div class="case-head">
+            <span class="case-num">01</span>
+            <div>
+              <span class="case-org">ABA Technology · PFE Master 2026</span>
+              <h3 data-i18n="proof.master.title">Reconnaissance faciale temps réel sur flux RTSP</h3>
+            </div>
+          </div>
+          <p data-i18n="proof.master.desc">Benchmark ArcFace, AdaFace et VGGFace2 · alignement SCRFD · calibration KDE des seuils · preuve de concept multi-caméras · latence &lt;35 ms.</p>
+          <ul class="case-tags"><li>ArcFace</li><li>SCRFD</li><li>OpenCV</li><li>PyTorch</li></ul>
+        </article>
+        <article class="case-card reveal">
+          <div class="case-head">
+            <span class="case-num">02</span>
+            <div>
+              <span class="case-org">ISM Dakar · JBA Licence 2024</span>
+              <h3 data-i18n="proof.jba.title">PanierDuCoin — Plateforme pour produits locaux</h3>
+            </div>
+          </div>
+          <p data-i18n="proof.jba.desc">Business plan complet : étude de marché, stratégie commerciale, modèle économique, analyse des risques et projections financières sur 5 ans.</p>
+          <ul class="case-tags"><li>Business Plan</li><li>Étude de marché</li><li>Finance</li></ul>
+        </article>
+        <article class="case-card reveal">
+          <div class="case-head">
+            <span class="case-num">03</span>
+            <div>
+              <span class="case-org">Projet personnel · Streamlit 2025</span>
+              <h3 data-i18n="proof.finsight.title">Finsight — Analyse de signaux financiers</h3>
+            </div>
+          </div>
+          <p data-i18n="proof.finsight.desc">Dashboard interactif : backtesting, signaux ML, VaR/CVaR, stress tests et visualisations Plotly pour l'aide à la décision.</p>
+          <ul class="case-tags"><li>Streamlit</li><li>Plotly</li><li>ML Signals</li></ul>
+          <a href="https://finsight-signals.streamlit.app" target="_blank" rel="noopener noreferrer" class="case-link"><i class="fa-solid fa-arrow-up-right-from-square"></i> <span data-i18n="proj.demo">Démo live</span></a>
+        </article>
+        <article class="case-card reveal">
+          <div class="case-head">
+            <span class="case-num">04</span>
+            <div>
+              <span class="case-org">Projet open source · AutoML 2025</span>
+              <h3 data-i18n="proof.automl.title">ChatAutoML Bot — Pipeline ML automatisé</h3>
+            </div>
+          </div>
+          <p data-i18n="proof.automl.desc">Preprocessing, sélection de modèles, optimisation Optuna et explications LLM dans une interface Streamlit modulaire.</p>
+          <ul class="case-tags"><li>Scikit-learn</li><li>Optuna</li><li>MLflow</li></ul>
+          <a href="https://chatautoml-bot.streamlit.app" target="_blank" rel="noopener noreferrer" class="case-link"><i class="fa-solid fa-arrow-up-right-from-square"></i> <span data-i18n="proj.demo">Démo live</span></a>
+        </article>
+        <article class="case-card reveal">
+          <div class="case-head">
+            <span class="case-num">05</span>
+            <div>
+              <span class="case-org">Projet RAG · LangChain 2025</span>
+              <h3 data-i18n="proof.rag.title">RAG Document Intelligence</h3>
+            </div>
+          </div>
+          <p data-i18n="proof.rag.desc">Assistant documentaire avec chunking, embeddings, recherche vectorielle et réponses sourcées via API Mistral.</p>
+          <ul class="case-tags"><li>LangChain</li><li>Mistral</li><li>Streamlit</li></ul>
+        </article>
+        <article class="case-card reveal">
+          <div class="case-head">
+            <span class="case-num">06</span>
+            <div>
+              <span class="case-org">Industrie · PyTorch 2025</span>
+              <h3 data-i18n="proof.anomaly.title">Détection d'anomalies industrielles</h3>
+            </div>
+          </div>
+          <p data-i18n="proof.anomaly.desc">Autoencodeur entraîné sur données SKAB pour surveiller capteurs industriels et détecter dérives en temps réel.</p>
+          <ul class="case-tags"><li>PyTorch</li><li>Autoencoder</li><li>SKAB</li></ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="projects">
+      <div class="section-header reveal">
+        <p class="section-tag" data-i18n="proj.tag">05 — PROJETS</p>
+        <h2 class="section-title" data-i18n="proj.title">Autres réalisations</h2>
+      </div>
+      <div class="projects-grid">
+        <article class="proj-card reveal">
+          <span class="proj-cat">Data Viz</span>
+          <h3>Finsight — Exploration interactive</h3>
+          <p>Application Streamlit pour l'analyse de signaux financiers et ML.</p>
+          <ul class="proj-tags"><li>Streamlit</li><li>Plotly</li><li>Pandas</li></ul>
+          <div class="proj-links-row">
+            <a href="https://github.com/KalsoumDS" target="_blank" rel="noopener noreferrer" class="proj-link"><i class="fa-brands fa-github"></i> <span>Code</span></a>
+            <a href="https://finsight-signals.streamlit.app" target="_blank" rel="noopener noreferrer" class="proj-link"><i class="fa-solid fa-arrow-up-right-from-square"></i> <span>Démo live</span></a>
+          </div>
+        </article>
+        <article class="proj-card reveal">
+          <span class="proj-cat">AutoML</span>
+          <h3>ChatAutoML Bot</h3>
+          <p>Pipeline AutoML modulaire : preprocessing, sélection de modèles et optimisation.</p>
+          <ul class="proj-tags"><li>Scikit-learn</li><li>Optuna</li><li>MLflow</li></ul>
+          <div class="proj-links-row">
+            <a href="https://github.com/KalsoumDS" target="_blank" rel="noopener noreferrer" class="proj-link"><i class="fa-brands fa-github"></i> <span>Code</span></a>
+            <a href="https://chatautoml-bot.streamlit.app" target="_blank" rel="noopener noreferrer" class="proj-link"><i class="fa-solid fa-arrow-up-right-from-square"></i> <span>Démo live</span></a>
+          </div>
+        </article>
+        <article class="proj-card reveal">
+          <span class="proj-cat">RAG / LLM</span>
+          <h3>RAG Document Intelligence</h3>
+          <p>Assistant documentaire avec LangChain, embeddings et réponses sourcées via Mistral.</p>
+          <ul class="proj-tags"><li>LangChain</li><li>Mistral</li><li>Streamlit</li></ul>
+          <a href="https://github.com/KalsoumDS" target="_blank" rel="noopener noreferrer" class="proj-link"><i class="fa-brands fa-github"></i> <span>Code source</span></a>
+        </article>
+        <article class="proj-card reveal">
+          <span class="proj-cat">Deep Learning / Industrie</span>
+          <h3>Détection d'anomalies industrielles</h3>
+          <p>Autoencodeur PyTorch sur données SKAB pour la surveillance de capteurs industriels.</p>
+          <ul class="proj-tags"><li>PyTorch</li><li>Autoencoder</li><li>SKAB</li></ul>
+          <a href="https://github.com/KalsoumDS" target="_blank" rel="noopener noreferrer" class="proj-link"><i class="fa-brands fa-github"></i> <span>Code source</span></a>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="journey">
+      <div class="section-header reveal">
+        <p class="section-tag" data-i18n="journey.tag">06 — PARCOURS</p>
+        <h2 class="section-title" data-i18n="journey.title">Expérience & formation</h2>
+      </div>
+      <div class="journey-grid">
+        <div class="journey-col reveal">
+          <h3 class="journey-col-title" data-i18n="journey.experience">Expérience</h3>
+          <div class="timeline">
+            <article class="timeline-item">
+              <time>Fév 2026 — <span data-i18n="journey.present">présent</span></time>
+              <h4 data-i18n="journey.aba">R&D Data Scientist</h4>
+              <p class="tl-org" data-i18n="journey.aba.org">ABA Technology / Nextronic — Casablanca</p>
+              <p class="tl-desc" data-i18n="journey.aba.desc">Deep learning, computer vision, validation de modèles et prototypes industriels temps réel.</p>
+            </article>
+            <article class="timeline-item">
+              <time>Août 2024 — Jan 2026</time>
+              <h4 data-i18n="journey.freelance">Freelance Data Scientist & ML Consultant</h4>
+              <p class="tl-org" data-i18n="journey.freelance.org">Remote — projets indépendants</p>
+              <p class="tl-desc" data-i18n="journey.freelance.desc">Pipelines data, scraping, modélisation statistique, visualisations et solutions ML sur mesure.</p>
+            </article>
+            <article class="timeline-item">
+              <time>Jan 2023 — Juin 2024</time>
+              <h4>Data Analyst (Bénévole)</h4>
+              <p class="tl-org">Refocus Child Senegal — Dakar</p>
+              <p class="tl-desc">Suivi de l'intégrité des données, structuration de cadres de métadonnées et optimisation des bases de données de suivi pour rationaliser les rapports opérationnels.</p>
+            </article>
+          </div>
+        </div>
+        <div class="journey-col reveal">
+          <h3 class="journey-col-title" data-i18n="journey.formation">Formation</h3>
+          <div class="timeline">
+            <article class="timeline-item">
+              <time>2023 — Oct 2026</time>
+              <h4 data-i18n="journey.master">Master Data Science & IA</h4>
+              <p class="tl-org" data-i18n="journey.master.org">Mundiapolis University of Casablanca</p>
+            </article>
+            <article class="timeline-item">
+              <time>2021 — 2024</time>
+              <h4 data-i18n="journey.licence">Licence Mathématiques Appliquées</h4>
+              <p class="tl-org" data-i18n="journey.licence.org">ISM Dakar — Sénégal</p>
+            </article>
+          </div>
+        </div>
+        <div class="journey-col reveal">
+          <h3 class="journey-col-title" data-i18n="journey.languages">Langues</h3>
+          <div class="lang-list">
+            <div class="lang-item">
+              <div class="lang-head"><span data-i18n="journey.lang.fr">Français</span><strong>95%</strong></div>
+              <div class="skill-bar-track"><span style="width:95%"></span></div>
+            </div>
+            <div class="lang-item">
+              <div class="lang-head"><span data-i18n="journey.lang.en">Anglais</span><strong>80%</strong></div>
+              <div class="skill-bar-track"><span style="width:80%"></span></div>
+            </div>
+            <div class="lang-item">
+              <div class="lang-head"><span data-i18n="journey.lang.ar">Arabe</span><strong>60%</strong></div>
+              <div class="skill-bar-track"><span style="width:60%"></span></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="section section-alt" id="contact">
+      <div class="contact-inner reveal">
+        <p class="section-tag" data-i18n="contact.tag">07 — CONTACT</p>
+        <h2 class="section-title" data-i18n="contact.title">Travaillons ensemble</h2>
+        <p class="contact-sub" data-i18n="contact.sub">Un projet, une mission ou une simple question ? Écrivez-moi ou discutez avec mon assistant IA.</p>
+        <a href="mailto:oumoukaltoumsall@gmail.com" class="contact-email">oumoukaltoumsall@gmail.com</a>
+        <div class="contact-actions">
+          <a href="mailto:oumoukaltoumsall@gmail.com" class="btn-primary" data-i18n="contact.emailBtn">Envoyer un message</a>
+          <button type="button" class="btn-ghost" id="contactChatBtn" data-i18n="contact.chatBtn">Discuter avec mon assistant IA</button>
+        </div>
+        <div class="contact-social">
+          <a href="https://github.com/KalsoumDS" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i> GitHub</a>
+          <a href="https://linkedin.com/in/oumou-kaltoum-sall" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin-in"></i> LinkedIn</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-main">
+      <p class="footer-brand">Oumou Kaltoum Sall</p>
+      <p class="footer-desc" data-i18n="footer.desc">Data Scientist & ML Engineer — IA appliquée, vision par ordinateur et MLOps.</p>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Oumou Kaltoum Sall</span>
+      <span data-i18n="footer.made">Portfolio 2026</span>
+    </div>
+  </footer>
+
+  <div class="level-indicator" id="levelIndicator">
+    <span class="level-dot"></span>
+    <span id="levelText">Level 01 — Accueil</span>
+    <span class="level-progress" id="levelProgress">0/8</span>
+  </div>
+
+  <div class="chatbot-tooltip" id="chatbotTooltip" data-i18n="chat.tooltip">Discutez avec mon assistant IA</div>
+  <button class="chatbot-fab" id="chatbotToggle" aria-label="Ouvrir l'assistant IA">
+    <i class="fa-solid fa-comments"></i>
+  </button>
+
+  <div class="chatbot-panel" id="chatbotPanel" aria-hidden="true">
+    <header class="chatbot-header">
+      <div class="chatbot-avatar">OKS</div>
+      <div class="chatbot-title">
+        <strong>Oumou Kaltoum Sall</strong>
+        <span data-i18n="chat.status">Assistant IA · En ligne</span>
+      </div>
+      <button class="chatbot-close" id="chatbotClose" aria-label="Fermer"><i class="fa-solid fa-times"></i></button>
+    </header>
+    <div class="chatbot-messages" id="chatbotMessages"></div>
+    <div class="chatbot-chips" id="chatbotChips"></div>
+    <div class="chatbot-input-row">
+      <input type="text" id="chatbotInput" autocomplete="off" data-i18n-placeholder="chat.placeholder" placeholder="Posez une question…">
+      <button type="button" id="chatbotSend" aria-label="Envoyer"><i class="fa-solid fa-paper-plane"></i></button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
