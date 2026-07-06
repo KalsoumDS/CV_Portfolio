@@ -10,7 +10,7 @@
 
 **Data Scientist & ML Engineer · Applied Mathematics & Data Optimization**
 
-[oumoukaltoumsall@gmail.com](mailto:oumoukaltoumsall@gmail.com) · [View my full portfolio →](https://kalsoumds.github.io)
+[oumoukaltoumsall@gmail.com](mailto:oumoukaltoumsall@gmail.com) · [View my full portfolio →](https://portfolio-oks-d1bn.vercel.app)
 
 ![Python](https://img.shields.io/badge/-Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![PyTorch](https://img.shields.io/badge/-PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white)

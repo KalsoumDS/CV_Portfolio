@@ -5,3 +5,12 @@ dist
 .trae
 .log
 .figma
+ChatAutoML-Bot-Streamlit-main/
+finsight/
+industrial-anomaly-detection/
+rag-document-intelligence/
+github-profile/
+fixes/
+*.pdf
+server.log
+.vscode/
