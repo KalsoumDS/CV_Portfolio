@@ -53,6 +53,33 @@ a { color: inherit; text-decoration: none; }
 button { font-family: inherit; cursor: pointer; }
 img { max-width: 100%; height: auto; display: block; }
 
+.fa-fallback .fa-solid,
+.fa-fallback .fa-brands {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1em;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.fa-fallback .fa-sun::before { content: '☀'; }
+.fa-fallback .fa-moon::before { content: '☾'; }
+.fa-fallback .fa-github::before { content: 'GH'; font-size: 0.7em; }
+.fa-fallback .fa-linkedin-in::before { content: 'in'; font-size: 0.8em; }
+.fa-fallback .fa-comments::before { content: '💬'; }
+.fa-fallback .fa-brain::before { content: '🧠'; }
+.fa-fallback .fa-eye::before { content: '👁'; }
+.fa-fallback .fa-robot::before { content: '🤖'; }
+.fa-fallback .fa-chart-line::before { content: '📈'; }
+.fa-fallback .fa-python::before { content: 'Py'; font-size: 0.7em; }
+.fa-fallback .fa-database::before { content: '🗄'; }
+.fa-fallback .fa-server::before { content: '🖥'; }
+.fa-fallback .fa-arrow-up-right-from-square::before { content: '↗'; }
+.fa-fallback .fa-times::before { content: '×'; }
+.fa-fallback .fa-paper-plane::before { content: '➤'; }
+
 /* ── Nav ── */
 #navbar {
   position: fixed;

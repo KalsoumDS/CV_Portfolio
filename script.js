@@ -364,6 +364,35 @@ const chatbotChips = document.getElementById('chatbotChips');
 const chatbotInput = document.getElementById('chatbotInput');
 const chatbotSend = document.getElementById('chatbotSend');
 
+function applyFontAwesomeFallback() {
+  const root = document.documentElement;
+
+  const updateFallbackState = () => {
+    if (!document.fonts || !document.fonts.check) {
+      root.classList.add('fa-fallback');
+      return;
+    }
+
+    const solidLoaded =
+      document.fonts.check('900 1em "Font Awesome 6 Free"') ||
+      document.fonts.check('900 1em "Font Awesome 5 Free"');
+    const brandsLoaded =
+      document.fonts.check('400 1em "Font Awesome 6 Brands"') ||
+      document.fonts.check('400 1em "Font Awesome 5 Brands"');
+
+    root.classList.toggle('fa-fallback', !(solidLoaded && brandsLoaded));
+  };
+
+  updateFallbackState();
+
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(updateFallbackState).catch(updateFallbackState);
+  }
+
+  window.addEventListener('load', updateFallbackState, { once: true });
+  setTimeout(updateFallbackState, 1200);
+}
+
 function applyLang(l) {
   lang = l;
   localStorage.setItem('lang', l);
@@ -398,6 +427,7 @@ function applyTheme(t) {
 
 langToggle.addEventListener('click', () => applyLang(lang === 'fr' ? 'en' : 'fr'));
 themeToggle.addEventListener('click', () => applyTheme(theme === 'light' ? 'dark' : 'light'));
+applyFontAwesomeFallback();
 applyTheme(theme);
 
 window.addEventListener('scroll', () => {
