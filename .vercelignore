@@ -9,8 +9,14 @@ ChatAutoML-Bot-Streamlit-main/
 finsight/
 industrial-anomaly-detection/
 rag-document-intelligence/
+Industrial-Anomaly-Detection/
+RAG-Document-Intelligence/
 github-profile/
 fixes/
 *.pdf
 server.log
 .vscode/
+**/venv/
+**/.venv/
+__pycache__/
+*.pyc
