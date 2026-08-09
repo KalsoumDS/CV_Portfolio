@@ -1,92 +1,89 @@
 const T = {
   fr: {
     'nav.about': 'À propos',
-    'nav.expertise': 'Expertise',
+    'nav.services': 'Services',
+    'nav.skills': 'Compétences',
     'nav.caseStudies': 'Projets phares',
     'nav.projects': 'Projets',
     'nav.journey': 'Parcours',
     'nav.contact': 'Contact',
     'nav.chat': 'Assistant IA',
-    'hero.greeting': 'Bonjour, je suis',
-    'hero.rolePrefix': 'Data Scientist',
-    'hero.subtitle': 'De la recherche à l\'IA en production',
-    'hero.bio': 'Data Scientist & ML Engineer basée au Maroc et au Sénégal. Je conçois des systèmes d\'IA appliquée — reconnaissance faciale temps réel, pipelines RAG/AutoML, BI et déploiement de modèles en production.',
-    'hero.available': 'Disponible — Freelance · CDD · CDI · Remote',
-    'hero.cta1': 'Voir mes projets',
+    'hero.subtitle': 'Data Scientist & ML Engineer — Maroc · Sénégal',
+    'hero.available': 'Freelance · Conseil',
+    'hero.intro': 'J\'aide les équipes à transformer des données, des modèles et des idées en produits IA utiles, robustes et prêts à être mis en production.',
+    'hero.cta1': 'Voir mon travail',
     'hero.cta2': 'Me contacter',
-    'about.tag': '01 — À PROPOS',
-    'about.title': 'Passionnée par la data, le deep learning et les systèmes IA en production.',
-    'about.bio': 'Data Scientist & ML Engineer basée au Maroc et au Sénégal. Mon expérience couvre la reconnaissance faciale temps réel chez ABA Technology, les pipelines RAG/AutoML, le traitement de données industrielles et la mise en production de modèles.',
-    'about.loc.label': 'Localisation',
+    'terminal.prompt': 'Qu\'est-ce qui vous amène ?',
+    'terminal.hint': 'CHOIX OU MESSAGE LIBRE — ENTRÉE POUR VALIDER',
+    'terminal.c1': '[ 1 ] Vous recruter',
+    'terminal.c2': '[ 2 ] Voir mon travail',
+    'terminal.c3': '[ 3 ] Juste explorer',
+    'terminal.restart': 'RECOMMENCER',
+    'terminal.scroll': 'SCROLL',
+    'terminal.scrollHint': 'scroll ↓',
+    'terminal.recruit': 'Parfait — parlons de votre mission. Je suis disponible pour freelance, CDD et remote.',
+    'terminal.work': 'Voici une sélection de mes projets phares. Faites défiler pour explorer.',
+    'terminal.explore': 'Prenez votre temps — découvrez mon parcours, mes valeurs et mon approche.',
+    'terminal.unknown': 'Je n\'ai pas compris. Tapez 1, 2 ou 3 — ou posez une question libre.',
+    'about.tag': 'À propos',
+    'about.lead': 'Ingénieure orientée impact, j\'interviens de la phase de cadrage jusqu\'au déploiement de solutions data et IA.',
+    'about.bio': 'Data Scientist & ML Engineer entre le Maroc et le Sénégal. Je conçois des systèmes d\'IA appliquée — de la stratégie au déploiement — avec une attention particulière portée à la data, au deep learning et à l\'impact métier.',
     'about.loc.val': 'Maroc · Sénégal',
-    'about.avail.label': 'Disponibilité',
-    'about.avail.val': 'Freelance · CDD · CDI · Remote',
-    'about.focus.label': 'Focus',
-    'about.focus.val': 'Vision IA · AutoML · MLOps',
-    'exp.tag': '02 — EXPERTISE',
-    'exp.title': 'Compétences & technologies',
-    'exp.subtitle': 'Machine learning, vision par ordinateur, AutoML et MLOps pour transformer la data en solutions IA exploitables.',
-    'exp.c1.title': 'Machine Learning & Deep Learning',
-    'exp.c1.desc': 'Modèles prédictifs, réseaux de neurones, AutoML et pipelines de bout en bout.',
-    'exp.c2.title': 'Computer Vision',
-    'exp.c2.desc': 'Reconnaissance faciale, détection d\'objets et pipelines temps réel sur flux RTSP.',
-    'exp.c3.title': 'AutoML & MLOps',
-    'exp.c3.desc': 'Optimisation Optuna, MLflow, déploiement Docker et APIs REST pour servir des modèles.',
-    'exp.c4.title': 'BI & Data Visualization',
-    'exp.c4.desc': 'Dashboards Power BI, ETL, data storytelling et KPIs pour la prise de décision.',
-    'exp.c5.title': 'Python & APIs',
-    'exp.c5.desc': 'Automatisation, FastAPI, Flask, Streamlit et intégrations REST.',
-    'exp.c6.title': 'SQL & Bases de données',
-    'exp.c6.desc': 'Modélisation relationnelle, requêtes optimisées et pipelines ETL structurés.',
-    'exp.c7.title': 'NLP & RAG',
-    'exp.c7.desc': 'LangChain, embeddings, recherche vectorielle et assistants documentaires.',
-    'exp.c8.title': 'Déploiement & Production',
-    'exp.c8.desc': 'Conteneurisation Docker, APIs scalables et validation industrielle de modèles.',
-    'analytics.tag': '03 — ANALYTICS',
-    'analytics.title': 'Niveau de maîtrise',
-    'analytics.stat.projects': 'Projets data & IA',
-    'analytics.stat.skills': 'Compétences techniques',
-    'analytics.stat.experience': 'Années d\'expérience',
-    'analytics.stat.markets': 'Pays',
-    'analytics.d1': 'Machine Learning & Deep Learning',
-    'analytics.d2': 'Computer Vision & IA appliquée',
-    'analytics.d3': 'BI, ETL & data storytelling',
-    'analytics.d4': 'APIs, Docker & déploiement',
-    'proof.tag': '04 — PROJETS PHARES',
-    'proof.title': 'Études de cas impactantes',
+    'about.locationTag': 'Basée au Maroc · Disponible globalement',
+    'services.tag': 'Services',
+    'services.s1.title': 'Stratégie Data & IA',
+    'services.s2.title': 'Systèmes ML sur mesure',
+    'services.s3.title': 'Déploiement & MLOps',
+    'skills.tag': 'Compétences',
+    'skills.g1.title': 'ML & Deep Learning',
+    'skills.g2.title': 'Vision & NLP',
+    'skills.g3.title': 'Data & MLOps',
+    'values.tag': 'Valeurs',
+    'values.v1.title': 'Impact',
+    'values.v1.desc': 'Chaque décision vise un résultat mesurable.',
+    'values.v2.title': 'Clarté',
+    'values.v2.desc': 'La complexité est un problème à résoudre, pas à exposer.',
+    'values.v3.title': 'Craft',
+    'values.v3.desc': 'Le soin dans les détails distingue le bon du remarquable.',
+    'process.tag': 'Processus',
+    'process.title': 'Du concept à la production.',
+    'process.p1.title': 'Découverte',
+    'process.p1.sub': 'Recherche & Stratégie',
+    'process.p1.desc': 'Comprendre le problème sous tous ses angles. Cartographier les parcours data, exposer les vraies contraintes — pas celles supposées.',
+    'process.p2.title': 'Design',
+    'process.p2.sub': 'Architecture & Prototypage',
+    'process.p2.desc': 'Architecture ML, prototypage rapide, validation de la faisabilité technique et définition des KPIs de succès.',
+    'process.p3.title': 'Build',
+    'process.p3.sub': 'Ingénierie & Livraison',
+    'process.p3.desc': 'Développement itératif, tests rigoureux, intégration continue et préparation au déploiement en production.',
+    'process.p4.title': 'Croissance',
+    'process.p4.sub': 'Analytics & Scale',
+    'process.p4.desc': 'Monitoring MLflow, analytics, optimisation continue et accompagnement pour l\'adoption et l\'échelle.',
+    'exp.c2.title': 'Computer Vision temps réel',
+    'exp.c4.title': 'NLP, RAG & assistants',
+    'exp.c5.title': 'BI & aide à la décision',
+    'analytics.stat.experience': 'Années d\'expertise',
+    'analytics.stat.projects': 'Projets livrés',
+    'proof.tag': 'Projets phares',
+    'proof.title': 'Études de cas & produits',
+    'proof.intro': 'Une sélection de projets où la technique sert un objectif clair : automatiser, analyser, prédire ou aider à la décision.',
     'proof.master.title': 'Reconnaissance faciale temps réel sur flux RTSP',
-    'proof.master.desc': 'Benchmark ArcFace, AdaFace et VGGFace2 · alignement SCRFD · calibration KDE des seuils · preuve de concept multi-caméras · latence <35 ms.',
+    'proof.master.desc': 'Conception d\'un système de reconnaissance faciale temps réel pour contrôle d\'accès, avec benchmark de modèles SOTA, faible latence et validation sur flux multi-caméras.',
     'proof.jba.title': 'PanierDuCoin — Plateforme pour produits locaux',
-    'proof.jba.desc': 'Business plan complet : étude de marché, stratégie commerciale, modèle économique, analyse des risques et projections financières sur 5 ans.',
+    'proof.jba.desc': 'Conception d\'un business plan complet pour une plateforme de produits locaux : étude de marché, modèle économique, analyse des risques et projections financières.',
     'proof.finsight.title': 'Finsight — Analyse de signaux financiers',
-    'proof.finsight.desc': 'Outil interactif pour analyser les données boursières : backtesting de stratégies, génération de signaux ML, gestion du risque (VaR/CVaR) et visualisations interactives avec Plotly pour prendre des décisions éclairées.',
+    'proof.finsight.desc': 'Plateforme d\'analyse financière interactive combinant données de marché, mesure du risque, signaux ML et backtesting pour explorer des décisions d\'investissement.',
     'proof.automl.title': 'ChatAutoML Bot — Pipeline ML automatisé',
-    'proof.automl.desc': 'Preprocessing, sélection de modèles, optimisation Optuna et explications LLM dans une interface Streamlit modulaire.',
+    'proof.automl.desc': 'Application AutoML orientée usage qui accélère le passage du dataset au modèle en intégrant préparation, sélection, optimisation et explications.',
     'proof.rag.title': 'RAG Document Intelligence',
-    'proof.rag.desc': 'Assistant IA pour interroger vos documents (PDF, texte, etc.) : il découpe les documents, crée des embeddings, recherche les informations pertinentes et génère des réponses sourcées grâce à Mistral.',
+    'proof.rag.desc': 'Assistant documentaire capable d\'interroger des corpus, citer ses sources et produire des réponses fiables à partir de recherche vectorielle et embeddings.',
     'proof.anomaly.title': 'Détection d\'anomalies industrielles',
-    'proof.anomaly.desc': 'Autoencodeur entraîné sur données SKAB pour surveiller capteurs industriels et détecter dérives en temps réel.',
-    'proj.tag': '05 — PROJETS',
-    'proj.title': 'Autres réalisations',
-    'proj.code': 'Code source',
+    'proof.anomaly.desc': 'Prototype de maintenance prédictive pour capteurs industriels, avec détection précoce d\'anomalies via autoencodeur séquentiel.',
+    'proj.tag': 'Démos live',
+    'proj.title': 'Applications testables',
+    'proj.intro': 'Applications déployées et testables en ligne, avec accès au code source et aux démonstrations Streamlit.',
     'proj.demo': 'Démo live',
-    'p3.title': 'Prédiction risques cardiovasculaires',
-    'p3.desc': 'Modèle ML, EDA complète, comparaison de modèles et interprétabilité SHAP.',
-    'p4.title': 'Dashboard BI complet',
-    'p4.desc': 'Modélisation dimensionnelle, ETL et dashboards analytiques pour la décision.',
-    'p5.title': 'Architectures CNN & ANN',
-    'p5.desc': 'Implémentation et optimisation de réseaux de neurones sur Jupyter.',
-    'p6.title': 'API Flask dockerisée',
-    'p6.desc': 'API REST conteneurisée pour servir un modèle ANN en production.',
-    'p7.title': 'Finsight — Exploration interactive',
-    'p7.desc': 'Application Streamlit pour l\'analyse de signaux financiers et ML.',
-    'p8.title': 'ChatAutoML Bot',
-    'p8.desc': 'Pipeline AutoML modulaire : preprocessing, sélection de modèles et optimisation.',
-    'p9.title': 'RAG Document Intelligence',
-    'p9.desc': 'Assistant documentaire avec LangChain, embeddings et réponses sourcées via Mistral.',
-    'p10.title': 'Détection d\'anomalies industrielles',
-    'p10.desc': 'Autoencodeur PyTorch sur données SKAB pour la surveillance de capteurs industriels.',
-    'journey.tag': '06 — PARCOURS',
+    'journey.tag': 'Parcours',
     'journey.title': 'Expérience & formation',
     'journey.experience': 'Expérience',
     'journey.formation': 'Formation',
@@ -99,32 +96,19 @@ const T = {
     'journey.freelance.desc': 'Pipelines data, scraping, modélisation statistique, visualisations et solutions ML sur mesure.',
     'journey.master': 'Master Data Science & IA',
     'journey.master.org': 'Mundiapolis University of Casablanca',
-    'journey.licence': 'Licence Mathématiques Appliquées & Data',
+    'journey.licence': 'Licence Mathématiques Appliquées',
     'journey.licence.org': 'ISM Dakar — Sénégal',
-    'journey.languages': 'Langues',
-    'journey.lang.fr': 'Français',
-    'journey.lang.en': 'Anglais',
-    'journey.lang.ar': 'Arabe',
-    'journey.certs': 'Certifications & distinctions',
-    'journey.cert1.title': 'Master Data Science & IA',
-    'journey.cert1.org': 'Mundiapolis University · 2023–2026',
-    'journey.cert2.title': 'Licence Mathématiques Appliquées & Data',
-    'journey.cert2.org': 'ISM Dakar · 2020–2023',
-    'journey.cert3.title': 'PFE Vision IA — Reconnaissance faciale industrielle',
-    'journey.cert3.org': 'ABA Technology / Nextronic · 2026',
-    'journey.cert4.title': 'Projets déployés en production',
-    'journey.cert4.org': 'Finsight & ChatAutoML — Streamlit Cloud',
-    'contact.tag': '07 — CONTACT',
-    'contact.title': 'Travaillons ensemble',
-    'contact.sub': 'Un projet, une mission ou une simple question ? Écrivez-moi ou discutez avec mon assistant IA.',
+    'contact.tag': 'Contact',
+    'contact.title': 'Travaillons ensemble.',
+    'contact.copy': 'Je collabore sur des missions freelance, des prototypes IA, des dashboards analytiques et des sujets de computer vision ou NLP.',
     'contact.emailBtn': 'Envoyer un message',
     'contact.chatBtn': 'Discuter avec mon assistant IA',
-    'footer.desc': 'Data Scientist & ML Engineer — IA appliquée, vision par ordinateur et MLOps.',
-    'footer.made': 'Portfolio 2026',
+    'footer.desc': 'Data Scientist & ML Engineer — produits IA, vision par ordinateur et déploiement ML pour des cas d\'usage concrets.',
+    'footer.nav': 'Navigation',
+    'footer.contact': 'Contact',
     'chat.status': 'Assistant IA · En ligne',
-    'chat.tooltip': 'Discutez avec mon assistant IA',
     'chat.placeholder': 'Posez une question…',
-    'chat.welcome': 'Bonjour ! Je suis l\'assistant d\'Oumou Kaltoum Sall. Posez-moi vos questions sur son parcours, ses compétences ou ses projets.',
+    'chat.welcome': 'Bonjour. Je suis l\'assistant d\'Oumou Kaltoum Sall. Posez-moi vos questions sur son parcours, ses compétences ou ses projets.',
     'chat.fallback': 'Je n\'ai pas trouvé de réponse précise. Essayez : projets, compétences, disponibilité, contact ou formation.',
     'chip.projects': 'Projets',
     'chip.skills': 'Compétences',
@@ -134,92 +118,89 @@ const T = {
   },
   en: {
     'nav.about': 'About',
-    'nav.expertise': 'Expertise',
+    'nav.services': 'Services',
+    'nav.skills': 'Skills',
     'nav.caseStudies': 'Featured work',
     'nav.projects': 'Projects',
     'nav.journey': 'Journey',
     'nav.contact': 'Contact',
     'nav.chat': 'AI Assistant',
-    'hero.greeting': 'Hello, I\'m',
-    'hero.rolePrefix': 'Data Scientist',
-    'hero.subtitle': 'From research to production AI',
-    'hero.bio': 'Data Scientist & ML Engineer based in Morocco and Senegal. I build applied AI systems — real-time facial recognition, RAG/AutoML pipelines, BI and production model deployment.',
-    'hero.available': 'Available — Freelance · CDD · CDI · Remote',
+    'hero.subtitle': 'Data Scientist & ML Engineer — Morocco · Senegal',
+    'hero.available': 'Freelance · Advisory',
+    'hero.intro': 'I help teams turn data, models and ideas into useful, robust AI products ready for production.',
     'hero.cta1': 'View my work',
     'hero.cta2': 'Contact me',
-    'about.tag': '01 — ABOUT',
-    'about.title': 'Passionate about data, deep learning and production AI systems.',
-    'about.bio': 'Data Scientist & ML Engineer based in Morocco and Senegal. My experience spans real-time facial recognition at ABA Technology, RAG/AutoML pipelines, industrial data processing and model deployment.',
-    'about.loc.label': 'Location',
+    'terminal.prompt': 'What brings you here?',
+    'terminal.hint': 'CHOICE OR FREE MESSAGE — ENTER TO SUBMIT',
+    'terminal.c1': '[ 1 ] Recruit me',
+    'terminal.c2': '[ 2 ] View my work',
+    'terminal.c3': '[ 3 ] Just explore',
+    'terminal.restart': 'RESTART',
+    'terminal.scroll': 'SCROLL',
+    'terminal.scrollHint': 'scroll ↓',
+    'terminal.recruit': 'Great — let\'s talk about your mission. I\'m available for freelance, contracts and remote work.',
+    'terminal.work': 'Here\'s a selection of my featured projects. Scroll to explore.',
+    'terminal.explore': 'Take your time — discover my journey, values and approach.',
+    'terminal.unknown': 'I didn\'t understand. Type 1, 2 or 3 — or ask a free question.',
+    'about.tag': 'About',
+    'about.lead': 'Impact-oriented engineer working from discovery and scoping to deployment of data and AI solutions.',
+    'about.bio': 'Data Scientist & ML Engineer between Morocco and Senegal. I design applied AI systems — from strategy to deployment — with a focus on data, deep learning and business impact.',
     'about.loc.val': 'Morocco · Senegal',
-    'about.avail.label': 'Availability',
-    'about.avail.val': 'Freelance · CDD · CDI · Remote',
-    'about.focus.label': 'Focus',
-    'about.focus.val': 'AI Vision · AutoML · MLOps',
-    'exp.tag': '02 — EXPERTISE',
-    'exp.title': 'Skills & Technologies',
-    'exp.subtitle': 'Machine learning, computer vision, AutoML and MLOps to turn raw data into actionable AI solutions.',
-    'exp.c1.title': 'Machine Learning & Deep Learning',
-    'exp.c1.desc': 'Predictive models, neural networks, AutoML and end-to-end pipelines.',
-    'exp.c2.title': 'Computer Vision',
-    'exp.c2.desc': 'Facial recognition, object detection and real-time pipelines on RTSP streams.',
-    'exp.c3.title': 'AutoML & MLOps',
-    'exp.c3.desc': 'Optuna optimization, MLflow, Docker deployment and REST APIs to serve models.',
-    'exp.c4.title': 'BI & Data Visualization',
-    'exp.c4.desc': 'Power BI dashboards, ETL, data storytelling and KPIs for decision-making.',
-    'exp.c5.title': 'Python & APIs',
-    'exp.c5.desc': 'Automation, FastAPI, Flask, Streamlit and REST integrations.',
-    'exp.c6.title': 'SQL & Databases',
-    'exp.c6.desc': 'Relational modelling, optimized queries and structured ETL pipelines.',
-    'exp.c7.title': 'NLP & RAG',
-    'exp.c7.desc': 'LangChain, embeddings, vector search and document assistants.',
-    'exp.c8.title': 'Deployment & Production',
-    'exp.c8.desc': 'Docker containerization, scalable APIs and industrial model validation.',
-    'analytics.tag': '03 — ANALYTICS',
-    'analytics.title': 'Proficiency level',
-    'analytics.stat.projects': 'Data & AI projects',
-    'analytics.stat.skills': 'Technical skills',
-    'analytics.stat.experience': 'Years of experience',
-    'analytics.stat.markets': 'Countries',
-    'analytics.d1': 'Machine Learning & Deep Learning',
-    'analytics.d2': 'Computer Vision & Applied AI',
-    'analytics.d3': 'BI, ETL & data storytelling',
-    'analytics.d4': 'APIs, Docker & deployment',
-    'proof.tag': '04 — FEATURED WORK',
-    'proof.title': 'High-impact case studies',
+    'about.locationTag': 'Based in Morocco · Available globally',
+    'services.tag': 'Services',
+    'services.s1.title': 'Data & AI Strategy',
+    'services.s2.title': 'Custom ML Systems',
+    'services.s3.title': 'Deployment & MLOps',
+    'skills.tag': 'Skills',
+    'skills.g1.title': 'ML & Deep Learning',
+    'skills.g2.title': 'Vision & NLP',
+    'skills.g3.title': 'Data & MLOps',
+    'values.tag': 'Values',
+    'values.v1.title': 'Impact',
+    'values.v1.desc': 'Every decision aims for measurable results.',
+    'values.v2.title': 'Clarity',
+    'values.v2.desc': 'Complexity is a problem to solve, not to expose.',
+    'values.v3.title': 'Craft',
+    'values.v3.desc': 'Attention to detail distinguishes good from remarkable.',
+    'process.tag': 'Process',
+    'process.title': 'From concept to production.',
+    'process.p1.title': 'Discovery',
+    'process.p1.sub': 'Research & Strategy',
+    'process.p1.desc': 'Understand the problem from every angle. Map data journeys, expose real constraints — not assumed ones.',
+    'process.p2.title': 'Design',
+    'process.p2.sub': 'Architecture & Prototyping',
+    'process.p2.desc': 'ML architecture, rapid prototyping, technical feasibility validation and success KPIs definition.',
+    'process.p3.title': 'Build',
+    'process.p3.sub': 'Engineering & Delivery',
+    'process.p3.desc': 'Iterative development, rigorous testing, continuous integration and production deployment preparation.',
+    'process.p4.title': 'Growth',
+    'process.p4.sub': 'Analytics & Scale',
+    'process.p4.desc': 'MLflow monitoring, analytics, continuous optimization and support for adoption and scaling.',
+    'exp.c2.title': 'Real-time Computer Vision',
+    'exp.c4.title': 'NLP, RAG & Assistants',
+    'exp.c5.title': 'BI & Decision Support',
+    'analytics.stat.experience': 'Years of expertise',
+    'analytics.stat.projects': 'Projects delivered',
+    'proof.tag': 'Featured work',
+    'proof.title': 'Case studies & products',
+    'proof.intro': 'A selection of projects where technology serves a clear objective: automate, analyze, predict or support decision-making.',
     'proof.master.title': 'Real-time facial recognition on RTSP streams',
-    'proof.master.desc': 'ArcFace, AdaFace and VGGFace2 benchmarking · SCRFD alignment · KDE threshold calibration · multi-camera proof of concept · latency <35 ms.',
+    'proof.master.desc': 'Design of a real-time facial recognition system for access control, with SOTA model benchmarking, low latency and validation on multi-camera streams.',
     'proof.jba.title': 'PanierDuCoin — Platform for local products',
-    'proof.jba.desc': 'Complete business plan: market study, commercial strategy, business model, risk analysis and 5-year financial projections.',
+    'proof.jba.desc': 'End-to-end business plan for a local products platform, including market analysis, business model, risk assessment and financial projections.',
     'proof.finsight.title': 'Finsight — Financial signal analysis',
-    'proof.finsight.desc': 'Interactive tool to analyze stock market data: strategy backtesting, ML signal generation, risk management (VaR/CVaR) and interactive Plotly visualizations for informed decision-making.',
+    'proof.finsight.desc': 'Interactive financial analytics platform combining market data, risk metrics, ML signals and backtesting to explore investment decisions.',
     'proof.automl.title': 'ChatAutoML Bot — Automated ML pipeline',
-    'proof.automl.desc': 'Preprocessing, model selection, Optuna optimization and LLM explanations in a modular Streamlit interface.',
+    'proof.automl.desc': 'Usage-oriented AutoML application that accelerates the path from dataset to model with preparation, selection, optimization and explanations.',
     'proof.rag.title': 'RAG Document Intelligence',
-    'proof.rag.desc': 'AI assistant to query your documents (PDF, text, etc.): it chunks documents, creates embeddings, searches for relevant information and generates sourced answers using Mistral.',
+    'proof.rag.desc': 'Document assistant able to query corpora, cite sources and generate reliable answers through vector search and embeddings.',
     'proof.anomaly.title': 'Industrial anomaly detection',
-    'proof.anomaly.desc': 'Autoencoder trained on SKAB data to monitor industrial sensors and detect real-time drift.',
-    'proj.tag': '05 — PROJECTS',
-    'proj.title': 'Other work',
-    'proj.code': 'Source code',
+    'proof.anomaly.desc': 'Predictive maintenance prototype for industrial sensors with early anomaly detection through a sequential autoencoder.',
+    'proj.tag': 'Live builds',
+    'proj.title': 'Testable applications',
+    'proj.intro': 'Deployed applications available online, with source code access and Streamlit demos.',
     'proj.demo': 'Live demo',
-    'p3.title': 'Cardiovascular risk prediction',
-    'p3.desc': 'ML model, full EDA, model comparison and SHAP interpretability.',
-    'p4.title': 'Complete BI dashboard',
-    'p4.desc': 'Dimensional modelling, ETL and analytical dashboards for decision-making.',
-    'p5.title': 'CNN & ANN architectures',
-    'p5.desc': 'Implementation and optimization of neural networks in Jupyter.',
-    'p6.title': 'Dockerized Flask API',
-    'p6.desc': 'Containerized REST API to serve an ANN model in production.',
-    'p7.title': 'Finsight — Interactive exploration',
-    'p7.desc': 'Streamlit app for financial signal analysis and ML.',
-    'p8.title': 'ChatAutoML Bot',
-    'p8.desc': 'Modular AutoML pipeline: preprocessing, model selection and optimization.',
-    'p9.title': 'RAG Document Intelligence',
-    'p9.desc': 'Document assistant with LangChain, embeddings and sourced answers via Mistral.',
-    'p10.title': 'Industrial anomaly detection',
-    'p10.desc': 'PyTorch autoencoder on SKAB data for industrial sensor monitoring.',
-    'journey.tag': '06 — JOURNEY',
+    'journey.tag': 'Journey',
     'journey.title': 'Experience & education',
     'journey.experience': 'Experience',
     'journey.formation': 'Education',
@@ -232,32 +213,19 @@ const T = {
     'journey.freelance.desc': 'Data pipelines, scraping, statistical modelling, visualizations and custom ML solutions.',
     'journey.master': 'Master Data Science & AI',
     'journey.master.org': 'Mundiapolis University of Casablanca',
-    'journey.licence': 'Bachelor Applied Mathematics & Data',
+    'journey.licence': 'Bachelor Applied Mathematics',
     'journey.licence.org': 'ISM Dakar — Senegal',
-    'journey.languages': 'Languages',
-    'journey.lang.fr': 'French',
-    'journey.lang.en': 'English',
-    'journey.lang.ar': 'Arabic',
-    'journey.certs': 'Certifications & highlights',
-    'journey.cert1.title': 'Master Data Science & AI',
-    'journey.cert1.org': 'Mundiapolis University · 2023–2026',
-    'journey.cert2.title': 'Bachelor Applied Mathematics & Data',
-    'journey.cert2.org': 'ISM Dakar · 2020–2023',
-    'journey.cert3.title': 'AI Vision Thesis — Industrial facial recognition',
-    'journey.cert3.org': 'ABA Technology / Nextronic · 2026',
-    'journey.cert4.title': 'Production-deployed projects',
-    'journey.cert4.org': 'Finsight & ChatAutoML — Streamlit Cloud',
-    'contact.tag': '07 — CONTACT',
-    'contact.title': 'Let\'s work together',
-    'contact.sub': 'A project, a mission or a quick question? Email me or chat with my AI assistant.',
+    'contact.tag': 'Contact',
+    'contact.title': 'Let\'s work together.',
+    'contact.copy': 'I collaborate on freelance engagements, AI prototypes, analytical dashboards and computer vision or NLP topics.',
     'contact.emailBtn': 'Send a message',
     'contact.chatBtn': 'Chat with my AI assistant',
-    'footer.desc': 'Data Scientist & ML Engineer — applied AI, computer vision and MLOps.',
-    'footer.made': 'Portfolio 2026',
+    'footer.desc': 'Data Scientist & ML Engineer — AI products, computer vision and ML deployment for concrete use cases.',
+    'footer.nav': 'Navigation',
+    'footer.contact': 'Contact',
     'chat.status': 'AI Assistant · Online',
-    'chat.tooltip': 'Chat with my AI assistant',
     'chat.placeholder': 'Ask a question…',
-    'chat.welcome': 'Hello! I\'m Oumou Kaltoum Sall\'s assistant. Ask me about her background, skills or projects.',
+    'chat.welcome': 'Hello. I\'m Oumou Kaltoum Sall\'s assistant. Ask me about her background, skills or projects.',
     'chat.fallback': 'I couldn\'t find a precise answer. Try: projects, skills, availability, contact or education.',
     'chip.projects': 'Projects',
     'chip.skills': 'Skills',
@@ -269,129 +237,50 @@ const T = {
 
 const FAQ = {
   fr: [
-    {
-      k: ['projet', 'réalisation', 'travail', 'github', 'aba', 'jba', 'mémoire', 'reconnaissance', 'panierducoin', 'finsight', 'automl', 'rag', 'anomalie'],
-      a: () => '🗂️ <b>Projets principaux :</b><br><br>1. <b>Reconnaissance faciale temps réel (ABA / PFE 2026)</b> — ArcFace, SCRFD, RTSP, latence &lt;35 ms.<br>2. <b>PanierDuCoin (JBA 2024)</b> — Business plan complet sur 5 ans.<br>3. <b>Finsight</b> — <a href="https://finsight-signals.streamlit.app" target="_blank" rel="noopener">finsight-signals.streamlit.app</a><br>4. <b>ChatAutoML Bot</b> — <a href="https://chatautoml-bot.streamlit.app" target="_blank" rel="noopener">chatautoml-bot.streamlit.app</a><br>5. <b>RAG Document Intelligence</b> et <b>détection d\'anomalies industrielles</b> (PyTorch, LangChain).'
-    },
-    {
-      k: ['compétence', 'competence', 'skill', 'stack', 'techno', 'python', 'tensorflow', 'pytorch', 'opencv', 'maîtrise', 'outil'],
-      a: () => '🛠️ <b>Stack :</b> Python, SQL, Scikit-learn, PyTorch, TensorFlow, OpenCV, FastAPI, Flask, Docker, Streamlit, Power BI, LangChain, MLflow, Optuna.'
-    },
-    {
-      k: ['disponible', 'disponibilité', 'emploi', 'cdd', 'cdi', 'freelance', 'mission', 'recrutement', 'remote'],
-      a: () => '✅ <b>Disponible immédiatement</b> pour freelance, CDD ou CDI — Maroc, Sénégal et remote.<br>📧 <a href="mailto:oumoukaltoumsall@gmail.com">oumoukaltoumsall@gmail.com</a>'
-    },
-    {
-      k: ['contact', 'email', 'mail', 'linkedin', 'joindre', 'écrire'],
-      a: () => '📬 <b>Contact :</b><br>📧 <a href="mailto:oumoukaltoumsall@gmail.com">oumoukaltoumsall@gmail.com</a><br>💼 <a href="https://linkedin.com/in/oumou-kaltoum-sall" target="_blank" rel="noopener">LinkedIn</a><br>🐙 <a href="https://github.com/KalsoumDS" target="_blank" rel="noopener">GitHub</a>'
-    },
-    {
-      k: ['formation', 'étude', 'diplôme', 'master', 'licence', 'université', 'parcours'],
-      a: () => '🎓 <b>Formation :</b><br>• Master Data Science & IA — Mundiapolis (Casablanca)<br>• Licence Mathématiques Appliquées & Data — ISM Dakar'
-    },
-    {
-      k: ['qui', 'profil', 'oumou', 'présente', 'presentation'],
-      a: () => '👩‍💻 <b>Oumou Kaltoum Sall</b> — Data Scientist & ML Engineer. Spécialisée en vision par ordinateur, AutoML et déploiement de modèles en production (ABA Technology).'
-    },
-    {
-      k: ['bonjour', 'salut', 'hello', 'bonsoir', 'coucou'],
-      a: () => 'Bonjour ! Je peux vous parler de ses projets, compétences, disponibilité ou formation. Utilisez les boutons ci-dessous ou posez votre question.'
-    }
+    { k: ['projet', 'réalisation', 'travail', 'github', 'aba', 'finsight', 'automl', 'rag'], a: () => '<b>Projets :</b> Reconnaissance faciale (ABA), Finsight, ChatAutoML Bot, RAG Document Intelligence, Détection d\'anomalies.' },
+    { k: ['compétence', 'skill', 'stack', 'python', 'pytorch'], a: () => 'Compétences : Python, PyTorch, TensorFlow, OpenCV, FastAPI, Docker, Streamlit, LangChain, MLflow.' },
+    { k: ['disponible', 'freelance', 'recrut', 'emploi', 'remote'], a: () => 'Disponible pour freelance, CDD et remote — Maroc, Sénégal.<br>Email : oumoukaltoumsall@gmail.com' },
+    { k: ['contact', 'email', 'linkedin'], a: () => 'Email : oumoukaltoumsall@gmail.com<br>LinkedIn · GitHub' },
+    { k: ['formation', 'master', 'diplôme'], a: () => 'Master Data Science & IA — Mundiapolis<br>Licence Mathématiques Appliquées — ISM Dakar' },
+    { k: ['bonjour', 'salut', 'hello'], a: () => 'Bonjour ! Posez-moi vos questions ou utilisez les boutons ci-dessous.' }
   ],
   en: [
-    {
-      k: ['project', 'work', 'github', 'aba', 'jba', 'thesis', 'facial', 'panierducoin', 'finsight', 'automl', 'rag', 'anomaly'],
-      a: () => '🗂️ <b>Main projects:</b><br><br>1. <b>Real-time facial recognition (ABA / Thesis 2026)</b> — ArcFace, SCRFD, RTSP, latency &lt;35 ms.<br>2. <b>PanierDuCoin (JBA 2024)</b> — Full 5-year business plan.<br>3. <b>Finsight</b> — <a href="https://finsight-signals.streamlit.app" target="_blank" rel="noopener">finsight-signals.streamlit.app</a><br>4. <b>ChatAutoML Bot</b> — <a href="https://chatautoml-bot.streamlit.app" target="_blank" rel="noopener">chatautoml-bot.streamlit.app</a><br>5. <b>RAG Document Intelligence</b> and <b>industrial anomaly detection</b> (PyTorch, LangChain).'
-    },
-    {
-      k: ['skill', 'stack', 'tech', 'python', 'tensorflow', 'pytorch', 'opencv', 'tools'],
-      a: () => '🛠️ <b>Stack:</b> Python, SQL, Scikit-learn, PyTorch, TensorFlow, OpenCV, FastAPI, Flask, Docker, Streamlit, Power BI, LangChain, MLflow, Optuna.'
-    },
-    {
-      k: ['available', 'availability', 'job', 'cdd', 'cdi', 'freelance', 'remote', 'hire'],
-      a: () => '✅ <b>Available immediately</b> for freelance, CDD or CDI — Morocco, Senegal and remote.<br>📧 <a href="mailto:oumoukaltoumsall@gmail.com">oumoukaltoumsall@gmail.com</a>'
-    },
-    {
-      k: ['contact', 'email', 'mail', 'linkedin', 'reach'],
-      a: () => '📬 <b>Contact:</b><br>📧 <a href="mailto:oumoukaltoumsall@gmail.com">oumoukaltoumsall@gmail.com</a><br>💼 <a href="https://linkedin.com/in/oumou-kaltoum-sall" target="_blank" rel="noopener">LinkedIn</a><br>🐙 <a href="https://github.com/KalsoumDS" target="_blank" rel="noopener">GitHub</a>'
-    },
-    {
-      k: ['education', 'degree', 'master', 'bachelor', 'university', 'school'],
-      a: () => '🎓 <b>Education:</b><br>• Master Data Science & AI — Mundiapolis (Casablanca)<br>• Bachelor Applied Mathematics & Data — ISM Dakar'
-    },
-    {
-      k: ['who', 'about', 'profile', 'oumou', 'introduce'],
-      a: () => '👩‍💻 <b>Oumou Kaltoum Sall</b> — Data Scientist & ML Engineer. Specialized in computer vision, AutoML and production model deployment (ABA Technology).'
-    },
-    {
-      k: ['hello', 'hi', 'hey', 'good morning', 'good evening'],
-      a: () => 'Hello! I can tell you about her projects, skills, availability or education. Use the buttons below or ask your question.'
-    }
+    { k: ['project', 'work', 'github', 'aba', 'finsight'], a: () => 'Projects: Facial recognition (ABA), Finsight, ChatAutoML Bot, RAG Document Intelligence, Anomaly Detection.' },
+    { k: ['skill', 'stack', 'python', 'pytorch'], a: () => 'Skills: Python, PyTorch, TensorFlow, OpenCV, FastAPI, Docker, Streamlit, LangChain, MLflow.' },
+    { k: ['available', 'freelance', 'hire', 'remote'], a: () => 'Available for freelance, contracts and remote — Morocco, Senegal.' },
+    { k: ['contact', 'email', 'linkedin'], a: () => 'Email: oumoukaltoumsall@gmail.com' },
+    { k: ['education', 'master', 'degree'], a: () => 'Master Data Science & AI — Mundiapolis · ISM Dakar' },
+    { k: ['hello', 'hi', 'hey'], a: () => 'Hello! Ask me anything or use the buttons below.' }
   ]
 };
 
-const SECTION_LEVELS = [
-  { id: 'about', fr: 'Level 01 — À propos', en: 'Level 01 — About' },
-  { id: 'expertise', fr: 'Level 02 — Expertise', en: 'Level 02 — Expertise' },
-  { id: 'analytics', fr: 'Level 03 — Analytics', en: 'Level 03 — Analytics' },
-  { id: 'case-studies', fr: 'Level 04 — Projets phares', en: 'Level 04 — Featured' },
-  { id: 'projects', fr: 'Level 05 — Projets', en: 'Level 05 — Projects' },
-  { id: 'journey', fr: 'Level 06 — Parcours', en: 'Level 06 — Journey' },
-  { id: 'contact', fr: 'Level 07 — Contact', en: 'Level 07 — Contact' }
-];
+const TERMINAL_TARGETS = {
+  recruit: '#contact',
+  work: '#case-studies',
+  explore: '#about'
+};
 
 let lang = localStorage.getItem('lang') || 'fr';
-let theme = localStorage.getItem('theme') || 'light';
+let theme = localStorage.getItem('theme') || 'dark';
+let terminalActive = false;
 
-const navbar = document.getElementById('navbar');
 const langToggle = document.getElementById('langToggle');
 const langLabel = document.getElementById('langLabel');
 const themeToggle = document.getElementById('themeToggle');
 const hamburger = document.getElementById('hamburger');
 const drawer = document.getElementById('drawer');
 const overlay = document.getElementById('overlay');
-const sections = document.querySelectorAll('section[id]');
-const navLinks = document.querySelectorAll('.nav-links a');
-const levelIndicator = document.getElementById('levelIndicator');
-const levelText = document.getElementById('levelText');
-const levelProgress = document.getElementById('levelProgress');
+const terminalInput = document.getElementById('terminalInput');
+const terminalChoices = document.getElementById('terminalChoices');
+const terminalLog = document.getElementById('terminalLog');
+const terminalRestart = document.getElementById('terminalRestart');
 const chatbotToggle = document.getElementById('chatbotToggle');
-const chatbotTooltip = document.getElementById('chatbotTooltip');
 const chatbotPanel = document.getElementById('chatbotPanel');
 const chatbotClose = document.getElementById('chatbotClose');
 const chatbotMessages = document.getElementById('chatbotMessages');
 const chatbotChips = document.getElementById('chatbotChips');
 const chatbotInput = document.getElementById('chatbotInput');
 const chatbotSend = document.getElementById('chatbotSend');
-
-function applyFontAwesomeFallback() {
-  const root = document.documentElement;
-
-  const updateFallbackState = () => {
-    if (!document.fonts || !document.fonts.check) {
-      root.classList.add('fa-fallback');
-      return;
-    }
-
-    const solidLoaded =
-      document.fonts.check('900 1em "Font Awesome 6 Free"') ||
-      document.fonts.check('900 1em "Font Awesome 5 Free"');
-    const brandsLoaded =
-      document.fonts.check('400 1em "Font Awesome 6 Brands"') ||
-      document.fonts.check('400 1em "Font Awesome 5 Brands"');
-
-    root.classList.toggle('fa-fallback', !(solidLoaded && brandsLoaded));
-  };
-
-  updateFallbackState();
-
-  if (document.fonts && document.fonts.ready) {
-    document.fonts.ready.then(updateFallbackState).catch(updateFallbackState);
-  }
-
-  window.addEventListener('load', updateFallbackState, { once: true });
-  setTimeout(updateFallbackState, 1200);
-}
 
 function applyLang(l) {
   lang = l;
@@ -404,19 +293,13 @@ function applyLang(l) {
     if (T[l][key] !== undefined) el.textContent = T[l][key];
   });
 
-  document.querySelectorAll('[data-i18n-html]').forEach(el => {
-    const key = el.getAttribute('data-i18n-html');
-    if (T[l][key] !== undefined) el.innerHTML = T[l][key];
-  });
-
   document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
     const key = el.getAttribute('data-i18n-placeholder');
     if (T[l][key] !== undefined) el.placeholder = T[l][key];
   });
 
   renderChips();
-  resetChat();
-  updateLevelIndicator();
+  if (!terminalActive) resetChat();
 }
 
 function applyTheme(t) {
@@ -427,25 +310,7 @@ function applyTheme(t) {
 
 langToggle.addEventListener('click', () => applyLang(lang === 'fr' ? 'en' : 'fr'));
 themeToggle.addEventListener('click', () => applyTheme(theme === 'light' ? 'dark' : 'light'));
-applyFontAwesomeFallback();
 applyTheme(theme);
-
-window.addEventListener('scroll', () => {
-  navbar.classList.toggle('scrolled', window.scrollY > 40);
-  updateLevelIndicator();
-  updateActiveNav();
-});
-
-function updateActiveNav() {
-  let current = '';
-  sections.forEach(sec => {
-    const rect = sec.getBoundingClientRect();
-    if (rect.top <= 200 && rect.bottom >= 200) current = sec.id;
-  });
-  navLinks.forEach(link => {
-    link.classList.toggle('active', link.getAttribute('href') === `#${current}`);
-  });
-}
 
 function openMenu() {
   hamburger.classList.add('open');
@@ -477,34 +342,118 @@ const revObs = new IntersectionObserver(entries => {
 }, { threshold: 0.12 });
 document.querySelectorAll('.reveal').forEach(el => revObs.observe(el));
 
-function updateLevelIndicator() {
-  let activeIndex = -1;
-  SECTION_LEVELS.forEach((section, index) => {
-    const el = document.getElementById(section.id);
-    if (!el) return;
-    const rect = el.getBoundingClientRect();
-    if (rect.top <= window.innerHeight * 0.45 && rect.bottom >= window.innerHeight * 0.2) {
-      activeIndex = index;
+/* ── Terminal ── */
+function handleTerminalAction(action, userText) {
+  terminalActive = true;
+  terminalChoices.classList.add('hidden');
+  terminalRestart.hidden = false;
+
+  const labels = {
+    recruit: T[lang]['terminal.c1'],
+    work: T[lang]['terminal.c2'],
+    explore: T[lang]['terminal.c3']
+  };
+
+  const responses = {
+    recruit: T[lang]['terminal.recruit'],
+    work: T[lang]['terminal.work'],
+    explore: T[lang]['terminal.explore']
+  };
+
+  const display = userText || labels[action] || userText;
+  terminalLog.innerHTML = `<p class="log-user">${display}</p><p class="log-bot">${responses[action] || T[lang]['terminal.unknown']}</p>`;
+
+  setTimeout(() => {
+    const target = TERMINAL_TARGETS[action];
+    if (target) {
+      document.querySelector(target)?.scrollIntoView({ behavior: 'smooth' });
     }
-  });
-
-  const onHero = activeIndex === -1;
-  levelIndicator.classList.toggle('visible', !onHero);
-
-  if (activeIndex >= 0) {
-    levelText.textContent = SECTION_LEVELS[activeIndex][lang];
-    levelProgress.textContent = `${activeIndex + 1}/7`;
-  } else {
-    levelText.textContent = lang === 'fr' ? 'Level 01 — Accueil' : 'Level 01 — Home';
-    levelProgress.textContent = '0/7';
-  }
+  }, 600);
 }
 
+function parseTerminalInput(value) {
+  const v = value.trim().toLowerCase();
+  if (v === '1' || v.includes('recrut') || v.includes('hire') || v.includes('emploi') || v.includes('job')) return 'recruit';
+  if (v === '2' || v.includes('travail') || v.includes('projet') || v.includes('work') || v.includes('project')) return 'work';
+  if (v === '3' || v.includes('explor') || v.includes('découvr') || v.includes('discover')) return 'explore';
+
+  const faqMatch = FAQ[lang].find(item => item.k.some(k => v.includes(k)));
+  if (faqMatch) {
+    terminalActive = true;
+    terminalChoices.classList.add('hidden');
+    terminalRestart.hidden = false;
+    terminalLog.innerHTML = `<p class="log-user">${value}</p><p class="log-bot">${faqMatch.a()}</p>`;
+    return null;
+  }
+
+  if (v.includes('contact') || v.includes('email') || v.includes('mail')) return 'recruit';
+  return null;
+}
+
+function submitTerminal(value) {
+  if (!value.trim()) return;
+  const action = parseTerminalInput(value);
+  if (action) handleTerminalAction(action, value.trim());
+  else if (!terminalActive) {
+    terminalActive = true;
+    terminalChoices.classList.add('hidden');
+    terminalRestart.hidden = false;
+    terminalLog.innerHTML = `<p class="log-user">${value}</p><p class="log-bot">${T[lang]['terminal.unknown']}</p>`;
+  }
+  terminalInput.value = '';
+}
+
+document.querySelectorAll('.terminal-choice').forEach(btn => {
+  btn.addEventListener('click', () => handleTerminalAction(btn.dataset.action));
+});
+
+terminalInput.addEventListener('keydown', e => {
+  if (e.key === 'Enter') submitTerminal(terminalInput.value);
+});
+
+terminalRestart.addEventListener('click', () => {
+  terminalActive = false;
+  terminalLog.innerHTML = '';
+  terminalChoices.classList.remove('hidden');
+  terminalRestart.hidden = true;
+  terminalInput.value = '';
+  terminalInput.focus();
+  document.getElementById('hero')?.scrollIntoView({ behavior: 'smooth' });
+});
+
+/* ── Process scroll ── */
+const processSection = document.getElementById('process');
+const processNavBtns = document.querySelectorAll('.process-nav-btn');
+const processPanels = document.querySelectorAll('.process-step-panel');
+
+function setProcessStep(index) {
+  processNavBtns.forEach((btn, i) => btn.classList.toggle('active', i === index));
+  processPanels.forEach((panel, i) => panel.classList.toggle('active', i === index));
+}
+
+processNavBtns.forEach(btn => {
+  btn.addEventListener('click', () => setProcessStep(Number(btn.dataset.step)));
+});
+
+function updateProcessOnScroll() {
+  if (!processSection) return;
+  const rect = processSection.getBoundingClientRect();
+  const scrollable = processSection.offsetHeight - window.innerHeight;
+  if (scrollable <= 0) return;
+
+  const scrolled = Math.min(Math.max(-rect.top, 0), scrollable);
+  const progress = scrolled / scrollable;
+  const step = Math.min(Math.floor(progress * 4), 3);
+  setProcessStep(step);
+}
+
+window.addEventListener('scroll', updateProcessOnScroll, { passive: true });
+
+/* ── Chatbot ── */
 function openChat() {
   chatbotPanel.classList.add('open');
   chatbotPanel.setAttribute('aria-hidden', 'false');
   chatbotToggle.classList.add('hidden');
-  if (chatbotTooltip) chatbotTooltip.classList.add('hidden-by-chat');
   chatbotInput.focus();
 }
 
@@ -512,13 +461,6 @@ function closeChat() {
   chatbotPanel.classList.remove('open');
   chatbotPanel.setAttribute('aria-hidden', 'true');
   chatbotToggle.classList.remove('hidden');
-  if (chatbotTooltip) chatbotTooltip.classList.remove('hidden-by-chat');
-}
-
-function showChatTooltip() {
-  if (!chatbotTooltip || chatbotPanel.classList.contains('open')) return;
-  chatbotTooltip.classList.add('visible');
-  setTimeout(() => chatbotTooltip.classList.remove('visible'), 5000);
 }
 
 function addMessage(html, type) {
@@ -540,8 +482,7 @@ function respondToMessage(text) {
     typing.remove();
     const lower = text.toLowerCase();
     const match = FAQ[lang].find(item => item.k.some(k => lower.includes(k)));
-    const reply = match ? match.a() : T[lang]['chat.fallback'];
-    addMessage(reply, 'bot');
+    addMessage(match ? match.a() : T[lang]['chat.fallback'], 'bot');
   }, 500);
 }
 
@@ -563,8 +504,7 @@ function renderChips() {
     { key: 'chip.projects', query: lang === 'fr' ? 'Quels sont vos projets ?' : 'What are your projects?' },
     { key: 'chip.skills', query: lang === 'fr' ? 'Quelles sont vos compétences ?' : 'What are your skills?' },
     { key: 'chip.availability', query: lang === 'fr' ? 'Êtes-vous disponible ?' : 'Are you available?' },
-    { key: 'chip.contact', query: lang === 'fr' ? 'Comment vous contacter ?' : 'How can I contact you?' },
-    { key: 'chip.education', query: lang === 'fr' ? 'Quelle est votre formation ?' : 'What is your education?' }
+    { key: 'chip.contact', query: lang === 'fr' ? 'Comment vous contacter ?' : 'How can I contact you?' }
   ];
 
   chatbotChips.innerHTML = '';
@@ -585,23 +525,27 @@ chatbotInput.addEventListener('keydown', e => {
   if (e.key === 'Enter') sendChatMessage(chatbotInput.value);
 });
 
-['navChatBtn', 'drawerChatBtn', 'contactChatBtn'].forEach(id => {
+['drawerChatBtn', 'contactChatBtn'].forEach(id => {
   const btn = document.getElementById(id);
-  if (btn) btn.addEventListener('click', () => {
-    closeMenu();
-    openChat();
-  });
+  if (btn) btn.addEventListener('click', () => { closeMenu(); openChat(); });
 });
 
 applyLang(lang);
-updateLevelIndicator();
 
-if (window.innerWidth > 768) {
-  setTimeout(showChatTooltip, 2000);
-  if (!sessionStorage.getItem('chatOpened')) {
-    setTimeout(() => {
-      openChat();
-      sessionStorage.setItem('chatOpened', '1');
-    }, 3500);
+/* ── Splash ── */
+const splash = document.getElementById('splash');
+if (splash) {
+  const hideSplash = () => {
+    splash.classList.add('is-hidden');
+    setTimeout(() => splash.remove(), 700);
+  };
+
+  if (sessionStorage.getItem('splashSeen') === '1') {
+    splash.remove();
+  } else {
+    sessionStorage.setItem('splashSeen', '1');
+    setTimeout(hideSplash, 1600);
   }
 }
+
+terminalInput.focus();
