@@ -176,7 +176,7 @@ button { font-family: inherit; cursor: pointer; background: none; border: none; 
   justify-content: center;
   padding: calc(var(--nav-h) + 40px) clamp(20px, 5vw, 48px) 100px;
   text-align: center;
-  max-width: 520px;
+  max-width: 680px;
   margin: 0 auto;
   width: 100%;
   position: relative;
@@ -185,22 +185,22 @@ button { font-family: inherit; cursor: pointer; background: none; border: none; 
 }
 
 .terminal-name {
-  font-size: clamp(0.95rem, 2.2vw, 1.05rem);
+  font-size: clamp(0.95rem, 2.2vw, 1.2rem);
   color: var(--terminal-text);
-  margin-bottom: 6px;
+  margin-bottom: 8px;
 }
 
 .terminal-role {
-  font-size: clamp(0.78rem, 1.8vw, 0.88rem);
+  font-size: clamp(0.78rem, 1.8vw, 1rem);
   color: rgba(228, 224, 240, 0.65);
-  margin-bottom: 36px;
+  margin-bottom: 44px;
 }
 
 .terminal-prompt {
-  font-size: clamp(1rem, 2.4vw, 1.15rem);
+  font-size: clamp(1rem, 2.4vw, 1.35rem);
   font-weight: 500;
   letter-spacing: -0.01em;
-  margin-bottom: 10px;
+  margin-bottom: 14px;
   color: var(--terminal-text);
 }
 
@@ -436,8 +436,8 @@ button { font-family: inherit; cursor: pointer; background: none; border: none; 
 .site-main { background: var(--bg); }
 
 .section {
-  padding: clamp(64px, 10vw, 100px) clamp(20px, 5vw, 64px);
-  max-width: 1100px;
+  padding: clamp(72px, 10vw, 120px) clamp(20px, 5vw, 80px);
+  max-width: 1240px;
   margin: 0 auto;
 }
 
@@ -445,7 +445,7 @@ button { font-family: inherit; cursor: pointer; background: none; border: none; 
   background: var(--bg-alt);
   max-width: none;
 }
-.section-alt > * { max-width: 1100px; margin-left: auto; margin-right: auto; }
+.section-alt > * { max-width: 1240px; margin-left: auto; margin-right: auto; }
 
 .section-label {
   font-family: var(--font-mono);
@@ -480,10 +480,10 @@ button { font-family: inherit; cursor: pointer; background: none; border: none; 
 
 .section-intro {
   color: var(--muted);
-  font-size: 0.98rem;
-  line-height: 1.75;
-  max-width: 62ch;
-  margin-bottom: 32px;
+  font-size: clamp(0.98rem, 1.1vw, 1.05rem);
+  line-height: 1.8;
+  max-width: 68ch;
+  margin-bottom: 40px;
   text-wrap: pretty;
 }
 
@@ -495,8 +495,8 @@ button { font-family: inherit; cursor: pointer; background: none; border: none; 
 
 .about-grid {
   display: grid;
-  grid-template-columns: minmax(280px, 420px) 1fr;
-  gap: clamp(40px, 7vw, 80px);
+  grid-template-columns: minmax(320px, 460px) 1fr;
+  gap: clamp(48px, 8vw, 96px);
   align-items: center;
   margin-bottom: 56px;
 }
@@ -697,7 +697,7 @@ button { font-family: inherit; cursor: pointer; background: none; border: none; 
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: clamp(24px, 4vw, 40px);
+  gap: clamp(28px, 5vw, 56px);
 }
 
 .skill-group h3 {
@@ -858,8 +858,8 @@ button { font-family: inherit; cursor: pointer; background: none; border: none; 
 
 .process-layout {
   display: grid;
-  grid-template-columns: 280px 1fr;
-  gap: clamp(32px, 6vw, 64px);
+  grid-template-columns: minmax(280px, 340px) 1fr;
+  gap: clamp(40px, 7vw, 80px);
   flex: 1;
   align-items: start;
 }
@@ -1121,7 +1121,7 @@ button { font-family: inherit; cursor: pointer; background: none; border: none; 
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
+  gap: clamp(20px, 3vw, 32px);
 }
 
 .proj-card {
@@ -1228,7 +1228,7 @@ button { font-family: inherit; cursor: pointer; background: none; border: none; 
 .journey-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: clamp(40px, 6vw, 64px);
+  gap: clamp(48px, 8vw, 88px);
 }
 
 .journey-col:first-child .journey-col-title { color: var(--accent); }
@@ -1318,7 +1318,7 @@ button { font-family: inherit; cursor: pointer; background: none; border: none; 
 .contact-layout {
   display: grid;
   grid-template-columns: minmax(0, 1.4fr) minmax(0, 0.8fr);
-  gap: clamp(32px, 6vw, 64px);
+  gap: clamp(48px, 8vw, 96px);
   align-items: start;
 }
 
@@ -1605,6 +1605,36 @@ footer {
   transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* ── Grands écrans XL / 2K / 4K ── */
+@media (min-width: 1440px) {
+  .section { max-width: 1360px; padding-block: clamp(96px, 10vw, 140px); }
+  .section-alt > * { max-width: 1360px; }
+  .about-grid { grid-template-columns: minmax(360px, 500px) 1fr; gap: 120px; }
+  .terminal-body { max-width: 780px; }
+  .skills-grid { gap: 72px; }
+  .journey-grid { gap: 104px; }
+  .process-layout { gap: 104px; grid-template-columns: 380px 1fr; }
+  .contact-layout { gap: 120px; }
+  .projects-grid { gap: 40px; }
+  .case-list { gap: 24px; }
+  .section-title { font-size: clamp(1.8rem, 3vw, 2.4rem); }
+  .about-bio { font-size: clamp(1.05rem, 1.3vw, 1.25rem); line-height: 1.9; max-width: 68ch; }
+  .about-lead { font-size: clamp(0.76rem, 1vw, 0.85rem); line-height: 2; }
+  .case-card h3 { font-size: clamp(1.15rem, 1.4vw, 1.3rem); }
+  .process-heading { font-size: clamp(2.4rem, 5vw, 4.2rem); }
+  .stat-block strong { font-size: clamp(2.4rem, 4vw, 3.4rem); }
+}
+
+@media (min-width: 1920px) {
+  .section { max-width: 1480px; }
+  .section-alt > * { max-width: 1480px; }
+  .section-label { font-size: 0.76rem; }
+  .terminal-name { font-size: 1.25rem; }
+  .terminal-role { font-size: 1rem; }
+  .terminal-prompt { font-size: 1.4rem; }
+  .contact-title { font-size: clamp(2.8rem, 5vw, 3.8rem); }
+}
 
 /* ── Responsive ── */
 @media (max-width: 1180px) {
