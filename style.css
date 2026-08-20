@@ -736,7 +736,7 @@ button { font-family: inherit; cursor: pointer; background: none; border: none; 
 /* ── Skills ── */
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: clamp(28px, 5vw, 56px);
 }
 
@@ -785,6 +785,17 @@ button { font-family: inherit; cursor: pointer; background: none; border: none; 
 }
 
 .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
+
+.btn-cv {
+  gap: 8px;
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.btn-cv:hover {
+  border-color: var(--accent-2);
+  color: var(--accent-2);
+}
 
 /* ── Services list ── */
 .service-list {
@@ -1108,6 +1119,39 @@ button { font-family: inherit; cursor: pointer; background: none; border: none; 
   margin-bottom: 16px;
   max-width: 72ch;
 }
+
+.case-metrics {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 16px;
+  margin-bottom: 20px;
+  padding: 18px 0;
+  border-block: 1px solid var(--border);
+}
+
+.case-metrics li {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.case-metrics strong {
+  font-family: var(--font-mono);
+  font-size: clamp(1.15rem, 2vw, 1.5rem);
+  font-weight: 600;
+  color: var(--accent);
+  letter-spacing: -0.01em;
+}
+
+.case-metrics span {
+  font-size: 0.76rem;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+.case-card:nth-child(even) .case-metrics strong { color: var(--accent-2); }
+.case-card:nth-child(3n) .case-metrics strong { color: var(--accent-3); }
 
 .case-tags {
   list-style: none;
