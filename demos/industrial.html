@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maintenance Prédictive IoT — VAE & Conformal RUL</title>
+  <meta name="description" content="Plateforme industrielle R&D : Autoencodeur Variationnel (VAE), Conformal Prediction pour l'estimation de RUL, décomposition causale XAI par capteur et matrice de confusion.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="demo.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+    
+    html, body {
+      font-family: 'Inter', sans-serif;
+    }
+    
+    .metric-card {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      border: 1px solid #e9ecef;
+      margin-bottom: 1rem;
+    }
+    
+    .risk-high { border-top: 5px solid #ff4b4b; }
+    .risk-low { border-top: 5px solid #28a745; }
+    .risk-medium { border-top: 5px solid #fcc419; }
+    
+    .disclaimer-banner {
+      background-color: #e9ecef;
+      padding: 15px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      border-left: 5px solid #0056b3;
+    }
+    
+    .disclaimer-banner h5 {
+      margin: 0;
+      color: #0056b3;
+    }
+    
+    .disclaimer-banner p {
+      margin: 5px 0 0 0;
+      font-size: 0.85rem;
+      color: #495057;
+    }
+    
+    .professional-footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #f8f9fa;
+      border-radius: 8px;
+      margin-top: 30px;
+    }
+    
+    .professional-footer p {
+      margin: 0;
+      color: #495057;
+      font-size: 0.9rem;
+    }
+    
+    .professional-footer p small {
+      color: #6c757d;
+      font-size: 0.75rem;
+    }
+  </style>
+</head>
+<body data-demo="industrial">
+
+  <header class="demo-top">
+    <a href="../#case-studies" class="demo-back" data-i18n="demo.back">Retour au portfolio</a>
+    <div class="demo-title-wrap">
+      <h1 data-i18n="industrial.title">Maintenance Prédictive Industrielle IoT</h1>
+      <p data-i18n="industrial.sub">VAE Spatio-Temporel · Conformal Prediction (RUL) · Explicabilité XAI · Normes ISO 13374</p>
+    </div>
+    <div class="demo-top-actions">
+      <span class="demo-badge" data-i18n="demo.badge">R&amp;D Live</span>
+      <button type="button" class="demo-lang-btn" id="demoLangToggle">EN</button>
+    </div>
+  </header>
+
+  <div class="demo-shell">
+
+    <aside class="demo-sidebar">
+
+      <!-- Safety & Trust Disclaimer -->
+      <div class="disclaimer-banner">
+        <h5>⚠️ Industrial Safety Disclaimer</h5>
+        <p>
+          <b>NOTICE:</b> This system is designed for <b>predictive maintenance decision support only</b> and does not replace professional industrial maintenance protocols. 
+          Always consult with qualified maintenance engineers. Model predictions are based on sensor data patterns and may not account for all failure modes or environmental factors.
+        </p>
+      </div>
+
+      <div class="demo-sidebar-section">
+        <div class="sidebar-section-label" data-i18n="industrial.side.control">
+          <i class="fa-solid fa-microchip"></i>
+          Équipement &amp; Flux IoT
+        </div>
+        <div class="field-group">
+          <label for="industrialFile" data-i18n="industrial.side.upload">Importer données capteurs (CSV)</label>
+          <input type="file" id="industrialFile" accept=".csv,.json,.txt">
+        </div>
+        <div class="field-group">
+          <label for="sensor" data-i18n="industrial.side.select">Équipement sous surveillance</label>
+          <select id="sensor">
+            <option value="pump" selected data-i18n="industrial.side.pump">Pompe P-042 · Dérive Palier &amp; Cavitation</option>
+            <option value="motor" data-i18n="industrial.side.motor">Moteur M-99 · Surchauffe Statorique</option>
+            <option value="compressor">Compresseur C-12 · Fuite &amp; Perte de Charge</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="demo-sidebar-section">
+        <div class="sidebar-section-label" data-i18n="industrial.side.autoencoder">
+          <i class="fa-solid fa-layer-group"></i>
+          Paramètres du VAE &amp; Détection
+        </div>
+        <div class="field-group">
+          <label for="threshold" data-i18n="industrial.side.threshold">Seuil d'anomalie (Multiples de σ)</label>
+          <select id="threshold">
+            <option value="2.0">2.0 σ (Sensibilité Haute)</option>
+            <option value="2.5" selected>2.5 σ (Standard Industriel)</option>
+            <option value="3.0">3.0 σ (Filtrage Strict)</option>
+            <option value="3.5">3.5 σ (Seuil Critique)</option>
+          </select>
+        </div>
+        <div class="field-group">
+          <label>Architecture Réseau</label>
+          <input type="text" value="VAE 4 → 2 → 4 (Reparam. Trick + ELBO)" readonly>
+        </div>
+        <div class="field-group">
+          <label>Quantification d'Incertitude</label>
+          <input type="text" value="Conformal Prediction (Couverture 95%)" readonly>
+        </div>
+      </div>
+
+      <button type="button" class="demo-btn" id="runIndustrial" data-i18n="industrial.side.run">
+        <i class="fa-solid fa-play"></i> Lancer l'inférence temps réel
+      </button>
+
+    </aside>
+
+    <main class="demo-main">
+
+      <div class="demo-intro">
+        <div class="demo-intro-icon"><i class="fa-solid fa-gears"></i></div>
+        <div class="demo-intro-copy">
+          <strong data-i18n="industrial.intro.title">Système de Surveillance Prédictive &amp; Diagnostic de Panne</strong>
+          <p id="industrialSummary" data-i18n="industrial.note">
+            Autoencodeur variationnel (VAE) calculant la perte de reconstruction ELBO, estimation de la Remaining Useful Life (RUL) garantie par Conformal Prediction et diagnostic de cause racine par décomposition causale.
+          </p>
+        </div>
+      </div>
+
+      <div id="datasetPreviewContainer" class="demo-panel" style="display:none;">
+        <div class="panel-head">
+          <div class="panel-title-group">
+            <h3 data-i18n="industrial.preview">Aperçu des signaux multi-capteurs</h3>
+            <p><span class="chip chip-accent"><i class="fa-solid fa-table"></i> Télémétrie</span></p>
+          </div>
+        </div>
+        <div class="table-wrap">
+          <table id="datasetPreviewTable" class="preview-table"></table>
+        </div>
+      </div>
+
+      <div class="section-heading">
+        <h3>
+          <span class="section-label">01</span>
+          <span data-i18n="industrial.sec.metrics">Santé de l'Équipement &amp; RUL Conforme</span>
+        </h3>
+        <span class="chip chip-accent"><i class="fa-solid fa-heart-pulse"></i> Condition Monitoring</span>
+      </div>
+      <div class="demo-grid">
+        <div class="demo-card">
+          <div class="card-icon"><i class="fa-solid fa-gauge-high"></i></div>
+          <strong id="metricHealth">—</strong>
+          <span>Index de Santé Global</span>
+        </div>
+        <div class="demo-card">
+          <div class="card-icon"><i class="fa-solid fa-hourglass-half"></i></div>
+          <strong id="metricRul">—</strong>
+          <span>RUL Estimée (95% Conformal)</span>
+        </div>
+        <div class="demo-card">
+          <div class="card-icon"><i class="fa-solid fa-triangle-exclamation"></i></div>
+          <strong id="metricStatus">—</strong>
+          <span data-i18n="industrial.card.status">Statut Opérationnel</span>
+        </div>
+        <div class="demo-card">
+          <div class="card-icon"><i class="fa-solid fa-clock-rotate-left"></i></div>
+          <strong id="metricLead">—</strong>
+          <span data-i18n="industrial.card.lead">Temps d'Avance (Lead Time)</span>
+        </div>
+      </div>
+
+      <div class="section-heading">
+        <h3>
+          <span class="section-label">02</span>
+          <span>Performances de Détection &amp; Cause Racine</span>
+        </h3>
+        <span class="chip chip-warn"><i class="fa-solid fa-bullseye"></i> Validation Ground Truth</span>
+      </div>
+      <div class="demo-grid">
+        <div class="demo-card">
+          <div class="card-icon"><i class="fa-solid fa-fire"></i></div>
+          <strong id="metricElbo">—</strong>
+          <span>Perte ELBO Max / Seuil</span>
+        </div>
+        <div class="demo-card">
+          <div class="card-icon"><i class="fa-solid fa-crosshairs"></i></div>
+          <strong id="metricPrecision">—</strong>
+          <span>Précision Détection</span>
+        </div>
+        <div class="demo-card">
+          <div class="card-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+          <strong id="metricRecall">—</strong>
+          <span>Taux de Capture (Recall)</span>
+        </div>
+        <div class="demo-card">
+          <div class="card-icon"><i class="fa-solid fa-circle-nodes"></i></div>
+          <strong id="metricRootCause">—</strong>
+          <span>Capteur &amp; Défaut Dominant</span>
+        </div>
+      </div>
+
+      <!-- Navigation par Onglets de Visualisation R&D -->
+      <section class="demo-panel">
+        <div class="panel-head">
+          <div class="panel-title-group">
+            <div class="finsight-tab-nav">
+              <button type="button" class="industrial-tab active" data-tab="telemetry">Télémétrie &amp; Détection</button>
+              <button type="button" class="industrial-tab" data-tab="latent">Espace Latent VAE (z₁, z₂)</button>
+              <button type="button" class="industrial-tab" data-tab="xai">Attribution Causale XAI</button>
+              <button type="button" class="industrial-tab" data-tab="rul">Trajectoire RUL &amp; Dégradation</button>
+              <button type="button" class="industrial-tab" data-tab="diagnostic">Plan d'Action Correctif</button>
+            </div>
+          </div>
+          <div class="panel-meta">
+            <span class="chip"><i class="fa-solid fa-database"></i> API /api/industrial</span>
+          </div>
+        </div>
+
+        <div class="industrial-tab-content active" id="itab-telemetry">
+          <canvas id="industrialChart" class="demo-chart" aria-label="Graphique télémétrie"></canvas>
+          <p class="chart-caption"><i class="fa-solid fa-info-circle"></i> Série temporelle des signaux réels et reconstruits par le VAE avec surlignage des fenêtres d'anomalie critique.</p>
+        </div>
+
+        <div class="industrial-tab-content" id="itab-latent">
+          <canvas id="latentChart" class="demo-chart" aria-label="Projection espace latent"></canvas>
+          <p class="chart-caption"><i class="fa-solid fa-info-circle"></i> Projection 2D de la distribution latente q(z|x) : cluster nominal (vert) vs trajectoire de dérive (orange/rouge).</p>
+        </div>
+
+        <div class="industrial-tab-content" id="itab-xai">
+          <div class="table-wrap">
+            <table class="preview-table" id="xaiTable">
+              <thead>
+                <tr>
+                  <th>Canal Capteur</th>
+                  <th>Contribution à l'Anomalie (%)</th>
+                  <th>Sensibilité Statistique</th>
+                  <th>Diagnostic Associé</th>
+                </tr>
+              </thead>
+              <tbody id="xaiTableBody">
+                <tr><td colspan="4" style="text-align:center; color:var(--muted);">Lancez l'inférence pour afficher la décomposition causale.</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="industrial-tab-content" id="itab-rul">
+          <canvas id="rulChart" class="demo-chart" aria-label="Fan chart RUL"></canvas>
+          <p class="chart-caption"><i class="fa-solid fa-info-circle"></i> Projection probabiliste de la dégradation avec fuseau d'incertitude garanti à 95% par Conformal Prediction.</p>
+        </div>
+
+        <div class="industrial-tab-content" id="itab-diagnostic">
+          <div class="frontier-summary" id="diagnosticBox">
+            <!-- Rapport injecté dynamiquement -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Professional Footer -->
+      <div class="professional-footer">
+        <p>
+          <b>Industrial IoT Predictive Maintenance</b> • ISO 13374 Compliant • v2.0
+        </p>
+        <p style="margin: 5px 0 0 0; color: #6c757d; font-size: 0.8rem;">
+          Built with Streamlit • Plotly • VAE • XAI • Real-time Monitoring
+        </p>
+        <p style="margin: 5px 0 0 0; color: #6c757d; font-size: 0.75rem;">
+          © 2026 Portfolio R&D SOTA 2026 • All Rights Reserved
+        </p>
+      </div>
+
+    </main>
+  </div>
+
+  <script src="demo.js"></script>
+</body>
+</html>

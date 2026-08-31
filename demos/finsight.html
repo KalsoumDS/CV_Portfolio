@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FinSight — Stress-Testing & Risque Financier R&D</title>
+  <meta name="description" content="Plateforme quantitative R&D : VaR/CVaR Cornish-Fisher, GARCH(1,1), Monte Carlo t-Student copula, backtest réglementaire Kupiec/Bâle et stress-testing macro-économique.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="demo.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+    
+    html, body {
+      font-family: 'Inter', sans-serif;
+    }
+    
+    .metric-card {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      border: 1px solid #e9ecef;
+      margin-bottom: 1rem;
+    }
+    
+    .risk-high { border-top: 5px solid #ff4b4b; }
+    .risk-low { border-top: 5px solid #28a745; }
+    .risk-medium { border-top: 5px solid #fcc419; }
+    
+    .disclaimer-banner {
+      background-color: #e9ecef;
+      padding: 15px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      border-left: 5px solid #0056b3;
+    }
+    
+    .disclaimer-banner h5 {
+      margin: 0;
+      color: #0056b3;
+    }
+    
+    .disclaimer-banner p {
+      margin: 5px 0 0 0;
+      font-size: 0.85rem;
+      color: #495057;
+    }
+    
+    .professional-footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #f8f9fa;
+      border-radius: 8px;
+      margin-top: 30px;
+    }
+    
+    .professional-footer p {
+      margin: 0;
+      color: #495057;
+      font-size: 0.9rem;
+    }
+    
+    .professional-footer p small {
+      color: #6c757d;
+      font-size: 0.75rem;
+    }
+  </style>
+</head>
+<body data-demo="finsight">
+
+  <header class="demo-top">
+    <a href="../#case-studies" class="demo-back" data-i18n="demo.back">Retour au portfolio</a>
+    <div class="demo-title-wrap">
+      <h1 data-i18n="finsight.title">FinSight — Stress-Testing &amp; Risque Quantitatif</h1>
+      <p data-i18n="finsight.sub">Moteur R&amp;D SOTA · Cornish-Fisher · GARCH(1,1) · Copules t-Student · Normes Bâle</p>
+    </div>
+    <div class="demo-top-actions">
+      <span class="demo-badge" data-i18n="demo.badge">R&amp;D Live</span>
+      <button type="button" class="demo-lang-btn" id="demoLangToggle">EN</button>
+    </div>
+  </header>
+
+  <div class="demo-shell">
+
+    <aside class="demo-sidebar">
+
+      <!-- Safety & Trust Disclaimer -->
+      <div class="disclaimer-banner">
+        <h5>⚠️ Risk Assessment Disclaimer</h5>
+        <p>
+          <b>NOTICE:</b> This system is designed for <b>quantitative risk assessment and decision support only</b> and does not constitute financial advice or investment recommendations. 
+          Always consult with qualified financial professionals. Model predictions are based on statistical patterns and historical data, which may not account for market anomalies or future events.
+        </p>
+      </div>
+
+      <div class="demo-sidebar-section">
+        <div class="sidebar-section-label" data-i18n="finsight.side.settings">
+          <i class="fa-solid fa-chart-pie"></i>
+          Portefeuille d'actifs
+        </div>
+        <div class="field-group">
+          <label for="finsightFile" data-i18n="finsight.side.upload">Importer cours historiques (CSV)</label>
+          <input type="file" id="finsightFile" accept=".csv,.json,.txt">
+        </div>
+        <div class="field-group">
+          <label for="tickers" data-i18n="finsight.side.tickers">Tickers du portefeuille</label>
+          <input id="tickers" type="text" value="AAPL, MSFT, GOOGL, NVDA">
+        </div>
+        <div class="field-group">
+          <label for="horizon" data-i18n="finsight.side.horizon">Horizon historique</label>
+          <select id="horizon">
+            <option value="1" data-i18n="finsight.side.horizon.1">1 An (252 séances)</option>
+            <option value="2" selected data-i18n="finsight.side.horizon.2">2 Ans (504 séances)</option>
+            <option value="3" data-i18n="finsight.side.horizon.3">3 Ans (756 séances)</option>
+          </select>
+        </div>
+        <div class="field-group">
+          <label for="notional" data-i18n="finsight.side.notional">Valeur notionnelle du portefeuille ($)</label>
+          <input id="notional" type="number" value="100000" min="10000" step="10000">
+        </div>
+      </div>
+
+      <div class="demo-sidebar-section">
+        <div class="sidebar-section-label" data-i18n="finsight.side.risk">
+          <i class="fa-solid fa-shield-halved"></i>
+          Paramètres du modèle de risque
+        </div>
+        <div class="field-group">
+          <label for="confidence" data-i18n="finsight.side.confidence">Niveau de confiance (1 - α)</label>
+          <select id="confidence">
+            <option value="90">90.0 %</option>
+            <option value="95" selected>95.0 %</option>
+            <option value="97.5">97.5 %</option>
+            <option value="99">99.0 % (Norme Bâle)</option>
+          </select>
+        </div>
+        <div class="field-group">
+          <label for="riskModel" data-i18n="finsight.side.model">Méthodologie mathématique</label>
+          <select id="riskModel">
+            <option value="cornish_fisher" selected>Cornish-Fisher (Skew/Kurtosis)</option>
+            <option value="monte_carlo">Monte Carlo t-Student (5 000 copules)</option>
+            <option value="historical">Simulation Historique Filterée (FHS)</option>
+            <option value="gaussian">Paramétrique Gaussienne N(μ, σ)</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="demo-sidebar-section">
+        <div class="sidebar-section-label" data-i18n="finsight.side.stress">
+          <i class="fa-solid fa-bolt-lightning"></i>
+          Scénario de Stress-Testing
+        </div>
+        <div class="field-group">
+          <label for="stressScenario">Rejeu de choc macro</label>
+          <select id="stressScenario">
+            <option value="lehman_2008" selected>Crise Lehman 2008 (-42% actions)</option>
+            <option value="covid_2020">Choc Pandémique 2020 (VIX > 80)</option>
+            <option value="stagflation_2022">Choc Taux & Stagflation 2022</option>
+            <option value="geopolitical_energy">Choc Énergie & Géopolitique</option>
+          </select>
+        </div>
+      </div>
+
+      <button type="button" class="demo-btn" id="runFinsight" data-i18n="finsight.side.run">
+        <i class="fa-solid fa-play"></i> Exécuter l'analyse quantitative
+      </button>
+
+    </aside>
+
+    <main class="demo-main">
+
+      <div class="demo-intro">
+        <div class="demo-intro-icon"><i class="fa-solid fa-chart-line"></i></div>
+        <div class="demo-intro-copy">
+          <strong data-i18n="finsight.intro.title">Moteur de Risque &amp; Stress-Testing Enterprise-Grade</strong>
+          <p id="finsightSummary" data-i18n="finsight.note.default">
+            Analyse quantitative exhaustive : estimation des moments d'ordre 3 & 4 (asymétrie/kurtosis), dynamique GARCH(1,1), VaR/CVaR Cornish-Fisher, validation réglementaire de Bâle (Kupiec POF) et optimisation Markowitz.
+          </p>
+        </div>
+      </div>
+
+      <div id="datasetPreviewContainer" class="demo-panel" style="display:none;">
+        <div class="panel-head">
+          <div class="panel-title-group">
+            <h3 data-i18n="finsight.preview">Aperçu des cours importés</h3>
+            <p><span class="chip chip-accent"><i class="fa-solid fa-file-csv"></i> Séries temporelles</span></p>
+          </div>
+        </div>
+        <div class="table-wrap">
+          <table id="datasetPreviewTable" class="preview-table"></table>
+        </div>
+      </div>
+
+      <div class="section-heading">
+        <h3>
+          <span class="section-label">01</span>
+          <span data-i18n="finsight.sec.risk">Métriques de Risque &amp; Conformité Bâle</span>
+        </h3>
+        <span class="chip chip-warn"><i class="fa-solid fa-shield-virus"></i> Downside Risk</span>
+      </div>
+      <div class="demo-grid">
+        <div class="demo-card">
+          <div class="card-icon"><i class="fa-solid fa-arrow-trend-down"></i></div>
+          <strong id="metricVar">—</strong>
+          <span data-i18n="finsight.card.var">VaR 1-Jour</span>
+        </div>
+        <div class="demo-card">
+          <div class="card-icon"><i class="fa-solid fa-chart-area"></i></div>
+          <strong id="metricCvar">—</strong>
+          <span data-i18n="finsight.card.cvar">Expected Shortfall (CVaR)</span>
+        </div>
+        <div class="demo-card">
+          <div class="card-icon"><i class="fa-solid fa-vial-circle-check"></i></div>
+          <strong id="metricKupiec">—</strong>
+          <span data-i18n="finsight.card.kupiec">Test Kupiec POF (p-value)</span>
+        </div>
+        <div class="demo-card">
+          <div class="card-icon"><i class="fa-solid fa-traffic-light"></i></div>
+          <strong id="metricBasel">—</strong>
+          <span data-i18n="finsight.card.basel">Cadre Réglementaire Bâle</span>
+        </div>
+      </div>
+
+      <div class="section-heading">
+        <h3>
+          <span class="section-label">02</span>
+          <span>Volatilité Dynamique &amp; Ratios de Performance</span>
+        </h3>
+        <span class="chip chip-accent"><i class="fa-solid fa-fire"></i> GARCH &amp; Moments</span>
+      </div>
+      <div class="demo-grid">
+        <div class="demo-card">
+          <div class="card-icon"><i class="fa-solid fa-wave-square"></i></div>
+          <strong id="metricGarch">—</strong>
+          <span>Volatilité GARCH(1,1)</span>
+        </div>
+        <div class="demo-card">
+          <div class="card-icon"><i class="fa-solid fa-scale-balanced"></i></div>
+          <strong id="metricSharpe">—</strong>
+          <span data-i18n="finsight.card.sharpe">Sharpe &amp; Sortino</span>
+        </div>
+        <div class="demo-card">
+          <div class="card-icon"><i class="fa-solid fa-water"></i></div>
+          <strong id="metricDrawdown">—</strong>
+          <span data-i18n="finsight.card.drawdown">Max Drawdown &amp; Calmar</span>
+        </div>
+        <div class="demo-card">
+          <div class="card-icon"><i class="fa-solid fa-shapes"></i></div>
+          <strong id="metricMoments">—</strong>
+          <span>Skewness &amp; Kurtosis</span>
+        </div>
+      </div>
+
+      <!-- Navigation par Onglets de Visualisation R&D -->
+      <section class="demo-panel">
+        <div class="panel-head">
+          <div class="panel-title-group">
+            <div class="finsight-tab-nav">
+              <button type="button" class="finsight-tab active" data-tab="timeline">Trajectoire &amp; Drawdown</button>
+              <button type="button" class="finsight-tab" data-tab="distribution">Distribution &amp; Queues Épaisses</button>
+              <button type="button" class="finsight-tab" data-tab="euler">Décomposition du Risque</button>
+              <button type="button" class="finsight-tab" data-tab="stress">Stress-Testing Macro</button>
+              <button type="button" class="finsight-tab" data-tab="frontier">Frontière Efficiente</button>
+            </div>
+          </div>
+          <div class="panel-meta">
+            <span class="chip"><i class="fa-solid fa-microchip"></i> Calculé côté moteur R&amp;D</span>
+          </div>
+        </div>
+
+        <div class="finsight-tab-content active" id="tab-timeline">
+          <canvas id="finsightChart" class="demo-chart" aria-label="Graphique de trajectoire"></canvas>
+          <p class="chart-caption"><i class="fa-solid fa-info-circle"></i> Évolution de la valeur du portefeuille avec overlay des drawdowns et comparaison benchmark.</p>
+        </div>
+
+        <div class="finsight-tab-content" id="tab-distribution">
+          <canvas id="distributionChart" class="demo-chart" aria-label="Histogramme des pertes"></canvas>
+          <p class="chart-caption"><i class="fa-solid fa-info-circle"></i> Distribution empirique issue de 5 000 simulations Monte Carlo t-Student avec matérialisation des seuils de VaR et CVaR.</p>
+        </div>
+
+        <div class="finsight-tab-content" id="tab-euler">
+          <div class="table-wrap">
+            <table class="preview-table" id="eulerTable">
+              <thead>
+                <tr>
+                  <th>Actif</th>
+                  <th>Poids (%)</th>
+                  <th>Bêta / Portefeuille</th>
+                  <th>Marginal VaR</th>
+                  <th>Component VaR</th>
+                  <th>Contribution au Risque (%)</th>
+                </tr>
+              </thead>
+              <tbody id="eulerTableBody">
+                <tr><td colspan="6" style="text-align:center; color:var(--muted);">Lancez l'analyse pour afficher la décomposition d'Euler.</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="finsight-tab-content" id="tab-stress">
+          <div class="demo-grid" id="stressScenarioGrid">
+            <!-- Scénarios injectés dynamiquement -->
+          </div>
+        </div>
+
+        <div class="finsight-tab-content" id="tab-frontier">
+          <canvas id="frontierChart" class="demo-chart" aria-label="Frontière efficiente de Markowitz"></canvas>
+          <div class="frontier-summary" id="frontierSummary"></div>
+        </div>
+      </section>
+
+      <!-- Log d'audit des violations réglementaires -->
+      <section class="demo-panel" id="violationsPanel">
+        <div class="panel-head">
+          <div class="panel-title-group">
+            <h3><i class="fa-solid fa-clipboard-check"></i> Audit des Exceptions Réglementaires (Backtesting)</h3>
+            <p>Dépassements réels constatés par rapport à la VaR prévisionnelle</p>
+          </div>
+        </div>
+        <div class="table-wrap">
+          <table class="preview-table" id="violationsTable">
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Perte Réalisée (%)</th>
+                <th>VaR Estimée (%)</th>
+                <th>Perte Excédentaire (%)</th>
+                <th>Statut</th>
+              </tr>
+            </thead>
+            <tbody id="violationsTableBody">
+              <tr><td colspan="5" style="text-align:center; color:var(--muted);">Aucune exception détectée ou analyse non exécutée.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Professional Footer -->
+      <div class="professional-footer">
+        <p>
+          <b>FinSight Quantitative Risk Engine</b> • R&D Grade System • v2.0
+        </p>
+        <p style="margin: 5px 0 0 0; color: #6c757d; font-size: 0.8rem;">
+          Built with Streamlit • Plotly • GARCH(1,1) • Basel III Compliant
+        </p>
+        <p style="margin: 5px 0 0 0; color: #6c757d; font-size: 0.75rem;">
+          © 2026 Portfolio R&D SOTA 2026 • All Rights Reserved
+        </p>
+      </div>
+
+    </main>
+  </div>
+
+  <script src="demo.js"></script>
+</body>
+</html>

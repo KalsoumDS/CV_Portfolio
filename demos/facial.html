@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reconnaissance Faciale RTSP — ArcFace SOTA</title>
+  <meta name="description" content="Architecture de vision par ordinateur temps réel : ArcFace (ResNet-50 512-D), indexation vectorielle HNSW, latence <35ms sur flux multi-caméras RTSP.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="demo.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+    
+    html, body {
+      font-family: 'Inter', sans-serif;
+    }
+    
+    .metric-card {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      border: 1px solid #e9ecef;
+      margin-bottom: 1rem;
+    }
+    
+    .risk-high { border-top: 5px solid #ff4b4b; }
+    .risk-low { border-top: 5px solid #28a745; }
+    .risk-medium { border-top: 5px solid #fcc419; }
+    
+    .disclaimer-banner {
+      background-color: #e9ecef;
+      padding: 15px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      border-left: 5px solid #0056b3;
+    }
+    
+    .disclaimer-banner h5 {
+      margin: 0;
+      color: #0056b3;
+    }
+    
+    .disclaimer-banner p {
+      margin: 5px 0 0 0;
+      font-size: 0.85rem;
+      color: #495057;
+    }
+    
+    .professional-footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #f8f9fa;
+      border-radius: 8px;
+      margin-top: 30px;
+    }
+    
+    .professional-footer p {
+      margin: 0;
+      color: #495057;
+      font-size: 0.9rem;
+    }
+    
+    .professional-footer p small {
+      color: #6c757d;
+      font-size: 0.75rem;
+    }
+  </style>
+</head>
+<body data-demo="facial">
+
+  <header class="demo-top">
+    <a href="../#case-studies" class="demo-back" data-i18n="demo.back">Retour au portfolio</a>
+    <div class="demo-title-wrap">
+      <h1>Reconnaissance Faciale RTSP Multi-Caméras</h1>
+      <p>ArcFace (512-D Angular Margin) · Indexation Vectorielle HNSW · Latence sub-35ms · Production ABA Technology</p>
+    </div>
+    <div class="demo-top-actions">
+      <span class="demo-badge">Edge SOTA</span>
+      <button type="button" class="demo-lang-btn" id="demoLangToggle">EN</button>
+    </div>
+  </header>
+
+  <div class="demo-shell">
+
+    <aside class="demo-sidebar">
+
+      <!-- Safety & Trust Disclaimer -->
+      <div class="disclaimer-banner">
+        <h5>⚠️ Biometric Privacy Disclaimer</h5>
+        <p>
+          <b>NOTICE:</b> This system is designed for <b>biometric verification decision support only</b> and does not replace professional security protocols. 
+          Always comply with local privacy regulations (GDPR, CCPA, etc.). Model predictions are based on facial feature patterns and may have bias or accuracy limitations.
+        </p>
+      </div>
+
+      <div class="demo-sidebar-section">
+        <div class="sidebar-section-label">
+          <i class="fa-solid fa-video"></i>
+          Flux Caméras RTSP
+        </div>
+        <div class="field-group">
+          <label for="cameraSelect">Caméra active</label>
+          <select id="cameraSelect">
+            <option value="CAM-01" selected>CAM-01 · Hall Principal - Portique A</option>
+            <option value="CAM-02">CAM-02 · Accès Salle Serveurs &amp; R&amp;D</option>
+            <option value="CAM-03">CAM-03 · Portail Extérieur Véhicules</option>
+            <option value="CAM-04">CAM-04 · Sas Sécurisé Salle Blanche</option>
+          </select>
+        </div>
+        <div class="field-group">
+          <label for="identitySelect">Identité présentée (Simulation flux)</label>
+          <select id="identitySelect">
+            <option value="EMP-001" selected>Dr. Sarah Alami (R&amp;D Computer Vision)</option>
+            <option value="EMP-002">Marc Berrada (MLOps &amp; Infra)</option>
+            <option value="EMP-003">Amina Mansour (Embedded IoT)</option>
+            <option value="EMP-004">Thomas Leroy (Direction)</option>
+            <option value="UNKNOWN">Visiteur Non Enrôlé (Imposteur)</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="demo-sidebar-section">
+        <div class="sidebar-section-label">
+          <i class="fa-solid fa-network-wired"></i>
+          Modèle &amp; Calibration Métrique
+        </div>
+        <div class="field-group">
+          <label for="facialModel">Backbone d'Embedding</label>
+          <select id="facialModel">
+            <option value="arcface" selected>ArcFace (ResNet-50 · 512-D m=0.5)</option>
+            <option value="adaface">AdaFace (Adaptive Margin · Quality-Aware)</option>
+            <option value="cosface">CosFace (MobileFaceNet · Edge Optimized)</option>
+            <option value="vggface2">VGGFace2 (Softmax Cross-Entropy Baseline)</option>
+          </select>
+        </div>
+        <div class="field-group">
+          <label for="similarityThreshold">Seuil d'acceptation cosinus (τ)</label>
+          <select id="similarityThreshold">
+            <option value="0.50">0.50 (Sensibilité Élevée)</option>
+            <option value="0.58" selected>0.58 (Calibré à FMR = 10⁻⁴)</option>
+            <option value="0.68">0.68 (Sécurité Renforcée)</option>
+            <option value="0.75">0.75 (Contrôle Strict)</option>
+          </select>
+        </div>
+      </div>
+
+      <button type="button" class="demo-btn" id="runFacial">
+        <i class="fa-solid fa-bolt"></i> Traiter la trame RTSP
+      </button>
+
+    </aside>
+
+    <main class="demo-main">
+
+      <div class="demo-intro">
+        <div class="demo-intro-icon"><i class="fa-solid fa-eye"></i></div>
+        <div class="demo-intro-copy">
+          <strong>Système de Contrôle d'Accès Temps Réel Haute Sécurité</strong>
+          <p id="facialSummary">
+            Pipeline de vision par ordinateur bout-en-bout : détection de visage (SCRFD), alignement 5 points, extraction d'embeddings 512-D normalisés via ArcFace et matching vectoriel sub-5ms dans une galerie HNSW.
+          </p>
+        </div>
+      </div>
+
+      <div class="section-heading">
+        <h3>
+          <span class="section-label">01</span>
+          <span>Contrôle d'Accès &amp; Métriques d'Inférence</span>
+        </h3>
+        <span class="chip chip-ok"><i class="fa-solid fa-shield-halved"></i> Live Decision</span>
+      </div>
+      <div class="demo-grid">
+        <div class="demo-card">
+          <div class="card-icon"><i class="fa-solid fa-id-badge"></i></div>
+          <strong id="metricAccessStatus">—</strong>
+          <span>Décision d'Accès</span>
+        </div>
+        <div class="demo-card">
+          <div class="card-icon"><i class="fa-solid fa-user-check"></i></div>
+          <strong id="metricMatchedPerson">—</strong>
+          <span>Identité Reconnue</span>
+        </div>
+        <div class="demo-card">
+          <div class="card-icon"><i class="fa-solid fa-stopwatch"></i></div>
+          <strong id="metricLatency">—</strong>
+          <span>Latence Bout-en-Bout</span>
+        </div>
+        <div class="demo-card">
+          <div class="card-icon"><i class="fa-solid fa-bullseye"></i></div>
+          <strong id="metricCosine">—</strong>
+          <span>Similarité Cosinus (Confiance)</span>
+        </div>
+      </div>
+
+      <div class="section-heading">
+        <h3>
+          <span class="section-label">02</span>
+          <span>Performances SOTA &amp; Sécurité Biométrique</span>
+        </h3>
+        <span class="chip chip-accent"><i class="fa-solid fa-gauge"></i> Benchmark NIST</span>
+      </div>
+      <div class="demo-grid">
+        <div class="demo-card">
+          <div class="card-icon"><i class="fa-solid fa-chart-line"></i></div>
+          <strong id="metricAccuracy">—</strong>
+          <span>Précision RTSP Globale</span>
+        </div>
+        <div class="demo-card">
+          <div class="card-icon"><i class="fa-solid fa-scale-balanced"></i></div>
+          <strong id="metricEer">—</strong>
+          <span>Equal Error Rate (EER)</span>
+        </div>
+        <div class="demo-card">
+          <div class="card-icon"><i class="fa-solid fa-fingerprint"></i></div>
+          <strong id="metricLiveness">—</strong>
+          <span>Score Anti-Spoofing</span>
+        </div>
+        <div class="demo-card">
+          <div class="card-icon"><i class="fa-solid fa-cubes-stacked"></i></div>
+          <strong id="metricFps">—</strong>
+          <span>Débit par Caméra</span>
+        </div>
+      </div>
+
+      <!-- Navigation par Onglets de Visualisation R&D -->
+      <section class="demo-panel">
+        <div class="panel-head">
+          <div class="panel-title-group">
+            <div class="finsight-tab-nav">
+              <button type="button" class="facial-tab active" data-tab="stream">Flux Caméra &amp; Overlays</button>
+              <button type="button" class="facial-tab" data-tab="embedding">Espace Latent ArcFace (512-D)</button>
+              <button type="button" class="facial-tab" data-tab="benchmark">Benchmark Modèles SOTA</button>
+              <button type="button" class="facial-tab" data-tab="roc">Courbe ROC / DET (FMR vs FNMR)</button>
+              <button type="button" class="facial-tab" data-tab="audit">Journal de Contrôle d'Accès</button>
+            </div>
+          </div>
+          <div class="panel-meta">
+            <span class="chip"><i class="fa-solid fa-microchip"></i> API /api/facial</span>
+          </div>
+        </div>
+
+        <div class="facial-tab-content active" id="ftab-stream">
+          <canvas id="streamCanvas" class="demo-chart" aria-label="Visualisation trame vidéo"></canvas>
+          <p class="chart-caption"><i class="fa-solid fa-info-circle"></i> Trame RTSP 1080p avec boîte englobante SCRFD, 5 repères faciaux d'alignement affine et badge d'identité en temps réel.</p>
+        </div>
+
+        <div class="facial-tab-content" id="ftab-embedding">
+          <canvas id="embeddingCanvas" class="demo-chart" aria-label="Espace latent ArcFace"></canvas>
+          <p class="chart-caption"><i class="fa-solid fa-info-circle"></i> Projection 2D de l'espace d'embedding 512-D sur l'hypersphère : compacité intra-classe et séparation angulaire inter-classes.</p>
+        </div>
+
+        <div class="facial-tab-content" id="ftab-benchmark">
+          <div class="table-wrap">
+            <table class="preview-table" id="benchmarkTable">
+              <thead>
+                <tr>
+                  <th>Modèle SOTA</th>
+                  <th>Backbone &amp; Marge</th>
+                  <th>Précision RTSP (%)</th>
+                  <th>Latence Inférence</th>
+                  <th>EER (%)</th>
+                  <th>Empreinte RAM</th>
+                </tr>
+              </thead>
+              <tbody id="benchmarkTableBody">
+                <!-- Rempli dynamiquement -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="facial-tab-content" id="ftab-roc">
+          <canvas id="rocCanvas" class="demo-chart" aria-label="Courbe ROC"></canvas>
+          <p class="chart-caption"><i class="fa-solid fa-info-circle"></i> Compromis False Match Rate (FMR) vs False Non-Match Rate (FNMR) avec point opérationnel calibré à FMR = 10⁻⁴.</p>
+        </div>
+
+        <div class="facial-tab-content" id="ftab-audit">
+          <div class="frontier-summary" id="auditSummary">
+            <!-- Rapport d'audit injecté -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Professional Footer -->
+      <div class="professional-footer">
+        <p>
+          <b>Facial Recognition Biometric System</b> • ISO 19795 Compliant • v2.0
+        </p>
+        <p style="margin: 5px 0 0 0; color: #6c757d; font-size: 0.8rem;">
+          Built with Streamlit • Plotly • FaceNet • Liveness Detection • Real-time
+        </p>
+        <p style="margin: 5px 0 0 0; color: #6c757d; font-size: 0.75rem;">
+          © 2026 Portfolio R&D SOTA 2026 • All Rights Reserved
+        </p>
+      </div>
+
+    </main>
+  </div>
+
+  <script src="demo.js"></script>
+</body>
+</html>
