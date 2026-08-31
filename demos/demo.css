@@ -216,6 +216,31 @@ input, select, textarea { font-family: inherit; }
   color: var(--accent);
 }
 
+.demo-streamlit-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  padding: 7px 12px;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(255, 75, 75, 0.45);
+  background: rgba(255, 75, 75, 0.12);
+  color: #ff6b6b;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.demo-streamlit-btn:hover {
+  background: rgba(255, 75, 75, 0.25);
+  border-color: #ff4b4b;
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
 /* ============================================================
    SHELL LAYOUT
 ============================================================*/

@@ -1218,9 +1218,22 @@ button { font-family: inherit; cursor: pointer; background: none; border: none; 
   display: inline-flex;
   align-items: center;
   gap: 6px;
+  transition: color 0.2s ease, transform 0.2s ease;
 }
 
-.case-link:hover { color: var(--accent-hover); }
+.case-link:hover { color: var(--accent-hover); transform: translateY(-1px); }
+
+.case-link-streamlit, .proj-link-streamlit {
+  color: #ff6b6b !important;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 500;
+}
+
+.case-link-streamlit:hover, .proj-link-streamlit:hover {
+  color: #ff9494 !important;
+}
 
 /* ── Projects ── */
 .projects-grid {

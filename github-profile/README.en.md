@@ -62,17 +62,18 @@
 
 ---
 
-## Featured Projects & Live Demos
+## Featured Projects & Streamlit Applications
 
 <div align="center">
 
-| Project | Description | Live Demo |
-|:--|:--|:--|
-| **FinSight** | Financial risk engine — VaR/CVaR, Monte Carlo, XGBoost/LSTM alpha signals | [▶ Demo](https://portfolio-oumou-kaltoum.vercel.app/demos/finsight.html) |
-| **ChatAutoML** | Conversational no-code ML platform with Optuna Bayesian optimization | [▶ Demo](https://portfolio-oumou-kaltoum.vercel.app/demos/chatautoml.html) |
-| **RAG Document Intelligence** | Vector search & sourced Q&A over ESG reports and regulations | [▶ Demo](https://portfolio-oumou-kaltoum.vercel.app/demos/rag.html) |
-| **Industrial Predictive Maintenance** | PyTorch autoencoder for IoT time-series anomaly detection | [▶ Demo](https://portfolio-oumou-kaltoum.vercel.app/demos/industrial.html) |
-| **Real-Time Face Recognition** | RTSP multi-camera access control, ArcFace/AdaFace benchmark, <35ms | [▶ Portfolio](https://portfolio-oumou-kaltoum.vercel.app/#case-studies) |
+| Project | Description | Streamlit App | Code |
+|:--|:--|:--|:--|
+| **Cardiovascular Disease Prediction** | Clinical ML diagnostic & cardiac risk multi-factor classification | [🚀 Streamlit.io](https://cardiovascular-disease-prediction-ajmznkpqhaewp2xwdmhcgc.streamlit.app/) | [GitHub](https://github.com/KalsoumDS/cardiovascular-disease-prediction) |
+| **FinSight** | Financial risk engine — VaR/CVaR, Monte Carlo & stress-testing | [🚀 Streamlit.io](https://finsight-signals.streamlit.app/) | [GitHub](https://github.com/KalsoumDS/finsight) |
+| **ChatAutoML** | Conversational no-code ML platform with Optuna Bayesian optimization | [🚀 Streamlit.io](https://lbx6ryyhzigbsh3d5uwiyg.streamlit.app/) | [GitHub](https://github.com/KalsoumDS/ChatAutoML-Bot) |
+| **RAG Document Intelligence** | Vector search & sourced Q&A over ESG reports and regulations | [🚀 Streamlit.io](https://rag-document-intelligence-2dkrcn85yperhuxoqg6p6g.streamlit.app/) | [GitHub](https://github.com/KalsoumDS/RAG-Document-Intelligence) |
+| **Industrial Predictive Maintenance** | PyTorch autoencoder for IoT time-series anomaly detection | [🚀 Streamlit.io](https://industrial-anomaly-detection-3kvbtzwtmiwm7l74tsntcr.streamlit.app/) | [GitHub](https://github.com/KalsoumDS/Industrial-Anomaly-Detection) |
+| **Real-Time Face Recognition** | RTSP multi-camera access control, ArcFace/AdaFace benchmark, <35ms | — | [GitHub](https://github.com/KalsoumDS) |
 
 </div>
 

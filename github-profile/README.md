@@ -52,7 +52,7 @@ Data Scientist with a rigorous foundation in **Applied Mathematics**, specialize
 
 [![Portfolio](https://portfolio-oumou-kaltoum.vercel.app/assets/portfolio-preview.png)](https://portfolio-oumou-kaltoum.vercel.app)
 
-*Click the image to explore the interactive portfolio & live demos*
+*Click the image to explore the interactive portfolio & Streamlit applications*
 
 </div>
 
