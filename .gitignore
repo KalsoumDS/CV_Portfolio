@@ -1,0 +1,9 @@
+.idea/
+server.log
+portfolio_rd_2026.zip
+node_modules/
+*.pyc
+__pycache__/
+.pytest_cache/
+.vercel
+.env*

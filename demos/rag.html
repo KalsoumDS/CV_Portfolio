@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RAG Document Intelligence — Démo live</title>
+  <meta name="description" content="Retrieval-Augmented Generation : TF-IDF from scratch, chunking ~160 tokens, réponses extractives sourcées. Option Groq Llama-3.1 8B si clé API.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="demo.css">
+</head>
+<body data-demo="rag">
+
+  <header class="demo-top">
+    <a href="../#case-studies" class="demo-back" data-i18n="demo.back">Retour au portfolio</a>
+    <div class="demo-title-wrap">
+      <h1 data-i18n="rag.title">Intelligence Documentaire RAG</h1>
+      <p data-i18n="rag.sub">TF-IDF from scratch · Chunking ~160 tokens · Réponses extractives sourcées</p>
+    </div>
+    <div class="demo-top-actions">
+      <span class="demo-badge" data-i18n="demo.badge">Live</span>
+      <button type="button" class="demo-lang-btn" id="demoLangToggle">EN</button>
+    </div>
+  </header>
+
+  <div class="demo-shell">
+
+    <aside class="demo-sidebar">
+
+      <div class="demo-sidebar-section">
+        <div class="sidebar-section-label" data-i18n="rag.side.heading">
+          <i class="fa-solid fa-folder-open"></i>
+          Corpus &amp; Documents
+        </div>
+        <div class="field-group">
+          <label for="ragFile" data-i18n="rag.side.upload">Importer un document (.TXT uniquement — indexation réelle)</label>
+          <input type="file" id="ragFile" accept=".txt">
+          <div id="ragIndexStatus" style="display:none;"></div>
+        </div>
+        <div class="field-group">
+          <label for="corpus" data-i18n="rag.side.corpus">Ou sélectionner un corpus prédéfini</label>
+          <select id="corpus">
+            <option data-i18n="rag.side.corpus1">Rapports d'impact ESG &amp; Climat (extraits)</option>
+            <option data-i18n="rag.side.corpus2">Réglementations &amp; Conformité FR (extraits)</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="demo-sidebar-section">
+        <div class="sidebar-section-label" data-i18n="rag.side.retrieval">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          Paramètres de recherche
+        </div>
+        <div class="field-group">
+          <label for="topk" data-i18n="rag.side.topk">Top-K chunks retournés</label>
+          <input type="number" id="topk" value="3" min="1" max="10">
+        </div>
+        <div class="field-group">
+          <label>Indexation</label>
+          <input type="text" value="TF-IDF + folding diacritiques" readonly>
+        </div>
+      </div>
+
+      <div class="demo-sidebar-section">
+        <div class="sidebar-section-label" data-i18n="rag.side.gen">
+          <i class="fa-solid fa-wand-magic-sparkles"></i>
+          Génération (optionnelle)
+        </div>
+        <div class="field-group">
+          <label for="model" data-i18n="rag.side.model">Mode réponse</label>
+          <select id="model">
+            <option value="extractive" selected>Extractive TF-IDF (toujours actif)</option>
+            <option value="groq">Groq Llama-3.1 8B (si API key)</option>
+          </select>
+        </div>
+      </div>
+
+    </aside>
+
+    <main class="demo-main">
+
+      <div class="demo-intro">
+        <div class="demo-intro-icon"><i class="fa-solid fa-book"></i></div>
+        <div class="demo-intro-copy">
+          <strong data-i18n="rag.intro.title">Moteur RAG honnête</strong>
+          <p id="ragSummary" data-i18n="rag.note">Le système découpe les documents en chunks (~160 tokens), construit un index TF-IDF réel avec tokenisation (normalisation NFD, suppression diacritiques), et sélectionne les réponses par recouvrement de tokens avec la question. Pas d'étapes simulées, pas de noms de librairies inventés.</p>
+        </div>
+      </div>
+
+      <div class="section-heading">
+        <h3>
+          <span class="section-label">01</span>
+          <span>État de l'index documentaire</span>
+        </h3>
+        <span class="chip chip-ok"><i class="fa-solid fa-database"></i> Index réel</span>
+      </div>
+      <div class="demo-grid">
+        <div class="demo-card"><strong id="metricDocs">—</strong><span data-i18n="rag.card.docs">Chunks indexés</span></div>
+        <div class="demo-card"><strong id="metricLatency">—</strong><span data-i18n="rag.card.latency">Latence retrieval</span></div>
+        <div class="demo-card"><strong id="metricTokens">—</strong><span data-i18n="rag.card.tokens">Tokens pertinents retournés</span></div>
+      </div>
+
+      <section class="demo-panel">
+        <div class="panel-head">
+          <div class="panel-title-group">
+            <h3 data-i18n="rag.sec.ask">Interroger le corpus documentaire</h3>
+            <p>Réponses 100% sourcées · Extraits chunks affichés</p>
+          </div>
+        </div>
+        <div class="chat-input-row">
+          <input type="text" id="ragQuestion" class="chat-input" data-i18n-placeholder="rag.input.placeholder" placeholder="Ex : quelles obligations ESG de reporting en France ?">
+          <button type="button" class="demo-btn" id="runRag" data-i18n="rag.btn.analyze">
+            <i class="fa-solid fa-paper-plane"></i> Rechercher
+          </button>
+        </div>
+        <div class="chat-log" id="ragLog">
+          <div class="chat-bubble bot" data-i18n="rag.welcome">Posez une question sur l'ESG, le climat ou la conformité. Je cherche les chunks les plus pertinents via TF-IDF et vous renvoie une réponse extractive avec les sources citées.</div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <script src="demo.js"></script>
+</body>
+</html>

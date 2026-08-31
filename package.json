@@ -1,0 +1,10 @@
+{
+  "name": "portfolio-demos",
+  "private": true,
+  "engines": {
+    "node": ">=18"
+  },
+  "devDependencies": {
+    "playwright": "^1.62.1"
+  }
+}

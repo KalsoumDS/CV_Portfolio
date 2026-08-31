@@ -1,0 +1,13 @@
+[theme]
+primaryColor = "#ff4b4b"
+backgroundColor = "#f8f9fa"
+secondaryBackgroundColor = "#ffffff"
+textColor = "#000000"
+font = "sans serif"
+
+[client]
+showErrorDetails = false
+maxUploadSize = 200
+
+[logger]
+level = "info"

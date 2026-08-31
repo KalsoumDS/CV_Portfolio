@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ChatAutoML — No-Code IA</title>
+  <meta name="description" content="AutoML conversationnel : StandardScaler from scratch, GridSearch kNN k∈{3,5,7,9}, Accuracy/F1/RMSE auto-détectés.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="demo.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+</head>
+<body data-demo="chatautoml">
+
+  <header class="demo-top">
+    <a href="../#case-studies" class="demo-back" data-i18n="demo.back">Retour au portfolio</a>
+    <div class="demo-title-wrap">
+      <h1 data-i18n="automl.title">ChatAutoML — No-Code IA</h1>
+      <p data-i18n="automl.sub">GridSearch kNN · StandardScaler from scratch · Détection auto de métrique</p>
+    </div>
+    <div class="demo-top-actions">
+      <span class="demo-badge" data-i18n="demo.badge">Live</span>
+      <button type="button" class="demo-lang-btn" id="demoLangToggle">EN</button>
+    </div>
+  </header>
+
+  <div class="demo-shell">
+
+    <aside class="demo-sidebar">
+
+      <div class="demo-sidebar-section">
+        <div class="sidebar-section-label" data-i18n="automl.side.ingest">
+          <i class="fa-solid fa-database"></i>
+          Ingestion de données
+        </div>
+        <div class="field-group">
+          <label for="automlFile" data-i18n="automl.side.upload">Importer un dataset (CSV)</label>
+          <input type="file" id="automlFile" accept=".csv,.json,.txt">
+        </div>
+        <div class="field-group">
+          <label for="dataset" data-i18n="automl.side.standard">Ou sélectionner un dataset standard</label>
+          <select id="dataset">
+            <option value="wine" data-i18n="automl.side.wine">Wine UCI · 13 features · 3 classes</option>
+            <option value="churn" selected data-i18n="automl.side.churn">Churn proxy · 4 features · Binaire</option>
+            <option value="house" data-i18n="automl.side.house">Prix proxy · 4 features · Régression</option>
+          </select>
+        </div>
+        <div class="field-group">
+          <label for="automlTarget" data-i18n="automl.side.target">Variable cible à prédire</label>
+          <select id="automlTarget">
+            <option value="default" data-i18n="automl.side.targetDefault">— Auto-détectée / dernière colonne —</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="demo-sidebar-section">
+        <div class="sidebar-section-label" data-i18n="automl.side.optuna">
+          <i class="fa-solid fa-sliders"></i>
+          Configuration kNN
+        </div>
+        <div class="field-group">
+          <label for="trials" data-i18n="automl.side.trials">Candidates k testées (GridSearch)</label>
+          <input type="text" id="trials" value="k ∈ {3, 5, 7, 9}" readonly>
+        </div>
+      </div>
+
+      <div class="demo-sidebar-section">
+        <div class="sidebar-section-label" data-i18n="automl.side.assistant">
+          <i class="fa-solid fa-message"></i>
+          Assistant IA
+        </div>
+        <div class="field-group">
+          <label for="automlPrompt" data-i18n="automl.side.promptLabel">Instructions en langage naturel</label>
+          <textarea id="automlPrompt" data-i18n-placeholder="automl.side.placeholder" placeholder="Ex : Construis un modèle pour prédire le churn, priorise le recall..."></textarea>
+        </div>
+      </div>
+
+      <button type="button" class="demo-btn" id="runAutoML" data-i18n="automl.side.run">
+        <i class="fa-solid fa-bolt"></i> Lancer le pipeline AutoML
+      </button>
+
+    </aside>
+
+    <main class="demo-main">
+
+      <div class="demo-intro">
+        <div class="demo-intro-icon"><i class="fa-solid fa-robot"></i></div>
+        <div class="demo-intro-copy">
+          <strong data-i18n="automl.intro.title">Pipeline d'entraînement supervisé</strong>
+          <p id="automlSummary" data-i18n="automl.note">ChatAutoML choisit un dataset, standardise les features via StandardScaler (from scratch), détecte la tâche (classification binaire / multi-classe / régression) et exécute un GridSearch kNN k∈{3,5,7,9} avec train/test split seedé.</p>
+        </div>
+      </div>
+
+      <div id="datasetPreviewContainer" class="demo-panel" style="display:none;">
+        <div class="panel-head">
+          <div class="panel-title-group">
+            <h3 data-i18n="automl.preview">Aperçu du dataset</h3>
+            <p><span class="chip chip-accent"><i class="fa-solid fa-table"></i> 10 premières lignes</span></p>
+          </div>
+        </div>
+        <div class="table-wrap">
+          <table id="datasetPreviewTable" class="preview-table"></table>
+        </div>
+      </div>
+
+      <div class="section-heading">
+        <h3>
+          <span class="section-label">01</span>
+          <span data-i18n="automl.sec.results">Résultats GridSearch kNN</span>
+        </h3>
+        <span class="chip chip-accent"><i class="fa-solid fa-trophy"></i> Best k</span>
+      </div>
+      <div class="demo-grid" id="automlMetrics" style="display:none;">
+        <div class="demo-card"><strong id="metricDataset">—</strong><span data-i18n="automl.card.dataset">Dataset</span></div>
+        <div class="demo-card"><strong id="metricModel">—</strong><span data-i18n="automl.card.bestModel">k retenu (GridSearch)</span></div>
+        <div class="demo-card"><strong id="metricValue">—</strong><span id="metricLabel" data-i18n="automl.card.metric">Métrique</span></div>
+        <div class="demo-card"><strong id="metricParams">—</strong><span data-i18n="automl.card.params">Métrique / Tâche</span></div>
+      </div>
+
+      <section class="demo-panel">
+        <div class="panel-head">
+          <div class="panel-title-group">
+            <h3 data-i18n="automl.sec.chat">Pipeline &amp; discussion avec l'assistant</h3>
+            <p>Traces d'exécution réelles · Score par k · Pas de simulation</p>
+          </div>
+        </div>
+        <div class="chat-log" id="automlLog">
+          <div class="chat-bubble bot" data-i18n="automl.welcome">Bonjour. Importez un dataset CSV, ou décrivez votre objectif (classification binaire, multi-classe, régression). Je sélectionne le dataset, exécute StandardScaler + GridSearch kNN k∈{3,5,7,9} et vous montre le score par k ainsi que le meilleur modèle.</div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <script src="demo.js"></script>
+</body>
+</html>
