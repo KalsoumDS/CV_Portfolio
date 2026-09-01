@@ -396,7 +396,7 @@ const TERMINAL_TARGETS = {
   explore: '#about'
 };
 
-let lang = localStorage.getItem('lang') || 'fr';
+let lang = 'fr'; // always start in French
 let theme = 'light'; // always start with light theme
 let terminalActive = false;
 
@@ -420,7 +420,7 @@ const chatbotSend = document.getElementById('chatbotSend');
 
 function applyLang(l) {
   lang = l;
-  localStorage.setItem('lang', l);
+  // Note: lang is NOT persisted to localStorage — always starts French on page load
   document.documentElement.lang = l;
   langLabel.textContent = l === 'fr' ? 'EN' : 'FR';
 
