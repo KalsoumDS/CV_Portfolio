@@ -148,6 +148,7 @@ const T = {
     'journey.experience': 'Expérience',
     'journey.formation': 'Formation',
     'journey.present': 'présent',
+    'journey.aba.date': 'Fév 2026 — Juil 2026',
     'journey.aba': 'R&D Data Scientist',
     'journey.aba.org': 'ABA Technology / Nextronic — Casablanca',
     'journey.aba.desc': 'Deep learning, computer vision, validation de modèles et prototypes industriels temps réel.',
@@ -331,6 +332,7 @@ const T = {
     'journey.experience': 'Experience',
     'journey.formation': 'Education',
     'journey.present': 'present',
+    'journey.aba.date': 'Feb 2026 — Jul 2026',
     'journey.aba': 'R&D Data Scientist',
     'journey.aba.org': 'ABA Technology / Nextronic — Casablanca',
     'journey.aba.desc': 'Deep learning, computer vision, model validation and real-time industrial prototypes.',
@@ -395,7 +397,7 @@ const TERMINAL_TARGETS = {
 };
 
 let lang = localStorage.getItem('lang') || 'fr';
-let theme = localStorage.getItem('theme') || 'dark';
+let theme = localStorage.getItem('theme') || 'light';
 let terminalActive = false;
 
 const langToggle = document.getElementById('langToggle');
