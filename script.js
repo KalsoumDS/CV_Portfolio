@@ -396,6 +396,9 @@ const TERMINAL_TARGETS = {
   explore: '#about'
 };
 
+// Always reset to defaults — clear any stale localStorage values
+localStorage.removeItem('lang');
+localStorage.removeItem('theme');
 let lang = 'fr'; // always start in French
 let theme = 'light'; // always start with light theme
 let terminalActive = false;
