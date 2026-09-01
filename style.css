@@ -40,10 +40,10 @@
   --accent-3: #a7583d;
   --border: rgba(42, 31, 17, 0.08);
   --border-strong: rgba(42, 31, 17, 0.16);
-  --terminal-bg: #f5efe3;
-  --terminal-text: #2a1f11;
-  --terminal-muted: rgba(42, 31, 17, 0.65);
-  --terminal-faint: rgba(42, 31, 17, 0.35);
+  --terminal-bg: #0f0c07;
+  --terminal-text: #f3e8d4;
+  --terminal-muted: rgba(243, 232, 212, 0.65);
+  --terminal-faint: rgba(243, 232, 212, 0.40);
   --shadow: 0 8px 32px rgba(154, 123, 79, 0.10);
 }
 
