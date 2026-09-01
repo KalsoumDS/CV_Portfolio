@@ -1,0 +1,26 @@
+name: Keep Streamlit Apps Alive
+
+on:
+  schedule:
+    # Ping every 25 minutes — keeps all 5 apps awake during the day (UTC)
+    - cron: '*/25 6-22 * * *'
+  workflow_dispatch: # allow manual trigger
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Wake up Streamlit apps
+        run: |
+          urls=(
+            "https://finsight-signals.streamlit.app/"
+            "https://lbx6ryyhzigbsh3d5uwiyg.streamlit.app/"
+            "https://rag-document-intelligence-2dkrcn85yperhuxoqg6p6g.streamlit.app/"
+            "https://industrial-anomaly-detection-3kvbtzwtmiwm7l74tsntcr.streamlit.app/"
+            "https://cardiovascular-disease-prediction-ajmznkpqhaewp2xwdmhcgc.streamlit.app/"
+          )
+          for url in "${urls[@]}"; do
+            echo "Pinging: $url"
+            curl -sS -o /dev/null -w "%{http_code} %{url_effective}\n" --max-time 30 "$url" || true
+          done
+          echo "All pings done ✅"
