@@ -1242,6 +1242,143 @@ button { font-family: inherit; cursor: pointer; background: none; border: none; 
   gap: clamp(20px, 3vw, 32px);
 }
 
+/* ── Streamlit Live Demos ── */
+.streamlit-demos-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(24px, 3vw, 40px);
+}
+
+.streamlit-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s;
+  display: flex;
+  flex-direction: column;
+}
+
+.streamlit-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-3px);
+  box-shadow: 0 16px 48px color-mix(in srgb, var(--accent) 12%, transparent);
+}
+
+.streamlit-card-header {
+  padding: 22px 24px 16px;
+}
+
+.streamlit-card-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.streamlit-badge {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  padding: 3px 8px;
+  border-radius: 20px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  color: #fff;
+  text-shadow: none;
+}
+
+.streamlit-card-header h3 {
+  font-size: 1.02rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+  letter-spacing: -0.01em;
+}
+
+.streamlit-card-header p {
+  color: var(--muted);
+  font-size: 0.88rem;
+  line-height: 1.6;
+}
+
+.streamlit-embed-wrap {
+  position: relative;
+  flex: 1;
+  min-height: 480px;
+  background: var(--bg-alt);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  overflow: hidden;
+}
+
+.streamlit-embed {
+  width: 100%;
+  height: 100%;
+  min-height: 480px;
+  border: none;
+  display: block;
+}
+
+.streamlit-loading {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  z-index: 2;
+  background: var(--bg-alt);
+  transition: opacity 0.4s;
+}
+
+.streamlit-loading.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.streamlit-loading-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+  animation: streamlit-dot 1.4s ease-in-out infinite;
+}
+
+.streamlit-loading-dot:nth-child(2) { animation-delay: 0.2s; }
+.streamlit-loading-dot:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes streamlit-dot {
+  0%, 80%, 100% { transform: scale(0.7); opacity: 0.5; }
+  40% { transform: scale(1); opacity: 1; }
+}
+
+.streamlit-card-footer {
+  padding: 14px 24px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.streamlit-open-btn {
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  color: var(--accent);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: color 0.2s, gap 0.2s;
+}
+
+.streamlit-open-btn:hover {
+  color: var(--accent-hover);
+  gap: 9px;
+}
+
+@media (max-width: 900px) {
+  .streamlit-demos-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 .proj-card {
   background: var(--surface);
   border: 1px solid var(--border);

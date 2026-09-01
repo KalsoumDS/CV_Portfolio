@@ -688,3 +688,27 @@ if (splash) {
 }
 
 terminalInput.focus();
+
+/* ── Streamlit iframe lazy loading ── */
+(function () {
+  const embedWraps = document.querySelectorAll('.streamlit-embed-wrap');
+  if (!embedWraps.length) return;
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      const wrap = entry.target;
+      const iframe = wrap.querySelector('.streamlit-embed');
+      const loading = wrap.querySelector('.streamlit-loading');
+      if (iframe && !iframe.src) {
+        iframe.src = wrap.dataset.src;
+        iframe.addEventListener('load', () => {
+          if (loading) loading.classList.add('hidden');
+        });
+      }
+      observer.unobserve(wrap);
+    });
+  }, { threshold: 0.1 });
+
+  embedWraps.forEach(wrap => observer.observe(wrap));
+})();
