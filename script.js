@@ -128,21 +128,21 @@ const T = {
     'proj.title': 'Applications Streamlit Déployées',
     'proj.intro': 'Testez directement en direct les 5 applications interactives hébergées sur Streamlit Cloud.',
     'proj.demo': 'Lancer l\'App Streamlit.io ↗',
-    'proj.p1.title': 'Maladies Cardiovasculaires',
-    'proj.p1.desc': 'Modélisation prédictive des risques cardiaques et classification multi-paramètres cliniques.',
-    'proj.p1.cat': 'HealthTech',
-    'proj.p2.title': 'FinSight — Stress-Testing Financier',
-    'proj.p2.desc': 'VaR/CVaR, Monte Carlo 10K scénarios, LSTM de détection de régimes (F1=0.91), backtesting XGBoost.',
-    'proj.p2.cat': 'FinTech / Quant',
-    'proj.p3.title': 'ChatAutoML — AutoML No-Code',
-    'proj.p3.desc': 'Optuna bayésien, 8 algorithmes comparés, meilleur modèle en <60s, rapport automatique complet.',
-    'proj.p3.cat': 'AutoML / IA',
-    'proj.p4.title': 'RAG Document Intelligence',
-    'proj.p4.desc': 'FAISS + Mistral AI, précision contextuelle >92%, réponses sourcées sur corpus ESG 500+ pages.',
-    'proj.p4.cat': 'NLP / GenAI',
-    'proj.p5.title': 'Maintenance Prédictive IoT',
-    'proj.p5.desc': 'LSTM-CNN autoencoder, recall=0.97, alerte 15 min avant rupture, réduction 40% des arrêts.',
-    'proj.p5.cat': 'Industrie 4.0',
+    'proj.p1.title': 'FinSight — Stress-Testing Financier',
+    'proj.p1.desc': 'VaR/CVaR, Monte Carlo 10K scénarios, LSTM de détection de régimes (F1=0.91), backtesting XGBoost.',
+    'proj.p1.cat': 'FinTech / Quant',
+    'proj.p2.title': 'ChatAutoML — AutoML No-Code',
+    'proj.p2.desc': 'Optuna bayésien, 8 algorithmes comparés, meilleur modèle en <60s, rapport automatique complet.',
+    'proj.p2.cat': 'AutoML / IA',
+    'proj.p3.title': 'RAG Document Intelligence',
+    'proj.p3.desc': 'FAISS + Mistral AI, précision contextuelle >92%, réponses sourcées sur corpus ESG 500+ pages.',
+    'proj.p3.cat': 'NLP / GenAI',
+    'proj.p4.title': 'Maintenance Prédictive IoT',
+    'proj.p4.desc': 'LSTM-CNN autoencoder, recall=0.97, alerte 15 min avant rupture, réduction 40% des arrêts.',
+    'proj.p4.cat': 'Industrie 4.0',
+    'proj.p5.title': 'Maladies Cardiovasculaires',
+    'proj.p5.desc': 'Modélisation prédictive des risques cardiaques et classification multi-paramètres cliniques.',
+    'proj.p5.cat': 'HealthTech',
     'journey.tag': 'Parcours',
     'journey.title': 'Expérience & formation',
     'journey.experience': 'Expérience',
@@ -312,21 +312,21 @@ const T = {
     'proj.title': 'Deployed Streamlit Applications',
     'proj.intro': 'Test all 5 interactive applications deployed live on Streamlit Cloud.',
     'proj.demo': 'Launch Streamlit App ↗',
-    'proj.p1.title': 'Cardiovascular Prediction',
-    'proj.p1.desc': 'Predictive modeling of cardiac risks and multi-parameter clinical feature classification.',
-    'proj.p1.cat': 'HealthTech',
-    'proj.p2.title': 'Finsight — Stress-Testing',
-    'proj.p2.desc': 'Financial risk assessment engine, VaR/CVaR calculation and volatility modeling for SMEs.',
-    'proj.p2.cat': 'FinTech / Quant',
-    'proj.p3.title': 'ChatAutoML — No-Code AI',
-    'proj.p3.desc': 'Conversational interface making predictive machine learning and Optuna optimization accessible to all.',
-    'proj.p3.cat': 'AutoML / AI',
-    'proj.p4.title': 'RAG Document Intelligence',
-    'proj.p4.desc': 'Vector search and 100% sourced answers for ESG impact reports and regulatory policies.',
-    'proj.p4.cat': 'NLP / GenAI',
-    'proj.p5.title': 'IoT Predictive Maintenance',
-    'proj.p5.desc': 'Early detection of sensor drift and industrial failure prevention using PyTorch autoencoders.',
-    'proj.p5.cat': 'Smart Factory',
+    'proj.p1.title': 'Finsight — Stress-Testing',
+    'proj.p1.desc': 'Financial risk assessment engine, VaR/CVaR calculation and volatility modeling for SMEs.',
+    'proj.p1.cat': 'FinTech',
+    'proj.p2.title': 'ChatAutoML — No-Code AI',
+    'proj.p2.desc': 'Conversational interface making predictive machine learning and Optuna optimization accessible to all.',
+    'proj.p2.cat': 'AutoML',
+    'proj.p3.title': 'RAG Document Intelligence',
+    'proj.p3.desc': 'Vector search and 100% sourced answers for ESG impact reports and regulatory policies.',
+    'proj.p3.cat': 'NLP / Societal',
+    'proj.p4.title': 'IoT Predictive Maintenance',
+    'proj.p4.desc': 'Early detection of sensor drift and industrial failure prevention using PyTorch autoencoders.',
+    'proj.p4.cat': 'Smart Factory',
+    'proj.p5.title': 'Cardiovascular Prediction',
+    'proj.p5.desc': 'Predictive modeling of cardiac risks and multi-parameter clinical feature classification.',
+    'proj.p5.cat': 'HealthTech',
     'journey.tag': 'Journey',
     'journey.title': 'Experience & education',
     'journey.experience': 'Experience',
@@ -397,7 +397,7 @@ const TERMINAL_TARGETS = {
 };
 
 let lang = localStorage.getItem('lang') || 'fr';
-let theme = localStorage.getItem('theme') || 'light';
+let theme = 'light'; // always start with light theme
 let terminalActive = false;
 
 const langToggle = document.getElementById('langToggle');
@@ -440,7 +440,7 @@ function applyLang(l) {
 
 function applyTheme(t) {
   theme = t;
-  localStorage.setItem('theme', t);
+  // Note: theme is NOT persisted to localStorage — always starts light on page load
   document.documentElement.setAttribute('data-theme', t);
 }
 
