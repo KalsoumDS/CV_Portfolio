@@ -34,6 +34,28 @@ const T = {
     'services.s1.title': 'Stratégie Data & IA',
     'services.s2.title': 'Systèmes ML sur mesure',
     'services.s3.title': 'Déploiement & MLOps',
+    'services.collab.tag': 'Modalités d\'intervention',
+    'services.collab.title': 'Comment travailler ensemble',
+    'services.collab.intro': 'Consultante indépendante disponible immédiatement — choisissez le format qui correspond à votre besoin.',
+    'services.m1.badge': '1 – 2 semaines',
+    'services.m1.title': 'Sprint ML Express',
+    'services.m1.desc': 'Un objectif, un livrable concret. Idéal pour valider la faisabilité d\'un modèle, prototyper une démo interactive Streamlit ou analyser vos données rapidement.',
+    'services.m1.d1': 'Prototype fonctionnel ou rapport d\'analyse',
+    'services.m1.d2': 'Code documenté & prêt à intégrer',
+    'services.m1.d3': 'Résultats livrés en fin de sprint',
+    'services.m2.badge': 'Forfait projet',
+    'services.m2.title': 'Mission Clé en Main',
+    'services.m2.desc': 'Cahier des charges défini ensemble, livraison en plusieurs étapes jalonnées. De la conception du modèle jusqu\'à l\'API FastAPI et la conteneurisation Docker.',
+    'services.m2.d1': 'Audit & cadrage technique inclus',
+    'services.m2.d2': 'Pipeline ML + API + Docker',
+    'services.m2.d3': '50% à la signature, 50% à la livraison',
+    'services.m3.badge': 'Disponibilité immédiate',
+    'services.m3.title': 'Renfort & Consulting Hebdomadaire',
+    'services.m3.desc': 'Je rejoins votre équipe comme référente Data / IA externe, 2 à 5 jours par semaine. Idéal pour les startups ou PME qui ont besoin d\'une expertise sans recruter à temps plein.',
+    'services.m3.d1': 'Facturation à la semaine ou au mois',
+    'services.m3.d2': 'Intégration agile dans votre équipe',
+    'services.m3.d3': 'Remote · Disponible immédiatement',
+    'services.cta': 'Discutons →',
     'skills.tag': 'Compétences',
     'skills.title': 'Expertise technique & mathématique',
     'skills.intro': 'Un socle quantitatif rigoureux en Mathématiques Appliquées combiné à l\'ingénierie logicielle pour concevoir et déployer des architectures IA robustes.',
@@ -162,9 +184,8 @@ const T = {
     'journey.volunteer': 'Data Analyst (Bénévole)',
     'journey.volunteer.org': 'Refocus Child',
     'journey.volunteer.desc': 'Suivi de l\'intégrité des données, structuration de cadres de métadonnées et optimisation des bases de données de reporting.',
-    'journey.references': 'Références académiques & professionnelles',
+    'journey.references': 'Référence académique',
     'journey.ref1.role': 'VP Affaires Académiques, Université Mundiapolis',
-    'journey.ref2.role': 'Ingénieur IA, Nextronic (ABA Technology)',
     'contact.tag': 'Contact',
     'contact.title': 'Travaillons ensemble.',
     'contact.copy': 'Disponible pour des opportunités en Data Science, Machine Learning et modélisation prédictive.',
@@ -218,6 +239,28 @@ const T = {
     'services.s1.title': 'Data & AI Strategy',
     'services.s2.title': 'Custom ML Systems',
     'services.s3.title': 'Deployment & MLOps',
+    'services.collab.tag': 'How to Work With Me',
+    'services.collab.title': 'Collaboration Formats',
+    'services.collab.intro': 'Independent consultant available immediately — choose the format that fits your needs.',
+    'services.m1.badge': '1 – 2 Weeks',
+    'services.m1.title': 'ML Sprint',
+    'services.m1.desc': 'One goal, one concrete deliverable. Ideal for validating model feasibility, prototyping a Streamlit demo or analysing your data rapidly.',
+    'services.m1.d1': 'Working prototype or analysis report',
+    'services.m1.d2': 'Clean, documented code ready to integrate',
+    'services.m1.d3': 'Deliverables at end of sprint',
+    'services.m2.badge': 'Fixed-Price Project',
+    'services.m2.title': 'Turnkey Mission',
+    'services.m2.desc': 'Scope defined together, delivery in milestones. From model design to FastAPI endpoint and Docker containerisation.',
+    'services.m2.d1': 'Technical audit & scoping included',
+    'services.m2.d2': 'ML pipeline + API + Docker',
+    'services.m2.d3': '50% upfront, 50% on delivery',
+    'services.m3.badge': 'Immediately Available',
+    'services.m3.title': 'Weekly Consulting & Embedded Support',
+    'services.m3.desc': 'I join your team as an external Data / AI lead, 2 to 5 days per week. Ideal for startups or SMEs that need expertise without a full-time hire.',
+    'services.m3.d1': 'Weekly or monthly billing',
+    'services.m3.d2': 'Agile integration into your team',
+    'services.m3.d3': 'Remote · Available immediately',
+    'services.cta': 'Let\'s talk →',
     'skills.tag': 'Skills',
     'skills.title': 'Technical & Mathematical Expertise',
     'skills.intro': 'A rigorous quantitative foundation in Applied Mathematics combined with software engineering to design and deploy robust AI architectures.',
@@ -346,9 +389,8 @@ const T = {
     'journey.volunteer': 'Data Analyst (Volunteer)',
     'journey.volunteer.org': 'Refocus Child',
     'journey.volunteer.desc': 'Monitored data integrity, structured metadata frameworks, and optimized tracking databases to streamline operational reporting.',
-    'journey.references': 'Academic & Professional References',
+    'journey.references': 'Academic Reference',
     'journey.ref1.role': 'VP Academic Affairs, Mundiapolis University',
-    'journey.ref2.role': 'AI Engineer, Nextronic (ABA Technology)',
     'contact.tag': 'Contact',
     'contact.title': 'Let\'s work together.',
     'contact.copy': 'Available for opportunities in Data Science, Machine Learning, and predictive modeling.',
@@ -374,7 +416,8 @@ const FAQ = {
     { k: ['streamlit', 'cloud', 'app'], a: () => '<b>Applications déployées sur Streamlit Cloud :</b><br>• <a href="https://cardiovascular-disease-prediction-ajmznkpqhaewp2xwdmhcgc.streamlit.app/" target="_blank" rel="noopener">Prédiction Maladies Cardiovasculaires ↗</a><br>• <a href="https://finsight-signals.streamlit.app/" target="_blank" rel="noopener">FinSight — Stress-Testing Financier ↗</a><br>• <a href="https://lbx6ryyhzigbsh3d5uwiyg.streamlit.app/" target="_blank" rel="noopener">ChatAutoML Bot ↗</a><br>• <a href="https://industrial-anomaly-detection-3kvbtzwtmiwm7l74tsntcr.streamlit.app/" target="_blank" rel="noopener">Maintenance Prédictive Industrielle IoT ↗</a><br>• <a href="https://rag-document-intelligence-2dkrcn85yperhuxoqg6p6g.streamlit.app/" target="_blank" rel="noopener">RAG Document Intelligence ↗</a>' },
     { k: ['projet', 'réalisation', 'travail', 'github', 'aba', 'finsight', 'automl', 'rag', 'anomalie', 'cardio'], a: () => '<b>Projets d\'impact :</b><br>• Prédiction des Maladies Cardiovasculaires (ML HealthTech & Streamlit)<br>• Maintenance Prédictive Industrielle (PyTorch IoT)<br>• Intelligence Documentaire RAG (Analyse ESG & Réglementations)<br>• Finsight (Stress-Testing & Risque Financier PME)<br>• ChatAutoML (Démocratisation IA No-Code)<br>• Reconnaissance faciale temps réel (ABA Technology)' },
     { k: ['compétence', 'skill', 'stack', 'python', 'pytorch'], a: () => 'Compétences : Python, PyTorch, TensorFlow, OpenCV, FastAPI, Docker, Streamlit, LangChain, MLflow.' },
-    { k: ['disponible', 'freelance', 'recrut', 'emploi', 'remote'], a: () => 'Disponible pour opportunités en Data Science & ML Engineering (Remote / International).<br>Email : oumoukaltoumsall@gmail.com' },
+    { k: ['tarif', 'prix', 'coût', 'taux', 'facturation', 'semaine', 'semaines', 'jour', 'tjm', 'combien', 'consulting', 'consult', 'independant', 'indépendant', 'renfort', 'sprint', 'forfait', 'mission', 'hebdo'], a: () => '<b>Modalités d\'intervention :</b><br>⚡ <b>Sprint ML Express (1–2 sem.)</b> — Prototype, analyse ou démo livrés en fin de sprint.<br>🛠️ <b>Mission Clé en Main (Forfait)</b> — Conception → ML → API → Docker, 50% à la signature.<br>🤝 <b>Consulting Hebdomadaire</b> — Renfort 2 à 5 jours/semaine, facturation à la semaine ou au mois.<br><br>Disponible immédiatement · Remote / International<br>→ <a href="mailto:oumoukaltoumsall@gmail.com">oumoukaltoumsall@gmail.com</a>' },
+    { k: ['disponible', 'freelance', 'recrut', 'emploi', 'remote'], a: () => 'Disponible immédiatement pour des missions freelance, consulting ou des opportunités Data Science / ML Engineering (Remote / International).<br>Email : oumoukaltoumsall@gmail.com' },
     { k: ['contact', 'email', 'linkedin'], a: () => 'Email : oumoukaltoumsall@gmail.com<br>LinkedIn · GitHub' },
     { k: ['formation', 'master', 'diplôme'], a: () => 'Master Data Science & IA — Mundiapolis<br>Licence Mathématiques Appliquées — ISM' },
     { k: ['bonjour', 'salut', 'hello'], a: () => 'Bonjour ! Posez-moi vos questions ou utilisez les boutons ci-dessous.' }
@@ -383,7 +426,7 @@ const FAQ = {
     { k: ['streamlit', 'cloud', 'app'], a: () => '<b>Streamlit Cloud Applications:</b><br>• <a href="https://cardiovascular-disease-prediction-ajmznkpqhaewp2xwdmhcgc.streamlit.app/" target="_blank" rel="noopener">Cardiovascular Disease Prediction ↗</a><br>• <a href="https://finsight-signals.streamlit.app/" target="_blank" rel="noopener">FinSight — Financial Risk ↗</a><br>• <a href="https://lbx6ryyhzigbsh3d5uwiyg.streamlit.app/" target="_blank" rel="noopener">ChatAutoML Bot ↗</a><br>• <a href="https://industrial-anomaly-detection-3kvbtzwtmiwm7l74tsntcr.streamlit.app/" target="_blank" rel="noopener">Industrial IoT Predictive Maintenance ↗</a><br>• <a href="https://rag-document-intelligence-2dkrcn85yperhuxoqg6p6g.streamlit.app/" target="_blank" rel="noopener">RAG Document Intelligence ↗</a>' },
     { k: ['project', 'work', 'github', 'aba', 'finsight', 'automl', 'rag', 'anomaly', 'cardio'], a: () => '<b>High-Impact Projects:</b><br>• Cardiovascular Disease Prediction (HealthTech ML & Streamlit)<br>• Industrial Predictive Maintenance (PyTorch IoT)<br>• RAG Document Intelligence (ESG & Regulatory Analysis)<br>• Finsight (SME Financial Risk & Stress-Testing)<br>• ChatAutoML (No-Code AI Democratization)<br>• Real-Time Facial Recognition (ABA Tech)' },
     { k: ['skill', 'stack', 'python', 'pytorch'], a: () => 'Skills: Python, PyTorch, TensorFlow, OpenCV, FastAPI, Docker, Streamlit, LangChain, MLflow.' },
-    { k: ['available', 'freelance', 'hire', 'remote'], a: () => 'Available for Data Science & ML Engineering opportunities (Remote / International).' },
+    { k: ['rate', 'price', 'cost', 'week', 'weekly', 'day', 'billing', 'hire', 'consulting', 'consult', 'sprint', 'mission', 'retainer', 'embedded', 'independent', 'freelance', 'how much', 'available', 'remote'], a: () => '<b>Collaboration Formats:</b><br>⚡ <b>ML Sprint (1–2 weeks)</b> — Working prototype or analysis report, delivered end of sprint.<br>🛠️ <b>Turnkey Mission (Fixed-price)</b> — ML pipeline + API + Docker, 50% upfront.<br>🤝 <b>Weekly Consulting</b> — 2–5 days/week embedded, billed weekly or monthly.<br><br>Available immediately · Remote / Worldwide<br>→ <a href="mailto:oumoukaltoumsall@gmail.com">oumoukaltoumsall@gmail.com</a>' },
     { k: ['contact', 'email', 'linkedin'], a: () => 'Email: oumoukaltoumsall@gmail.com' },
     { k: ['education', 'master', 'degree'], a: () => 'Master Data Science & AI — Mundiapolis · ISM' },
     { k: ['hello', 'hi', 'hey'], a: () => 'Hello! Ask me anything or use the buttons below.' }
@@ -711,4 +754,158 @@ terminalInput.focus();
   }, { threshold: 0.1 });
 
   embedWraps.forEach(wrap => observer.observe(wrap));
+})();
+
+/* ── Streamlit Keep-Alive & Smart Wake-Up UX ── */
+(function () {
+  // All live Streamlit app URLs
+  const STREAMLIT_APPS = [
+    { url: 'https://finsight-signals.streamlit.app/', key: 'finsight' },
+    { url: 'https://lbx6ryyhzigbsh3d5uwiyg.streamlit.app/', key: 'automl' },
+    { url: 'https://rag-document-intelligence-2dkrcn85yperhuxoqg6p6g.streamlit.app/', key: 'rag' },
+    { url: 'https://industrial-anomaly-detection-3kvbtzwtmiwm7l74tsntcr.streamlit.app/', key: 'industrial' },
+    { url: 'https://cardiovascular-disease-prediction-ajmznkpqhaewp2xwdmhcgc.streamlit.app/', key: 'cardio' }
+  ];
+
+  const PING_INTERVAL_MS = 4 * 60 * 1000; // ping every 4 min to prevent 5-min sleep
+
+  // Status map: 'checking' | 'online' | 'waking'
+  const appStatus = {};
+  STREAMLIT_APPS.forEach(a => { appStatus[a.key] = 'checking'; });
+
+  // Inject wake-up toast styles
+  const style = document.createElement('style');
+  style.textContent = `
+    /* ── Dynamic badge states ── */
+    .streamlit-badge { transition: background 0.3s, color 0.3s; }
+    .streamlit-badge.badge--online  { background: rgba(16,185,129,.15); color: #10b981; border: 1px solid rgba(16,185,129,.3); }
+    .streamlit-badge.badge--waking  { background: rgba(245,158,11,.13); color: #f59e0b; border: 1px solid rgba(245,158,11,.3); animation: pulse-badge 1.2s infinite; }
+    .streamlit-badge.badge--checking{ background: rgba(148,163,184,.1);  color: #94a3b8; border: 1px solid rgba(148,163,184,.2); }
+    @keyframes pulse-badge { 0%,100%{opacity:1} 50%{opacity:.5} }
+
+    /* ── Wake-up overlay on card click ── */
+    .streamlit-wakeup-toast {
+      position: fixed; bottom: 28px; left: 50%; transform: translateX(-50%) translateY(20px);
+      background: rgba(15,23,42,.95); color: #e2e8f0;
+      backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(99,102,241,.35); border-radius: 12px;
+      padding: 12px 22px; display: flex; align-items: center; gap: 12px;
+      font-family: 'Inter', sans-serif; font-size: 13.5px; font-weight: 500;
+      box-shadow: 0 8px 32px rgba(0,0,0,.45);
+      z-index: 9999; opacity: 0; pointer-events: none;
+      transition: opacity .35s ease, transform .35s ease;
+    }
+    .streamlit-wakeup-toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+    .streamlit-wakeup-toast .toast-spinner {
+      width: 18px; height: 18px; border-radius: 50%;
+      border: 2.5px solid rgba(99,102,241,.3);
+      border-top-color: #818cf8;
+      animation: spin-toast .8s linear infinite; flex-shrink: 0;
+    }
+    @keyframes spin-toast { to { transform: rotate(360deg); } }
+    .streamlit-wakeup-toast .toast-icon-ok { color: #10b981; font-size: 18px; flex-shrink: 0; }
+    .streamlit-wakeup-toast .toast-label { line-height: 1.3; }
+    .streamlit-wakeup-toast .toast-label strong { display: block; color: #f8fafc; }
+    .streamlit-wakeup-toast .toast-label span { font-size: 11.5px; color: #94a3b8; }
+  `;
+  document.head.appendChild(style);
+
+  // ── Toast helper ──
+  let toastEl = null;
+  let toastTimer = null;
+  function showToast(html, autoHideMs = 0) {
+    if (!toastEl) {
+      toastEl = document.createElement('div');
+      toastEl.className = 'streamlit-wakeup-toast';
+      document.body.appendChild(toastEl);
+    }
+    if (toastTimer) clearTimeout(toastTimer);
+    toastEl.innerHTML = html;
+    requestAnimationFrame(() => { toastEl.classList.add('show'); });
+    if (autoHideMs > 0) {
+      toastTimer = setTimeout(() => { toastEl.classList.remove('show'); }, autoHideMs);
+    }
+  }
+  function hideToast() {
+    if (toastEl) toastEl.classList.remove('show');
+    if (toastTimer) clearTimeout(toastTimer);
+  }
+
+  // ── Update badge for an app ──
+  function updateBadge(key, status) {
+    appStatus[key] = status;
+    const badge = document.querySelector(`.streamlit-preview--${key}`)
+      ?.closest('.streamlit-card')
+      ?.querySelector('.streamlit-badge');
+    if (!badge) return;
+    badge.classList.remove('badge--online', 'badge--waking', 'badge--checking');
+    if (status === 'online') {
+      badge.classList.add('badge--online');
+      badge.innerHTML = '✅ Live';
+    } else if (status === 'waking') {
+      badge.classList.add('badge--waking');
+      badge.innerHTML = '⏳ Démarrage…';
+    } else {
+      badge.classList.add('badge--checking');
+      badge.innerHTML = '● Vérif…';
+    }
+  }
+
+  // ── Ping an app (no-cors, just a warmup fetch) ──
+  async function pingApp(app) {
+    try {
+      await fetch(app.url, { mode: 'no-cors', cache: 'no-store' });
+      // no-cors = we can't read response, but the request wakes the server
+      updateBadge(app.key, 'online');
+    } catch (e) {
+      // Network error – app may be sleeping, don't mark as offline
+    }
+  }
+
+  // ── Initial ping of all apps ──
+  function pingAll() {
+    STREAMLIT_APPS.forEach(app => pingApp(app));
+  }
+
+  // Ping immediately on page load, then every 4 minutes
+  pingAll();
+  setInterval(pingAll, PING_INTERVAL_MS);
+
+  // Also set all badges to "checking" initially with proper class
+  STREAMLIT_APPS.forEach(app => updateBadge(app.key, 'online')); // optimistic default
+
+  // ── Click intercept: show wake-up toast when user opens a demo ──
+  STREAMLIT_APPS.forEach(app => {
+    // All links pointing to this app (preview + open btn)
+    const links = document.querySelectorAll(`a[href="${app.url}"]`);
+    links.forEach(link => {
+      link.addEventListener('click', () => {
+        const status = appStatus[app.key];
+        if (status === 'waking' || status === 'checking') {
+          showToast(
+            `<div class="toast-spinner"></div>
+             <div class="toast-label">
+               <strong>Application en cours de démarrage…</strong>
+               <span>Streamlit Community Cloud prend ~30s au réveil. Merci de patienter ☕</span>
+             </div>`,
+            8000
+          );
+        } else {
+          showToast(
+            `<span class="toast-icon-ok">✅</span>
+             <div class="toast-label">
+               <strong>Application active — ouverture…</strong>
+               <span>La démo se lance en plein écran.</span>
+             </div>`,
+            3000
+          );
+        }
+      });
+    });
+  });
+
+  // ── Visibility API: re-ping when user returns to tab ──
+  document.addEventListener('visibilitychange', () => {
+    if (document.visibilityState === 'visible') pingAll();
+  });
 })();
