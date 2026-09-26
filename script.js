@@ -9,7 +9,7 @@ const T = {
     'nav.contact': 'Contact',
     'nav.chat': 'Assistant IA',
     'hero.subtitle': 'Data Scientist & ML Engineer | Mathématiques Appliquées & Optimisation',
-    'hero.available': 'Disponible en Remote & International',
+    'hero.available': 'Disponible à Dakar & en Remote',
     'hero.intro': 'J\'aide les équipes à transformer des données, des modèles et des idées en produits IA utiles, robustes et prêts à être mis en production.',
     'hero.cta1': 'Voir mon travail',
     'hero.cta2': 'Me contacter',
@@ -21,40 +21,41 @@ const T = {
     'terminal.restart': 'RECOMMENCER',
     'terminal.scroll': 'SCROLL',
     'terminal.scrollHint': 'scroll ↓',
-    'terminal.recruit': 'Parfait — parlons de votre mission. Je suis disponible pour des opportunités en Data Science & ML Engineering.',
+    'terminal.recruit': 'Excellente nouvelle ! Je suis disponible pour un recrutement (Stage / CDD) ou des missions techniques en Data Science & ML Engineering.',
     'terminal.work': 'Voici une sélection de mes projets phares. Faites défiler pour explorer.',
     'terminal.explore': 'Prenez votre temps — découvrez mon parcours, mes valeurs et mon approche.',
     'terminal.unknown': 'Je n\'ai pas compris. Tapez 1, 2 ou 3 — ou posez une question libre.',
     'about.tag': 'À propos',
     'about.lead': 'Data Scientist avec une solide formation en Mathématiques Appliquées et optimisation des données.',
     'about.bio': 'Data Scientist & ML Engineer spécialisée dans la traduction de contraintes industrielles complexes en modèles prédictifs scalables, pipelines de données automatisés et architectures de Deep Learning.',
-    'about.loc.val': 'Remote / International',
-    'about.locationTag': 'Disponible en Remote & International',
+    'about.loc.val': 'Dakar, Sénégal · Remote',
+    'about.locationTag': 'Basée à Dakar, Sénégal · Disponible sur place & en Remote',
     'services.tag': 'Services',
     'services.s1.title': 'Stratégie Data & IA',
     'services.s2.title': 'Systèmes ML sur mesure',
     'services.s3.title': 'Déploiement & MLOps',
-    'services.collab.tag': 'Modalités d\'intervention',
-    'services.collab.title': 'Comment travailler ensemble',
-    'services.collab.intro': 'Consultante indépendante disponible immédiatement — choisissez le format qui correspond à votre besoin.',
-    'services.m1.badge': '1 – 2 semaines',
-    'services.m1.title': 'Sprint ML Express',
-    'services.m1.desc': 'Un objectif, un livrable concret. Idéal pour valider la faisabilité d\'un modèle, prototyper une démo interactive Streamlit ou analyser vos données rapidement.',
-    'services.m1.d1': 'Prototype fonctionnel ou rapport d\'analyse',
-    'services.m1.d2': 'Code documenté & prêt à intégrer',
-    'services.m1.d3': 'Résultats livrés en fin de sprint',
-    'services.m2.badge': 'Forfait projet',
-    'services.m2.title': 'Mission Clé en Main',
-    'services.m2.desc': 'Cahier des charges défini ensemble, livraison en plusieurs étapes jalonnées. De la conception du modèle jusqu\'à l\'API FastAPI et la conteneurisation Docker.',
-    'services.m2.d1': 'Audit & cadrage technique inclus',
-    'services.m2.d2': 'Pipeline ML + API + Docker',
-    'services.m2.d3': '50% à la signature, 50% à la livraison',
-    'services.m3.badge': 'Disponibilité immédiate',
-    'services.m3.title': 'Renfort & Consulting Hebdomadaire',
-    'services.m3.desc': 'Je rejoins votre équipe comme référente Data / IA externe, 2 à 5 jours par semaine. Idéal pour les startups ou PME qui ont besoin d\'une expertise sans recruter à temps plein.',
-    'services.m3.d1': 'Facturation à la semaine ou au mois',
-    'services.m3.d2': 'Intégration agile dans votre équipe',
-    'services.m3.d3': 'Remote · Disponible immédiatement',
+    'services.collab.tag': 'Modalités & Opportunités',
+    'services.collab.title': 'Comment collaborer ensemble',
+    'services.collab.intro': 'Basée à Dakar, disponible pour un recrutement (Stage / CDD / CDI), une mission projet ou du consulting technique — sur place ou en remote.',
+    'services.m0.badge': 'Stage · CDD · CDI',
+    'services.m0.title': 'Recrutement en Entreprise (Stage / CDD / CDI)',
+    'services.m0.desc': 'Prête à rejoindre votre équipe technique comme Data Scientist ou ML Engineer. Idéale pour accélérer vos chantiers R&D, Computer Vision, NLP et déploiement de modèles.',
+    'services.m0.d1': 'Dakar (sur place) ou en Remote',
+    'services.m0.d2': 'Double cursus Mathématiques & IA (Bac+5)',
+    'services.m0.d3': 'Disponible immédiatement · Stage, CDD ou CDI',
+    'services.m0.cta': 'Me recruter →',
+    'services.m1.badge': 'Mission Projet',
+    'services.m1.title': 'Projets & Développements IA',
+    'services.m1.desc': 'Conception et réalisation de briques IA sur mesure : modélisation prédictive, vision par ordinateur, architectures RAG/LLM ou prototypes interactifs (Streamlit, FastAPI).',
+    'services.m1.d1': 'Cadrage technique & livrables jalonnés',
+    'services.m1.d2': 'Code robuste, documenté & conteneurisé Docker',
+    'services.m1.d3': 'Dakar (sur place) ou en Remote',
+    'services.m2.badge': 'Consulting & Renfort',
+    'services.m2.title': 'Consulting & Renfort d\'Équipe',
+    'services.m2.desc': 'Intervention ciblée pour auditer, concevoir ou industrialiser vos solutions ML (pipelines data, optimisation de modèles, MLOps) ou renforcer vos équipes techniques.',
+    'services.m2.d1': 'Audit algorithmique, modélisation & MLOps',
+    'services.m2.d2': 'Intervention flexible au forfait ou au temps passé',
+    'services.m2.d3': 'Dakar (sur place) ou en Remote',
     'services.cta': 'Discutons →',
     'skills.tag': 'Compétences',
     'skills.title': 'Expertise technique & mathématique',
@@ -128,7 +129,7 @@ const T = {
     'proof.tag': 'Études de cas',
     'proof.title': 'Projets & Ingénierie R&D',
     'proof.intro': 'Architectures de pointe, méthodologies quantitatives et solutions techniques prêtes pour la production.',
-    'proof.c1.org': 'ABA Technology / Nextronic · PFE Master 2026',
+    'proof.c1.org': 'ABA Technology / Nextronic · Stage 2026',
     'proof.c2.org': 'HealthTech & IA Médicale · 2025',
     'proof.c3.org': 'FinTech & Analyse Quantitative · 2025',
     'proof.c4.org': 'Democratisation ML · 2025',
@@ -175,7 +176,7 @@ const T = {
     'journey.aba.org': 'ABA Technology / Nextronic — Casablanca',
     'journey.aba.desc': 'Deep learning, computer vision, validation de modèles et prototypes industriels temps réel.',
     'journey.freelance': 'Freelance Data Scientist & ML Consultant',
-    'journey.freelance.org': 'Remote — projets indépendants',
+    'journey.freelance.org': 'Dakar & Remote — Projets R&D et indépendants',
     'journey.freelance.desc': 'Pipelines data, scraping, modélisation statistique, visualisations et solutions ML sur mesure.',
     'journey.master': 'Master Data Science & IA',
     'journey.master.org': 'Mundiapolis University of Casablanca',
@@ -188,7 +189,7 @@ const T = {
     'journey.ref1.role': 'VP Affaires Académiques, Université Mundiapolis',
     'contact.tag': 'Contact',
     'contact.title': 'Travaillons ensemble.',
-    'contact.copy': 'Disponible pour des opportunités en Data Science, Machine Learning et modélisation prédictive.',
+    'contact.copy': 'Disponible pour un recrutement (Stage / CDD / CDI), des missions techniques ou du consulting en Data Science & ML — basée à Dakar & Remote.',
     'contact.emailBtn': 'Envoyer un message',
     'contact.chatBtn': 'Discuter avec mon assistant IA',
     'footer.desc': 'Data Scientist & ML Engineer — produits IA, vision par ordinateur et déploiement ML pour des cas d\'usage concrets.',
@@ -214,7 +215,7 @@ const T = {
     'nav.contact': 'Contact',
     'nav.chat': 'AI Assistant',
     'hero.subtitle': 'Data Scientist & ML Engineer | Applied Mathematics & Data Optimization',
-    'hero.available': 'Available for Remote & International',
+    'hero.available': 'Available in Dakar & Remote',
     'hero.intro': 'I help teams turn data, models and ideas into useful, robust AI products ready for production.',
     'hero.cta1': 'View my work',
     'hero.cta2': 'Contact me',
@@ -226,40 +227,41 @@ const T = {
     'terminal.restart': 'RESTART',
     'terminal.scroll': 'SCROLL',
     'terminal.scrollHint': 'scroll ↓',
-    'terminal.recruit': 'Great — let\'s talk about your mission. I\'m available for Data Science & ML Engineering roles.',
+    'terminal.recruit': 'Great! I am available for recruitment (Internship / Contract) or project-based missions in Data Science & ML Engineering.',
     'terminal.work': 'Here\'s a selection of my featured projects. Scroll to explore.',
     'terminal.explore': 'Take your time — discover my journey, values and approach.',
     'terminal.unknown': 'I didn\'t understand. Type 1, 2 or 3 — or ask a free question.',
     'about.tag': 'About',
     'about.lead': 'Data Scientist with a rigorous foundation in Applied Mathematics and data optimization.',
     'about.bio': 'Data Scientist & ML Engineer specialized in translating complex industrial constraints into scalable predictive models, structured pipelines and Deep Learning architectures.',
-    'about.loc.val': 'Remote / Worldwide',
-    'about.locationTag': 'Available for Remote & International',
+    'about.loc.val': 'Dakar, Senegal · Remote',
+    'about.locationTag': 'Based in Dakar, Senegal · Available on-site & Remote',
     'services.tag': 'Services',
     'services.s1.title': 'Data & AI Strategy',
     'services.s2.title': 'Custom ML Systems',
     'services.s3.title': 'Deployment & MLOps',
-    'services.collab.tag': 'How to Work With Me',
-    'services.collab.title': 'Collaboration Formats',
-    'services.collab.intro': 'Independent consultant available immediately — choose the format that fits your needs.',
-    'services.m1.badge': '1 – 2 Weeks',
-    'services.m1.title': 'ML Sprint',
-    'services.m1.desc': 'One goal, one concrete deliverable. Ideal for validating model feasibility, prototyping a Streamlit demo or analysing your data rapidly.',
-    'services.m1.d1': 'Working prototype or analysis report',
-    'services.m1.d2': 'Clean, documented code ready to integrate',
-    'services.m1.d3': 'Deliverables at end of sprint',
-    'services.m2.badge': 'Fixed-Price Project',
-    'services.m2.title': 'Turnkey Mission',
-    'services.m2.desc': 'Scope defined together, delivery in milestones. From model design to FastAPI endpoint and Docker containerisation.',
-    'services.m2.d1': 'Technical audit & scoping included',
-    'services.m2.d2': 'ML pipeline + API + Docker',
-    'services.m2.d3': '50% upfront, 50% on delivery',
-    'services.m3.badge': 'Immediately Available',
-    'services.m3.title': 'Weekly Consulting & Embedded Support',
-    'services.m3.desc': 'I join your team as an external Data / AI lead, 2 to 5 days per week. Ideal for startups or SMEs that need expertise without a full-time hire.',
-    'services.m3.d1': 'Weekly or monthly billing',
-    'services.m3.d2': 'Agile integration into your team',
-    'services.m3.d3': 'Remote · Available immediately',
+    'services.collab.tag': 'Collaboration & Opportunities',
+    'services.collab.title': 'How We Can Work Together',
+    'services.collab.intro': 'Based in Dakar, available for recruitment (Internship / Contract / Permanent), project missions, or technical consulting — on-site or remote.',
+    'services.m0.badge': 'Internship · Contract · Permanent',
+    'services.m0.title': 'Company Recruitment (Internship / Contract / Permanent)',
+    'services.m0.desc': 'Ready to join your engineering team as Data Scientist or ML Engineer. Immediate contribution in ML/DL modeling, Computer Vision, NLP, and production deployment.',
+    'services.m0.d1': 'Dakar (on-site) or Remote',
+    'services.m0.d2': 'Dual background: Applied Mathematics & AI (MSc)',
+    'services.m0.d3': 'Available immediately · Internship, Contract or Permanent',
+    'services.m0.cta': 'Recruit me →',
+    'services.m1.badge': 'Project Mission',
+    'services.m1.title': 'Custom AI Projects & Development',
+    'services.m1.desc': 'End-to-end design and delivery of custom AI solutions: predictive modeling, computer vision, RAG/LLM architectures, or interactive prototypes (Streamlit, FastAPI).',
+    'services.m1.d1': 'Technical scoping & staged milestones',
+    'services.m1.d2': 'Robust, documented code containerized with Docker',
+    'services.m1.d3': 'Dakar (on-site) or Remote',
+    'services.m2.badge': 'Consulting & Advisory',
+    'services.m2.title': 'Consulting & Team Support',
+    'services.m2.desc': 'Targeted technical support to audit algorithms, optimize ML models, build robust data pipelines, or assist engineering teams.',
+    'services.m2.d1': 'Algorithmic audit, ML modeling & MLOps',
+    'services.m2.d2': 'Flexible engagement (fixed-scope or time-based)',
+    'services.m2.d3': 'Dakar (on-site) or Remote',
     'services.cta': 'Let\'s talk →',
     'skills.tag': 'Skills',
     'skills.title': 'Technical & Mathematical Expertise',
@@ -333,7 +335,7 @@ const T = {
     'proof.tag': 'Case Studies',
     'proof.title': 'Projects & R&D Engineering',
     'proof.intro': 'State-of-the-art architectures, quantitative methodologies and production-ready technical solutions.',
-    'proof.c1.org': 'ABA Technology / Nextronic · Master Thesis 2026',
+    'proof.c1.org': 'ABA Technology / Nextronic · Internship 2026',
     'proof.c2.org': 'HealthTech & Medical AI · 2025',
     'proof.c3.org': 'FinTech & Quantitative Analysis · 2025',
     'proof.c4.org': 'ML Democratization · 2025',
@@ -380,7 +382,7 @@ const T = {
     'journey.aba.org': 'ABA Technology / Nextronic — Casablanca',
     'journey.aba.desc': 'Deep learning, computer vision, model validation and real-time industrial prototypes.',
     'journey.freelance': 'Freelance Data Scientist & ML Consultant',
-    'journey.freelance.org': 'Remote — independent projects',
+    'journey.freelance.org': 'Dakar & Remote — Independent & R&D projects',
     'journey.freelance.desc': 'Data pipelines, scraping, statistical modelling, visualizations and custom ML solutions.',
     'journey.master': 'Master Data Science & AI',
     'journey.master.org': 'Mundiapolis University of Casablanca',
@@ -393,7 +395,7 @@ const T = {
     'journey.ref1.role': 'VP Academic Affairs, Mundiapolis University',
     'contact.tag': 'Contact',
     'contact.title': 'Let\'s work together.',
-    'contact.copy': 'Available for opportunities in Data Science, Machine Learning, and predictive modeling.',
+    'contact.copy': 'Available for recruitment opportunities (Internship / Contract / Permanent), technical missions, or consulting in Data Science & ML — based in Dakar & Remote.',
     'contact.emailBtn': 'Send a message',
     'contact.chatBtn': 'Chat with my AI assistant',
     'footer.desc': 'Data Scientist & ML Engineer — AI products, computer vision and ML deployment for concrete use cases.',
@@ -416,8 +418,8 @@ const FAQ = {
     { k: ['streamlit', 'cloud', 'app'], a: () => '<b>Applications déployées sur Streamlit Cloud :</b><br>• <a href="https://cardiovascular-disease-prediction-ajmznkpqhaewp2xwdmhcgc.streamlit.app/" target="_blank" rel="noopener">Prédiction Maladies Cardiovasculaires ↗</a><br>• <a href="https://finsight-signals.streamlit.app/" target="_blank" rel="noopener">FinSight — Stress-Testing Financier ↗</a><br>• <a href="https://lbx6ryyhzigbsh3d5uwiyg.streamlit.app/" target="_blank" rel="noopener">ChatAutoML Bot ↗</a><br>• <a href="https://industrial-anomaly-detection-3kvbtzwtmiwm7l74tsntcr.streamlit.app/" target="_blank" rel="noopener">Maintenance Prédictive Industrielle IoT ↗</a><br>• <a href="https://rag-document-intelligence-2dkrcn85yperhuxoqg6p6g.streamlit.app/" target="_blank" rel="noopener">RAG Document Intelligence ↗</a>' },
     { k: ['projet', 'réalisation', 'travail', 'github', 'aba', 'finsight', 'automl', 'rag', 'anomalie', 'cardio'], a: () => '<b>Projets d\'impact :</b><br>• Prédiction des Maladies Cardiovasculaires (ML HealthTech & Streamlit)<br>• Maintenance Prédictive Industrielle (PyTorch IoT)<br>• Intelligence Documentaire RAG (Analyse ESG & Réglementations)<br>• Finsight (Stress-Testing & Risque Financier PME)<br>• ChatAutoML (Démocratisation IA No-Code)<br>• Reconnaissance faciale temps réel (ABA Technology)' },
     { k: ['compétence', 'skill', 'stack', 'python', 'pytorch'], a: () => 'Compétences : Python, PyTorch, TensorFlow, OpenCV, FastAPI, Docker, Streamlit, LangChain, MLflow.' },
-    { k: ['tarif', 'prix', 'coût', 'taux', 'facturation', 'semaine', 'semaines', 'jour', 'tjm', 'combien', 'consulting', 'consult', 'independant', 'indépendant', 'renfort', 'sprint', 'forfait', 'mission', 'hebdo'], a: () => '<b>Modalités d\'intervention :</b><br>⚡ <b>Sprint ML Express (1–2 sem.)</b> — Prototype, analyse ou démo livrés en fin de sprint.<br>🛠️ <b>Mission Clé en Main (Forfait)</b> — Conception → ML → API → Docker, 50% à la signature.<br>🤝 <b>Consulting Hebdomadaire</b> — Renfort 2 à 5 jours/semaine, facturation à la semaine ou au mois.<br><br>Disponible immédiatement · Remote / International<br>→ <a href="mailto:oumoukaltoumsall@gmail.com">oumoukaltoumsall@gmail.com</a>' },
-    { k: ['disponible', 'freelance', 'recrut', 'emploi', 'remote'], a: () => 'Disponible immédiatement pour des missions freelance, consulting ou des opportunités Data Science / ML Engineering (Remote / International).<br>Email : oumoukaltoumsall@gmail.com' },
+    { k: ['tarif', 'prix', 'coût', 'taux', 'facturation', 'jour', 'tjm', 'combien', 'consulting', 'consult', 'independant', 'indépendant', 'renfort', 'forfait', 'mission', 'stage', 'cdd', 'cdi', 'recruter', 'recrutement', 'embauche'], a: () => '<b>Modalités d\'intervention & Recrutement :</b><br><b>[01] Recrutement en Entreprise (Stage / CDD / CDI)</b> — Intégration en équipe Data Science / ML, sur place à Dakar ou en Remote.<br><b>[02] Projets & Développements IA</b> — Conception & déploiement de solutions IA (modélisation prédictive, vision, LLM/RAG, FastAPI, Docker).<br><b>[03] Consulting & Renfort Technique</b> — Audit d\'algorithmes, optimisation de modèles, pipelines data et renfort d\'équipe.<br><br>Basée à Dakar, Sénégal · Disponible sur place & en Remote<br>→ <a href="mailto:oumoukaltoumsall@gmail.com">oumoukaltoumsall@gmail.com</a>' },
+    { k: ['disponible', 'freelance', 'recrut', 'emploi', 'remote', 'stage', 'cdd', 'cdi', 'embauche'], a: () => 'Disponible immédiatement pour un <b>recrutement en Stage, CDD ou CDI</b>, ainsi que pour des missions projet ou consulting en Data Science / ML Engineering (Dakar & Remote).<br>Email : oumoukaltoumsall@gmail.com' },
     { k: ['contact', 'email', 'linkedin'], a: () => 'Email : oumoukaltoumsall@gmail.com<br>LinkedIn · GitHub' },
     { k: ['formation', 'master', 'diplôme'], a: () => 'Master Data Science & IA — Mundiapolis<br>Licence Mathématiques Appliquées — ISM' },
     { k: ['bonjour', 'salut', 'hello'], a: () => 'Bonjour ! Posez-moi vos questions ou utilisez les boutons ci-dessous.' }
@@ -426,7 +428,7 @@ const FAQ = {
     { k: ['streamlit', 'cloud', 'app'], a: () => '<b>Streamlit Cloud Applications:</b><br>• <a href="https://cardiovascular-disease-prediction-ajmznkpqhaewp2xwdmhcgc.streamlit.app/" target="_blank" rel="noopener">Cardiovascular Disease Prediction ↗</a><br>• <a href="https://finsight-signals.streamlit.app/" target="_blank" rel="noopener">FinSight — Financial Risk ↗</a><br>• <a href="https://lbx6ryyhzigbsh3d5uwiyg.streamlit.app/" target="_blank" rel="noopener">ChatAutoML Bot ↗</a><br>• <a href="https://industrial-anomaly-detection-3kvbtzwtmiwm7l74tsntcr.streamlit.app/" target="_blank" rel="noopener">Industrial IoT Predictive Maintenance ↗</a><br>• <a href="https://rag-document-intelligence-2dkrcn85yperhuxoqg6p6g.streamlit.app/" target="_blank" rel="noopener">RAG Document Intelligence ↗</a>' },
     { k: ['project', 'work', 'github', 'aba', 'finsight', 'automl', 'rag', 'anomaly', 'cardio'], a: () => '<b>High-Impact Projects:</b><br>• Cardiovascular Disease Prediction (HealthTech ML & Streamlit)<br>• Industrial Predictive Maintenance (PyTorch IoT)<br>• RAG Document Intelligence (ESG & Regulatory Analysis)<br>• Finsight (SME Financial Risk & Stress-Testing)<br>• ChatAutoML (No-Code AI Democratization)<br>• Real-Time Facial Recognition (ABA Tech)' },
     { k: ['skill', 'stack', 'python', 'pytorch'], a: () => 'Skills: Python, PyTorch, TensorFlow, OpenCV, FastAPI, Docker, Streamlit, LangChain, MLflow.' },
-    { k: ['rate', 'price', 'cost', 'week', 'weekly', 'day', 'billing', 'hire', 'consulting', 'consult', 'sprint', 'mission', 'retainer', 'embedded', 'independent', 'freelance', 'how much', 'available', 'remote'], a: () => '<b>Collaboration Formats:</b><br>⚡ <b>ML Sprint (1–2 weeks)</b> — Working prototype or analysis report, delivered end of sprint.<br>🛠️ <b>Turnkey Mission (Fixed-price)</b> — ML pipeline + API + Docker, 50% upfront.<br>🤝 <b>Weekly Consulting</b> — 2–5 days/week embedded, billed weekly or monthly.<br><br>Available immediately · Remote / Worldwide<br>→ <a href="mailto:oumoukaltoumsall@gmail.com">oumoukaltoumsall@gmail.com</a>' },
+    { k: ['rate', 'price', 'cost', 'day', 'billing', 'hire', 'consulting', 'consult', 'mission', 'embedded', 'independent', 'freelance', 'how much', 'available', 'remote', 'internship', 'stage', 'contract', 'cdd', 'cdi', 'permanent'], a: () => '<b>Collaboration Formats & Hiring:</b><br><b>[01] Recruitment (Internship / Contract / Permanent)</b> — Joining your Data Science & ML team, on-site in Dakar or Remote.<br><b>[02] Custom AI Projects & Development</b> — Predictive modeling, computer vision, RAG/LLM architectures, or interactive prototypes.<br><b>[03] Consulting & Team Support</b> — Algorithmic audit, ML pipeline optimization, and embedded engineering support.<br><br>Based in Dakar, Senegal · Available on-site & Remote<br>→ <a href="mailto:oumoukaltoumsall@gmail.com">oumoukaltoumsall@gmail.com</a>' },
     { k: ['contact', 'email', 'linkedin'], a: () => 'Email: oumoukaltoumsall@gmail.com' },
     { k: ['education', 'master', 'degree'], a: () => 'Master Data Science & AI — Mundiapolis · ISM' },
     { k: ['hello', 'hi', 'hey'], a: () => 'Hello! Ask me anything or use the buttons below.' }
@@ -555,7 +557,7 @@ function handleTerminalAction(action, userText) {
 
 function parseTerminalInput(value) {
   const v = value.trim().toLowerCase();
-  if (v === '1' || v.includes('recrut') || v.includes('hire') || v.includes('emploi') || v.includes('job')) return 'recruit';
+  if (v === '1' || v.includes('recrut') || v.includes('hire') || v.includes('emploi') || v.includes('job') || v.includes('stage') || v.includes('cdd')) return 'recruit';
   if (v === '2' || v.includes('travail') || v.includes('projet') || v.includes('work') || v.includes('project')) return 'work';
   if (v === '3' || v.includes('explor') || v.includes('découvr') || v.includes('discover')) return 'explore';
 
@@ -841,13 +843,13 @@ terminalInput.focus();
     badge.classList.remove('badge--online', 'badge--waking', 'badge--checking');
     if (status === 'online') {
       badge.classList.add('badge--online');
-      badge.innerHTML = '✅ Live';
+      badge.innerHTML = '<span class="live-dot"></span>Live';
     } else if (status === 'waking') {
       badge.classList.add('badge--waking');
-      badge.innerHTML = '⏳ Démarrage…';
+      badge.innerHTML = '<span class="live-dot" style="background:#f59e0b"></span>Démarrage…';
     } else {
       badge.classList.add('badge--checking');
-      badge.innerHTML = '● Vérif…';
+      badge.innerHTML = '<span class="live-dot" style="background:#94a3b8"></span>Vérif…';
     }
   }
 
@@ -886,13 +888,13 @@ terminalInput.focus();
             `<div class="toast-spinner"></div>
              <div class="toast-label">
                <strong>Application en cours de démarrage…</strong>
-               <span>Streamlit Community Cloud prend ~30s au réveil. Merci de patienter ☕</span>
+               <span>Streamlit Community Cloud prend ~30s au réveil. Merci de patienter…</span>
              </div>`,
             8000
           );
         } else {
           showToast(
-            `<span class="toast-icon-ok">✅</span>
+            `<span class="toast-icon-ok"><i class="fa-solid fa-check"></i></span>
              <div class="toast-label">
                <strong>Application active — ouverture…</strong>
                <span>La démo se lance en plein écran.</span>

@@ -925,19 +925,20 @@ button { font-family: inherit; cursor: pointer; background: none; border: none; 
 .collab-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 20px;
+  gap: 24px;
 }
 
 .collab-card {
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding: 28px 26px;
+  padding: 28px 24px;
   display: flex;
   flex-direction: column;
   gap: 14px;
   transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
   border-left: 3px solid transparent;
+  position: relative;
 }
 
 .collab-card:hover {
@@ -945,61 +946,80 @@ button { font-family: inherit; cursor: pointer; background: none; border: none; 
   box-shadow: var(--shadow);
 }
 
-.collab-card--sprint  { border-left-color: var(--accent-2); }
-.collab-card--projet  { border-left-color: var(--accent); }
-.collab-card--retainer { border-left-color: var(--accent-3); }
+.collab-card--recrutement { border-left-color: var(--accent); }
+.collab-card--sprint      { border-left-color: var(--accent-2); }
+.collab-card--projet      { border-left-color: var(--accent-3); }
 
-.collab-card--sprint:hover  { border-color: var(--accent-2); }
-.collab-card--projet:hover  { border-color: var(--accent); }
-.collab-card--retainer:hover { border-color: var(--accent-3); }
+.collab-card--recrutement:hover { border-color: var(--accent); }
+.collab-card--sprint:hover      { border-color: var(--accent-2); }
+.collab-card--projet:hover      { border-color: var(--accent-3); }
 
 .collab-card-top {
   display: flex;
   align-items: center;
-  gap: 10px;
+  justify-content: space-between;
+  gap: 12px;
 }
 
-.collab-icon {
-  font-size: 1.4rem;
-  line-height: 1;
+.collab-num {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
 }
+
+.collab-card:nth-child(1) .collab-num { color: var(--accent); }
+.collab-card:nth-child(2) .collab-num { color: var(--accent-2); }
+.collab-card:nth-child(3) .collab-num { color: var(--accent-3); }
 
 .collab-badge {
   font-family: var(--font-mono);
-  font-size: 0.68rem;
+  font-size: 0.64rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   padding: 3px 10px;
-  border-radius: 20px;
+  border-radius: 999px;
   background: var(--accent-soft);
   color: var(--accent);
-  border: 1px solid rgba(189, 161, 120, 0.22);
+  border: 1px solid rgba(189, 161, 120, 0.25);
   font-weight: 600;
 }
 
-.collab-badge--highlight {
-  background: rgba(201, 123, 90, 0.15);
-  color: var(--accent-3);
-  border-color: rgba(201, 123, 90, 0.25);
-  animation: pulse-highlight 2.5s ease-in-out infinite;
+.collab-card:nth-child(1) .collab-badge {
+  color: var(--accent);
+  background: var(--accent-soft);
+  border-color: rgba(189, 161, 120, 0.25);
 }
 
-@keyframes pulse-highlight {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.65; }
+.collab-card:nth-child(2) .collab-badge {
+  color: var(--accent-2);
+  background: var(--accent-2-soft);
+  border-color: rgba(90, 154, 154, 0.25);
+}
+
+.collab-card:nth-child(3) .collab-badge {
+  color: var(--accent-3);
+  background: color-mix(in srgb, var(--accent-3) 14%, transparent);
+  border-color: color-mix(in srgb, var(--accent-3) 25%, transparent);
+}
+
+.collab-badge--highlight {
+  background: color-mix(in srgb, var(--accent) 18%, transparent);
+  border-color: var(--accent);
 }
 
 .collab-card h3 {
-  font-size: 1.12rem;
-  font-weight: 700;
-  line-height: 1.25;
+  font-size: 1.15rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.3;
   margin-top: 2px;
 }
 
 .collab-card p {
   color: var(--muted);
-  font-size: 0.9rem;
-  line-height: 1.62;
+  font-size: 0.92rem;
+  line-height: 1.65;
   flex: 1;
 }
 
@@ -1007,44 +1027,63 @@ button { font-family: inherit; cursor: pointer; background: none; border: none; 
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 7px;
-  margin: 0;
+  gap: 8px;
+  margin: 4px 0 0 0;
   padding: 0;
 }
 
 .collab-delivers li {
-  font-size: 0.83rem;
+  font-size: 0.84rem;
   color: var(--text);
-  opacity: 0.85;
+  opacity: 0.88;
   padding-left: 18px;
   position: relative;
-  line-height: 1.45;
+  line-height: 1.5;
 }
 
 .collab-delivers li::before {
-  content: '✓';
+  content: '—';
   position: absolute;
   left: 0;
+  font-family: var(--font-mono);
+  font-weight: 600;
+  font-size: 0.76rem;
   color: var(--accent);
-  font-weight: 700;
-  font-size: 0.82rem;
 }
+
+.collab-card:nth-child(2) .collab-delivers li::before { color: var(--accent-2); }
+.collab-card:nth-child(3) .collab-delivers li::before { color: var(--accent-3); }
 
 .collab-cta {
   display: inline-flex;
   align-items: center;
-  font-size: 0.88rem;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
   font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
   color: var(--accent);
   text-decoration: none;
-  margin-top: 4px;
-  transition: gap 0.2s, opacity 0.2s;
-  gap: 4px;
+  margin-top: auto;
+  padding-top: 14px;
+  transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
+.collab-card:nth-child(2) .collab-cta { color: var(--accent-2); }
+.collab-card:nth-child(3) .collab-cta { color: var(--accent-3); }
+
 .collab-cta:hover {
-  opacity: 0.8;
-  gap: 8px;
+  opacity: 0.85;
+  transform: translateX(4px);
+}
+
+.collab-arrow {
+  transition: transform 0.2s ease;
+}
+
+.collab-cta:hover .collab-arrow {
+  transform: translateX(3px);
 }
 
 /* ── Values ── */
@@ -1443,6 +1482,23 @@ button { font-family: inherit; cursor: pointer; background: none; border: none; 
   background: linear-gradient(90deg, var(--accent), var(--accent-2));
   color: #fff;
   text-shadow: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.live-dot {
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #fff;
+  animation: pulse-dot 1.8s infinite ease-in-out;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.35; transform: scale(0.75); }
 }
 
 .streamlit-card-header h3 {

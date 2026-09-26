@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>CV — Oumou Kaltoum Sall</title>
+<style>
+  @page { size: A4; margin: 0; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 9.0pt;
+    line-height: 1.30;
+    color: #111;
+    background: #fff;
+    padding: 9mm 14mm 8mm 14mm;
+    -webkit-print-color-adjust: exact;
+  }
+
+  /* ─── HEADER ─── */
+  .name {
+    font-size: 19pt;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    text-align: center;
+    margin-bottom: 2px;
+  }
+  .tagline {
+    font-size: 9.6pt;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 5px;
+    color: #222;
+  }
+  .contact {
+    font-size: 8.9pt;
+    text-align: center;
+    color: #333;
+    margin-bottom: 3px;
+  }
+  .contact a {
+    color: #111;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    font-weight: bold;
+  }
+  hr.top { border: none; border-top: 1.8px solid #111; margin: 5px 0 0 0; }
+
+  /* ─── SECTION ─── */
+  .section { margin-top: 8px; }
+  .section-title {
+    font-size: 9.1pt;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    border-bottom: 1.2px solid #111;
+    padding-bottom: 1px;
+    margin-bottom: 3px;
+  }
+
+  /* ─── RÉSUMÉ ─── */
+  .summary {
+    font-size: 8.8pt;
+    text-align: justify;
+    line-height: 1.32;
+  }
+
+  /* ─── SKILLS ─── */
+  .skill-row { font-size: 8.8pt; line-height: 1.32; margin-top: 2.5px; }
+  .skill-row b { font-weight: bold; }
+
+  /* ─── EXPERIENCE / PROJECT ENTRY ─── */
+  .entry { margin-top: 4.5px; }
+
+  .entry-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+  .entry-title { font-size: 9.8pt; font-weight: bold; }
+  .entry-date  { font-size: 8.9pt; font-weight: bold; color: #222; white-space: nowrap; }
+
+  .entry-sub {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-top: 0.5px;
+    margin-bottom: 1.5px;
+  }
+  .entry-role { font-size: 8.7pt; font-style: italic; font-weight: bold; }
+  .entry-loc  { font-size: 8.7pt; color: #444; white-space: nowrap; }
+
+  ul { list-style: disc; padding-left: 15px; margin-top: 1.5px; }
+  ul li { font-size: 8.7pt; line-height: 1.28; text-align: justify; margin-top: 1.5px; }
+
+  /* ─── EDUCATION ─── */
+  .edu { margin-top: 4.5px; }
+  .edu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+  .edu-school { font-size: 9.8pt; font-weight: bold; }
+  .edu-date   { font-size: 8.9pt; font-weight: bold; color: #222; white-space: nowrap; }
+  .edu-sub {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.5px;
+    font-size: 8.7pt;
+  }
+  .edu-degree { font-style: italic; color: #222; font-weight: 600; }
+  .edu-loc    { color: #444; }
+  .edu-desc   { font-size: 8.7pt; color: #333; margin-top: 1px; }
+
+  /* ─── MISC ─── */
+  .misc { margin-top: 2.5px; font-size: 8.8pt; line-height: 1.32; }
+
+  /* ─── QR + PORTFOLIO URL ─── */
+  .portfolio-link-block {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+  }
+  .portfolio-url-print {
+    display: none;
+  }
+  /* Impression : affiche l'URL complète visible dans la ligne de contact */
+  @media print {
+    .portfolio-url-print {
+      display: inline;
+      font-size: 8.2pt;
+      color: #333;
+      font-weight: normal;
+    }
+  }
+
+</style>
+</head>
+<body>
+
+<!-- ══════════════════ EN-TÊTE ══════════════════ -->
+<div class="name">Oumou Kaltoum Sall</div>
+<div class="tagline">Data Scientist &amp; ML Engineer | Mathématiques Appliquées &amp; Intelligence Artificielle</div>
+<div class="contact">
+  Dakar, Sénégal &nbsp;|&nbsp; +221 78 864 82 31 &nbsp;|&nbsp;
+  <a href="mailto:oumoukaltoumsall@gmail.com">oumoukaltoumsall@gmail.com</a>
+  &nbsp;|&nbsp;
+  <span class="portfolio-link-block">
+    <a href="https://portfolio-oumou-kaltoum.vercel.app" target="_blank">Portfolio</a>
+    <span class="portfolio-url-print">— portfolio-oumou-kaltoum.vercel.app</span>
+  </span>
+</div>
+<hr class="top">
+
+<!-- ══════════════════ RÉSUMÉ ══════════════════ -->
+<div class="section">
+  <div class="section-title">Résumé Professionnel</div>
+  <p class="summary">
+    Data Scientist et ML Engineer avec une double formation approfondie en Mathématiques Appliquées et Intelligence Artificielle.
+    Spécialisée dans la conception, l'optimisation et le déploiement de solutions d'apprentissage automatique sur l'ensemble du
+    cycle de vie de la donnée : formulation mathématique, exploration, modélisation avancée (Computer Vision, NLP, Séries temporelles)
+    et industrialisation en production (MLOps, microservices Docker, FastAPI, CI/CD). Reconnue pour ma rigueur analytique et mon
+    orientation résultats, je traduis des problématiques métiers complexes en architectures logicielles fiables, scalables et mesurables.
+  </p>
+</div>
+
+<!-- ══════════════════ EXPÉRIENCES PROFESSIONNELLES ══════════════════ -->
+<div class="section">
+  <div class="section-title">Expériences Professionnelles</div>
+
+  <div class="entry">
+    <div class="entry-header">
+      <span class="entry-title">ABA Technology / Nextronic</span>
+      <span class="entry-date">Fév 2026 – Juil 2026</span>
+    </div>
+    <div class="entry-sub">
+      <span class="entry-role">Data Scientist &amp; ML Engineer — Stage</span>
+      <span class="entry-loc">Casablanca, Maroc</span>
+    </div>
+    <ul>
+      <li>Conception et déploiement d'un pipeline complet de <b>reconnaissance faciale en temps réel</b> (détection, alignement, embedding) atteignant une latence inférence &lt; 35 ms et une précision &gt; 98 % sur cibles Edge embarquées.</li>
+      <li>Benchmarking d'architectures deep learning (CNN, MobileNetV3, InsightFace ArcFace) et compression via <b>ONNX Runtime &amp; quantification</b>, réduisant la consommation mémoire de 40 % sans perte d'exactitude.</li>
+      <li>Industrialisation sous forme d'<b>APIs REST FastAPI conteneurisées (Docker)</b> avec intégration CI/CD automatisée (tests unitaires, validation continue de non-régression).</li>
+    </ul>
+  </div>
+
+  <div class="entry">
+    <div class="entry-header">
+      <span class="entry-title">Refocus Child — Association</span>
+      <span class="entry-date">Jan 2023 – Juin 2024</span>
+    </div>
+    <div class="entry-sub">
+      <span class="entry-role">Data Analyst (Bénévole)</span>
+      <span class="entry-loc">Dakar, Sénégal</span>
+    </div>
+    <ul>
+      <li>Automatisation des flux de traitement et d'agrégation de données associatives en Python, <b>réduisant de 40 % les délais de production</b> des synthèses périodiques.</li>
+      <li>Modélisation et déploiement de tableaux de bord décisionnels dynamiques sous <b>Power BI</b> (mesures DAX complexes, modélisation en étoile) pour le reporting des KPI stratégiques aux bailleurs de fonds.</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ══════════════════ PROJETS R&D ══════════════════ -->
+<div class="section">
+  <div class="section-title">Projets R&amp;D &amp; Réalisations</div>
+
+  <div class="entry">
+    <div class="entry-header">
+      <span class="entry-title">FinSight — Système d'Analyse Prédictive de Risques Financiers</span>
+      <span class="entry-date">2025</span>
+    </div>
+    <div class="entry-sub">
+      <span class="entry-role">Python · PyTorch · XGBoost · LSTM · Streamlit · Monte Carlo</span>
+      <span class="entry-loc">Finance Quantitative</span>
+    </div>
+    <ul>
+      <li>Implémentation d'un moteur de simulations <b>Monte Carlo (10 000 scénarios)</b> pour l'évaluation de portefeuilles d'actifs et l'estimation de la Value at Risk (VaR 95/99% et CVaR).</li>
+      <li>Modèle de prévision de séries temporelles basé sur un réseau <b>LSTM, atteignant un F1-score de 0,91</b>, avec interface interactive de visualisation et stress-testing sous Streamlit.</li>
+    </ul>
+  </div>
+
+  <div class="entry">
+    <div class="entry-header">
+      <span class="entry-title">ChatAutoML — Plateforme AutoML &amp; Explicabilité No-Code</span>
+      <span class="entry-date">2025</span>
+    </div>
+    <div class="entry-sub">
+      <span class="entry-role">Python · Optuna · Scikit-learn · Streamlit</span>
+      <span class="entry-loc">MLOps / Automatisation</span>
+    </div>
+    <ul>
+      <li>Développement d'un orchestrateur permettant à un utilisateur d'importer un jeu de données et d'entraîner automatiquement le modèle optimal via optimisation bayésienne des hyperparamètres (Optuna).</li>
+      <li>Génération automatisée de rapports comparatifs détaillés (matrices de confusion, courbes ROC-AUC, score SHAP / importance des variables) en <b>moins de 60 secondes</b>.</li>
+    </ul>
+  </div>
+
+  <div class="entry">
+    <div class="entry-header">
+      <span class="entry-title">Assistant IA — Analyse de Documents Financiers Complexes (RAG)</span>
+      <span class="entry-date">2025</span>
+    </div>
+    <div class="entry-sub">
+      <span class="entry-role">LangChain · FAISS · Mistral AI · OpenAI API</span>
+      <span class="entry-loc">NLP / IA Générative</span>
+    </div>
+    <ul>
+      <li>Système de question-réponse sur volumétrie dense (&gt; 500 pages) exploitant une architecture <b>RAG (Retrieval-Augmented Generation)</b> couplée à un index vectoriel FAISS et reranking sémantique.</li>
+      <li>Précision et fidélité des réponses sourcées supérieure à <b>92 %</b>, testée et validée sur un corpus exhaustif de rapports financiers annuels.</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ══════════════════ FORMATION ══════════════════ -->
+<div class="section">
+  <div class="section-title">Formation</div>
+
+  <div class="edu">
+    <div class="edu-header">
+      <span class="edu-school">Université Mundiapolis</span>
+      <span class="edu-date">Oct 2024 – Juil 2026</span>
+    </div>
+    <div class="edu-sub">
+      <span class="edu-degree">Master Data Science &amp; Intelligence Artificielle (Bac+5)</span>
+      <span class="edu-loc">Casablanca, Maroc</span>
+    </div>
+    <div class="edu-desc">Enseignements clés : Deep Learning, Vision par Ordinateur, NLP &amp; LLMs, MLOps, Architectures Cloud &amp; Big Data.</div>
+  </div>
+
+  <div class="edu">
+    <div class="edu-header">
+      <span class="edu-school">Institut Supérieur de Management (ISM)</span>
+      <span class="edu-date">Oct 2021 – Août 2024</span>
+    </div>
+    <div class="edu-sub">
+      <span class="edu-degree">Licence Mathématiques Appliquées &amp; Informatique (Bac+3)</span>
+      <span class="edu-loc">Dakar, Sénégal</span>
+    </div>
+    <div class="edu-desc">Enseignements clés : Modélisation stochastique, Algèbre linéaire, Probabilités &amp; Statistiques, Algorithmique &amp; Optimisation.</div>
+  </div>
+</div>
+
+<!-- ══════════════════ COMPÉTENCES TECHNIQUES ══════════════════ -->
+<div class="section">
+  <div class="section-title">Compétences Techniques</div>
+  <div class="skill-row"><b>Langages &amp; Outils :</b> Python, SQL (PostgreSQL), Bash, Git, Docker, FastAPI, Streamlit, CI/CD, Linux.</div>
+  <div class="skill-row"><b>Machine Learning &amp; Deep Learning :</b> PyTorch, Scikit-learn, XGBoost, LightGBM, LSTM, CNN, Autoencodeurs, Optuna, ONNX.</div>
+  <div class="skill-row"><b>NLP &amp; IA Générative :</b> LangChain, FAISS, Mistral AI, OpenAI API, RAG, Embeddings, Hugging Face Transformers.</div>
+  <div class="skill-row"><b>Mathématiques &amp; Analyse :</b> Modélisation stochastique, Simulations Monte Carlo, Power BI (DAX), Pandas, NumPy.</div>
+</div>
+
+<!-- ══════════════════ CERTIFICATIONS & LANGUES ══════════════════ -->
+<div class="section">
+  <div class="section-title">Certifications &amp; Langues</div>
+  <div class="misc"><b>Certifications :</b> Data Analysis avec SQL, Excel &amp; Power BI — Microsoft via Coursera (En cours).</div>
+  <div class="misc"><b>Langues :</b> Français (Professionnel) &nbsp;·&nbsp; Anglais (Professionnel) &nbsp;·&nbsp; Wolof (Langue maternelle).</div>
+</div>
+
+</body>
+</html>
