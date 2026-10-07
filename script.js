@@ -911,3 +911,42 @@ terminalInput.focus();
     if (document.visibilityState === 'visible') pingAll();
   });
 })();
+
+// ── Modal Certificat Honoris (Visualisation seule sans téléchargement) ────────
+(function initCertifModal() {
+  const modal = document.getElementById('certifModal');
+  const openBtn = document.getElementById('openCertifModal');
+  const closeBtn = document.getElementById('closeCertifModal');
+  const closeActionBtn = document.getElementById('closeCertifModalBtn');
+
+  if (!modal) return;
+
+  function openModal(e) {
+    if (e) e.preventDefault();
+    modal.classList.add('active');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    modal.classList.remove('active');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  if (openBtn) openBtn.addEventListener('click', openModal);
+  if (closeBtn) closeBtn.addEventListener('click', closeModal);
+  if (closeActionBtn) closeActionBtn.addEventListener('click', closeModal);
+
+  // Fermeture en cliquant sur le fond flouté en dehors de la carte
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) closeModal();
+  });
+
+  // Fermeture avec la touche Échap
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.classList.contains('active')) {
+      closeModal();
+    }
+  });
+})();

@@ -683,12 +683,21 @@
           </div>
         </div>
         <div class="journey-col reveal">
-          <h3 class="journey-col-title" data-i18n="journey.formation">Formation</h3>
+          <h3 class="journey-col-title" data-i18n="journey.formation">Formation &amp; Certifications</h3>
           <div class="timeline">
             <article class="timeline-item">
               <time>2024 — Juil 2026</time>
               <h4 data-i18n="journey.master">Master Data Science & IA</h4>
               <p class="tl-org" data-i18n="journey.master.org">Mundiapolis University of Casablanca</p>
+            </article>
+            <article class="timeline-item">
+              <time>Sept 2025</time>
+              <h4>Honoris 21st Century Soft Skills Certificate</h4>
+              <p class="tl-org">Honoris Online Academy — Division of Employability</p>
+              <p class="tl-desc">Compétences d'avenir : Intelligence comportementale, pensée critique, créativité &amp; design thinking, communication, collaboration et entrepreneuriat.</p>
+              <button type="button" class="btn-certif-modal" id="openCertifModal">
+                <i class="fa-solid fa-award"></i> Voir le certificat officiel
+              </button>
             </article>
             <article class="timeline-item">
               <time>2021 — 2024</time>
@@ -779,6 +788,31 @@
     <div class="chatbot-input-row">
       <input type="text" id="chatbotInput" autocomplete="off" data-i18n-placeholder="chat.placeholder" placeholder="Posez une question…">
       <button type="button" id="chatbotSend" aria-label="Envoyer"><i class="fa-solid fa-paper-plane"></i></button>
+    </div>
+  </div>
+
+  <!-- Modal Certificat (Visualisation seule - Pas de téléchargement) -->
+  <div class="certif-modal-backdrop" id="certifModal" aria-hidden="true" role="dialog" aria-labelledby="certifModalTitle">
+    <div class="certif-modal-card">
+      <div class="certif-modal-header">
+        <div class="certif-modal-title-wrap">
+          <span class="certif-badge-pill">Certificat Officiel</span>
+          <h3 id="certifModalTitle">Honoris 21st Century Soft Skills Certificate</h3>
+          <p class="certif-modal-meta">Honoris Online Academy · SALL Sokhna Oumou Kaltoum · Promotion Septembre 2025</p>
+        </div>
+        <button type="button" class="certif-modal-close" id="closeCertifModal" aria-label="Fermer la vue">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+      <div class="certif-modal-body">
+        <div class="certif-image-wrap">
+          <img src="assets/certificates/honoris-soft-skills-certificate.png" alt="Certificat Honoris 21st Century Soft Skills - SALL Sokhna Oumou Kaltoum" class="certif-modal-img" loading="lazy" oncontextmenu="return false;" />
+        </div>
+      </div>
+      <div class="certif-modal-footer">
+        <span class="certif-security-note"><i class="fa-solid fa-shield-halved"></i> Document vérifié — Division of Employability · Honoris Group</span>
+        <button type="button" class="btn-certif-close-action" id="closeCertifModalBtn">Fermer</button>
+      </div>
     </div>
   </div>
 
