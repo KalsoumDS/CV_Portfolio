@@ -946,11 +946,9 @@ button { font-family: inherit; cursor: pointer; background: none; border: none; 
   box-shadow: var(--shadow);
 }
 
-.collab-card--recrutement { border-left-color: var(--accent); }
 .collab-card--sprint      { border-left-color: var(--accent-2); }
 .collab-card--projet      { border-left-color: var(--accent-3); }
 
-.collab-card--recrutement:hover { border-color: var(--accent); }
 .collab-card--sprint:hover      { border-color: var(--accent-2); }
 .collab-card--projet:hover      { border-color: var(--accent-3); }
 
@@ -1001,11 +999,6 @@ button { font-family: inherit; cursor: pointer; background: none; border: none; 
   color: var(--accent-3);
   background: color-mix(in srgb, var(--accent-3) 14%, transparent);
   border-color: color-mix(in srgb, var(--accent-3) 25%, transparent);
-}
-
-.collab-badge--highlight {
-  background: color-mix(in srgb, var(--accent) 18%, transparent);
-  border-color: var(--accent);
 }
 
 .collab-card h3 {
